@@ -1356,117 +1356,6 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/12/first9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/03/12/first9/" itemprop="url">判断设备是否是移动端</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-12T22:25:17+08:00">
-                2014-03-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">判断设备是否为移动端</div><div class="line"></div><div class="line">/**</div><div class="line">* 判断浏览的设备是否为移动设备</div><div class="line">*/</div><div class="line">function isMobileDevice() &#123;</div><div class="line">    var sUserAgent = navigator.userAgent.toLowerCase();</div><div class="line">    var bIsIpad = sUserAgent.match(/ipad/i) == &quot;ipad&quot;;</div><div class="line">    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == &quot;iphone os&quot;;</div><div class="line">    var bIsMidp = sUserAgent.match(/midp/i) == &quot;midp&quot;;</div><div class="line">    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == &quot;rv:1.2.3.4&quot;;</div><div class="line">    var bIsUc = sUserAgent.match(/ucweb/i) == &quot;ucweb&quot;;</div><div class="line">    var bIsAndroid = sUserAgent.match(/android/i) == &quot;android&quot;;</div><div class="line">    var bIsCE = sUserAgent.match(/windows ce/i) == &quot;windows ce&quot;;</div><div class="line">    var bIsWM = sUserAgent.match(/windows mobile/i) == &quot;windows mobile&quot;;</div><div class="line">    if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) &#123;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">    return false;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">if (isMobileDevice()) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/12/first14/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1546,6 +1435,117 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
 <p>我们将uaredirect.js格式化一下。</p>
 <p>uaredirect.js格式化后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line">function uaredirect(f) &#123;</div><div class="line">    try &#123;</div><div class="line">        if (document.getElementById(&quot;bdmark&quot;) != null) &#123;</div><div class="line">            return</div><div class="line">        &#125;</div><div class="line">        var b = false;</div><div class="line">        if (arguments[1]) &#123;</div><div class="line">            var e = window.location.host;</div><div class="line">            var a = window.location.href;</div><div class="line">            if (isSubdomain(arguments[1], e) == 1) &#123;</div><div class="line">                f = f + &quot;/#m/&quot; + a; b = true</div><div class="line">            &#125; else &#123;</div><div class="line">                if (isSubdomain(arguments[1], e) == 2) &#123;</div><div class="line">                    f = f + &quot;/#m/&quot; + a; b = true</div><div class="line">                &#125; else &#123;</div><div class="line">                    f = a; b = false</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125; else &#123;</div><div class="line">            b = true</div><div class="line">        &#125; if (b) &#123;</div><div class="line">            var c = window.location.hash;</div><div class="line">            if (!c.match(&quot;fromapp&quot;)) &#123;</div><div class="line">                if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i))) &#123;</div><div class="line">                    location.replace(f)</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125; catch (d) &#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">function isSubdomain(c, d) &#123;</div><div class="line">    this.getdomain = function (f) &#123;</div><div class="line">        var e = f.indexOf(&quot;://&quot;);</div><div class="line">        if (e &gt; 0) &#123;</div><div class="line">            var h = f.substr(e + 3)</div><div class="line">        &#125; else &#123;</div><div class="line">            var h = f</div><div class="line">        &#125;</div><div class="line">        var g = /^www\./;</div><div class="line">        if (g.test(h)) &#123;</div><div class="line">            h = h.substr(4)</div><div class="line">        &#125;</div><div class="line">        return h</div><div class="line">    &#125;;</div><div class="line">    if (c == d) &#123;</div><div class="line">        return 1</div><div class="line">    &#125; else &#123;</div><div class="line">        var c = this.getdomain(c);</div><div class="line">        var b = this.getdomain(d);</div><div class="line">        if (c == b) &#123;</div><div class="line">            return 1</div><div class="line">        &#125; else &#123;</div><div class="line">            c = c.replace(&quot;.&quot;, &quot;\\.&quot;);</div><div class="line">            var a = new RegExp(&quot;\\.&quot; + c + &quot;$&quot;);</div><div class="line">            if (b.match(a)) &#123;</div><div class="line">                return 2</div><div class="line">            &#125; else &#123;</div><div class="line">                return 0</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/12/first9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/03/12/first9/" itemprop="url">判断设备是否是移动端</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-12T22:25:17+08:00">
+                2014-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">判断设备是否为移动端</div><div class="line"></div><div class="line">/**</div><div class="line">* 判断浏览的设备是否为移动设备</div><div class="line">*/</div><div class="line">function isMobileDevice() &#123;</div><div class="line">    var sUserAgent = navigator.userAgent.toLowerCase();</div><div class="line">    var bIsIpad = sUserAgent.match(/ipad/i) == &quot;ipad&quot;;</div><div class="line">    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == &quot;iphone os&quot;;</div><div class="line">    var bIsMidp = sUserAgent.match(/midp/i) == &quot;midp&quot;;</div><div class="line">    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == &quot;rv:1.2.3.4&quot;;</div><div class="line">    var bIsUc = sUserAgent.match(/ucweb/i) == &quot;ucweb&quot;;</div><div class="line">    var bIsAndroid = sUserAgent.match(/android/i) == &quot;android&quot;;</div><div class="line">    var bIsCE = sUserAgent.match(/windows ce/i) == &quot;windows ce&quot;;</div><div class="line">    var bIsWM = sUserAgent.match(/windows mobile/i) == &quot;windows mobile&quot;;</div><div class="line">    if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) &#123;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">    return false;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">if (isMobileDevice()) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
