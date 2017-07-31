@@ -256,6 +256,117 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/06/20/first16/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/06/20/first16/" itemprop="url">移动端rem初始化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-06-20T22:25:17+08:00">
+                2014-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line">//初始化rem</div><div class="line">(function () &#123;</div><div class="line">    var getStyle = (function () &#123;</div><div class="line">        if (window.currentStyle) &#123;</div><div class="line">            return function (obj, name) &#123;</div><div class="line">                return obj.currentStyle[name];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">            return function (obj, name) &#123;</div><div class="line">                return getComputedStyle(obj, false)[name];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)();</div><div class="line"></div><div class="line">    var addEvent = (function () &#123;</div><div class="line">        if (document.attachEvent) &#123;</div><div class="line">            return function (obj, ev, fn) &#123;</div><div class="line">                obj.attachEvent(&apos;on&apos; + ev, fn);</div><div class="line">            &#125;;</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">            return function (obj, ev, fn) &#123;</div><div class="line">                obj.addEventListener(ev, fn, false);</div><div class="line">            &#125;;</div><div class="line">        &#125;</div><div class="line">    &#125;)();</div><div class="line"></div><div class="line">    var oHtml = document.querySelector(&apos;html&apos;);</div><div class="line">    var fontSize = getStyle(oHtml, &apos;fontSize&apos;).split(&apos;px&apos;)[0];</div><div class="line">    var originalWidth = 320;</div><div class="line"></div><div class="line">    setFontSize();</div><div class="line"></div><div class="line">    addEvent(window, &apos;resize&apos;, function () &#123;</div><div class="line">        setFontSize();</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    function setFontSize() &#123;</div><div class="line">        var size = size || 200;</div><div class="line">        var _fontSize = (getSize()[&apos;width&apos;] * fontSize / 320) &gt; size ? size : (getSize()[&apos;width&apos;] * fontSize / 320);</div><div class="line">        oHtml.style.fontSize = _fontSize + &quot;px&quot;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function getSize() &#123;</div><div class="line">        return &#123;</div><div class="line">            width: document.documentElement.clientWidth || document.body.clientWidth,</div><div class="line">            height: document.documentElement.clientHeight || document.body.clientHeight</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)();</div><div class="line">    &lt;ul class=&quot;list&quot;&gt;</div><div class="line">        &lt;li class=&quot;btn1&quot;&gt;btn1&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn2&quot;&gt;btn2&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn3&quot;&gt;btn3&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    &lt;ul class=&quot;list&quot;&gt;</div><div class="line">        &lt;li class=&quot;btn1&quot;&gt;btn1&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn2&quot;&gt;btn2&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn3&quot;&gt;btn3&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    &lt;ul class=&quot;list&quot;&gt;</div><div class="line">        &lt;li class=&quot;btn1&quot;&gt;btn1&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn2&quot;&gt;btn2&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn3&quot;&gt;btn3&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    js代码</div><div class="line">    &lt;script&gt;</div><div class="line">        $(function()&#123;</div><div class="line">            $(&apos;.list .btn1&apos;).click(function () &#123;</div><div class="line">                // 表示返回点击的btn1在其父级元素中的索引位置</div><div class="line">                $(this).index()</div><div class="line">                // 在所有的btn1元素中返回当前你点击的btn1的索引位置</div><div class="line">                $(&apos;.list .btn1&apos;).index(this)</div><div class="line">            &#125;)</div><div class="line">        &#125;)</div><div class="line">    &lt;/script&gt;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/04/25/first15/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -436,6 +547,170 @@
         
           
             <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">1、全局规则之一，不要写&lt;style&gt;标签、不要写class，所有CSS都用style属性，什么元素需要什么样式就用style写内联的CSS。</div><div class="line"></div><div class="line">2、全局规则之二，少用图片，邮箱不会过滤你的img标签，但是系统往往会默认不载入陌生来信的图片，如果用了很多图片的邮件，在图片没有载入的情况下，丑陋无比甚至看不清内容，没耐心的用户直接就删除了。所有图片必须存在宽高和alt标签，且alt内容不宜过多不能出现特殊字符，页面所有图片地址必须为绝对地址，图片链接禁止使用热区，因为map标记在outlook中无法进行正常的点击，不能打开该链接指向的网址。</div><div class="line"></div><div class="line">3、不要在style里面写float、position这些style，因为会被过滤。那么如何实现左右布局或者更复杂的布局呢？使用table制作页面，且必须设置宽度，而div格式由于有些属性不被邮件客户端完全支持，所以建议避免作用。</div><div class="line"></div><div class="line">4、style内容里面background可以设置color，但是img会被过滤，就是说不能通过CSS来设置背景图片了。但是有一个很有意思的元素 属性，也叫background，里面可以定义一个图片路径，这是个不错的替代方案，虽然这样功能有限，比如无法定位背景图片了，有总比没有好。例如要给 一个单元格加一个背景，必须这样写：</div><div class="line">`&lt;td background=”http://image1.koubei.com/images/common/logo_koubei.gif”&gt;&lt;/td&gt;`</div><div class="line"></div><div class="line">5、div模式的邮箱不支持flash，iframe模式的有待验证。</div><div class="line"></div><div class="line">最后提一句，sohu的邮箱很怪异，会在每个文本段后面加一个空格，导致原本正常的排版一行放不下而换行，从而使某些布局错乱。所以，如果你要兼容sohu邮箱的话，遇到一些紧凑的布局就要格外小心了，尽量减少文本段的数量，留足宽度。</div><div class="line"></div><div class="line">6、页面显示宽度400px-800px，高度一般控制在一屏以内。</div><div class="line"></div><div class="line">7、页面不向出现js代码及flash内容（如需要动画全用gif）</div><div class="line"></div><div class="line">8、页面的内容最好以文字的形式来呈现。</div><div class="line"> </div><div class="line">9、DTD声明中&lt;html xmlns=http://www.w3.org/1999/xhtml&gt;请改为&lt;html&gt;</div><div class="line"></div><div class="line">10、链接的打开方式统一为：_blank</div><div class="line"></div><div class="line">11、mailto的正确写法：例：&lt;mailto:xxx@163.com&gt; xxx@163.com&lt;/a&gt;</div><div class="line"></div><div class="line">12、代码干净严谨，删除不必要的空格及回车，总代码量&lt;50K</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/04/12/first12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/04/12/first12/" itemprop="url">IE6常见bug总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-04-12T22:25:17+08:00">
+                2014-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、IE6怪异解析之padding与border算入宽高<br>原因：未加文档声明造成非盒模型解析<br>解决方法：加入文档声明&lt;!doctype html&gt; </p>
+<p>2、IE6在块元素、左右浮动、设定marin时造成margin双倍（双边距）<br>解决方法：display:inline </p>
+<p>3、以下三种其实是同一种bug，其实也不算是个bug，举个例子：父标签高度20，子标签11，垂直居中，20-11=9，9要分给文字的上面与下面，怎么分？IE6就会与其它的不同，所以，尽量避免。<br>1）字体大小为奇数之边框高度少1px<br>解决方法：字体大小设置为偶数或line-height为偶数<br>2）line-height，文本垂直居中差1px<br>解决方法：padding-top代替line-height居中，或line-height加1或减1<br>3）与父标签的宽度的奇偶不同的居中造成1px的偏离<br>解决方法：如果父标签是奇数宽度，则子标签也用奇数宽度;如果是父标签偶数宽度，则子标签也用偶数宽度 </p>
+<p>4、内部盒模型超出父级时，父级被撑大<br>解决方法：父标签使用overflow:hidden </p>
+<p>5、line-height默认行高bug<br>解决方法：line-height设值 </p>
+<p>6、行标签之间会有一小段空白<br>解决方法：float或结构并排(可读性差，不建议) </p>
+<p>7、标签高度无法小于19px<br>解决方法：overflow: hidden; </p>
+<p>8、左浮元素margin-bottom失效<br>解决方法：显示设置高度 or 父标签设置_padding-bottom代替子标签的margin-bottom or 再放个标签让父标签浮动，子标签<br>margin- bottom，即(margin-bottom与float不同时作用于一个标签) </p>
+<p>9、img于块元素中，底边多出空白<br>解决方法：父级设置overflow: hidden; 或 img { display: block; } 或 _margin: -5px; </p>
+<p>10、li之间会有间距<br>解决方法：float: left; </p>
+<p>11、块元素中有文字及右浮动的行元素，行元素换行<br>解决方法：将行元素置于块元素内的文字前 </p>
+<p>12、position下的left，bottom错位<br>解决方法：为父级(relative层)设置宽高或添加*zoom:1 </p>
+<p>13、子级中有设置position，则父级overflow失效<br>解决方法：为父级设置position:relative</p>
+<p>以下是补充：上面要先看</p>
+<p>1、终极方法：条件注释<br><!--[if lte IE 6]> 这段文字仅显示在 IE6及IE6以下版本。 <![endif]--><br><!--[if gte IE 6]> 这段文字仅显示在 IE6及IE6以上版本。 <![endif]--><br><!--[if gt IE 6]> 这段文字仅显示在 IE6以上版本（不包含IE6）。 <![endif]--><br><!--[if IE 5.5]> 这段文字仅显示在 IE5.5。 <![endif]--><br><!--在 IE6及IE6以下版本中加载css--><br><!--[if lte IE 6]> <link type="text/css" rel="stylesheet" href="css/ie6.css" mce_href="css/ie6.css" /><![endif]--><br>缺点是在IE浏览器下可能会增加额外的HTTP请求数。 </p>
+<p>2、CSS选择器区分<br>IE6不支持子选择器；先针对IE6使用常规申明CSS选择器，然后再用子选择器针对IE7+及其他浏览器。 </p>
+<p>复制代码<br>代码如下:</p>
+<p>/<em> IE6 专用 </em>/<br>.content {color:red;}<br>/<em> 其他浏览器 </em>/<br>div&gt;p .content {color:blue;} –&gt;</p>
+<p>3、PNG半透明图片的问题<br>虽然可以通过JS等方式解决，但依然存在载入速度等问题，所以，这个在设计上能避免还是尽量避免为好。以达到网站最大优化。<br>4、IE6下的圆角<br>IE6不支持CSS3的圆角属性，性价比最高的解决方法就是用图片圆角来替代，或者放弃IE6的圆角。 </p>
+<p>5、IE6背景闪烁<br>如果你给链接、按钮用CSS sprites作为背景，你可能会发现在IE6下会有背景图闪烁的现象。造成这个的原因是由于IE6没有将背景图缓存，每次触发hover的时候都会重新加载，可以用JavaScript设置IE6缓存这些图片： </p>
+<p>复制代码<br>代码如下:</p>
+<p>document.execCommand(“BackgroundImageCache”,false,true);</p>
+<p>6、最小高度<br>IE6 不支持min-height属性，但它却认为height就是最小高度。解决方法：使用ie6不支持但其余浏览器支持的属性!important。 </p>
+<p>复制代码<br>代码如下:</p>
+<p>#container {min-height:200px; height:auto !important; height:200px;}</p>
+<p>7、最大高度 </p>
+<p>复制代码<br>代码如下:</p>
+<p>//直接使用ID来改变元素的最大高度<br>var container = document.getElementById(‘container’);<br>container.style.height = (container.scrollHeight &gt; 199) ? “200px” : “auto”;<br>//写成函数来运行<br>function setMaxHeight(elementId, height){<br>var container = document.getElementById(elementId);<br>container.style.height = (container.scrollHeight &gt; (height - 1)) ? height + “px” : “auto”;<br>}<br>//函数示例<br>setMaxHeight(‘container1’, 200);<br>setMaxHeight(‘container2’, 500);</p>
+<p>8、100% 高度<br>在IE6下，如果要给元素定义100%高度，必须要明确定义它的父级元素的高度，如果你需要给元素定义满屏的高度，就得先给html和body定义height:100%;。 </p>
+<p>9、最小宽度<br>同max-height和max-width一样，IE6也不支持min-width。 </p>
+<p>复制代码<br>代码如下:</p>
+<p>//直接使用ID来改变元素的最小宽度<br>var container = document.getElementById(‘container’);<br>container.style.width = (container.clientWidth &lt; width) ? “500px” : “auto”;<br>//写成函数来运行<br>function setMinWidth(elementId, width){<br>var container = document.getElementById(elementId);<br>container.style.width = (container.clientWidth &lt; width) ? width + “px” : “auto”;<br>}<br>//函数示例<br>setMinWidth(‘container1’, 200);<br>setMinWidth(‘container2’, 500);</p>
+<p>10、最大宽度 </p>
+<p>复制代码<br>代码如下:</p>
+<p>//直接使用ID来改变元素的最大宽度<br>var container = document.getElementById(elementId);<br>container.style.width = (container.clientWidth &gt; (width - 1)) ? width + “px” : “auto”;<br>//写成函数来运行<br>function setMaxWidth(elementId, width){<br>var container = document.getElementById(elementId);<br>container.style.width = (container.clientWidth &gt; (width - 1)) ? width + “px” : “auto”;<br>}<br>//函数示例<br>setMaxWidth(‘container1’, 200);<br>setMaxWidth(‘container2’, 500);</p>
+<p>11、双边距Bug<br>当元素浮动时，IE6会错误的把浮动方向的margin值双倍计算。个人觉得较好解决方法是避免float和margin同时使用。 </p>
+<p>12、清除浮动<br>如果你想用div(或其他容器)包裹一个浮动的元素，你会发现必须给div(容器)定义明确的height、width、overflow之中一个属性（除了auto值）才能将浮动元素严实地包裹。 </p>
+<p>复制代码<br>代码如下:</p>
+<p>#container {border:1px solid #333; overflow:auto; height:100%;} </p>
+<p>#floated1 {float:left; height:300px; width:200px; background:#00F;} </p>
+<p>#floated2 {float:right; height:400px; width:200px; background:#F0F;}<br>更多：<a href="http://www.twinsenliang.net/skill/20090413.html" target="_blank" rel="external">http://www.twinsenliang.net/skill/20090413.html</a></p>
+<p>13、浮动层错位<br>当内容超出外包容器定义的宽度时，在IE6中容器会忽视定义的width值，宽度会错误地随内容宽度增长而增长。<br>浮动层错位问题在IE6下没有真正让人满意的解决方法，虽然可以使用overflow:hidden;或overflow:scroll;来修正， 但hidden容易导致其他一些问题，scroll会破坏设计；JavaScript也没法很好地解决这个问题。所以建议是一定要在布局上避免这个问题发 生，使用一个固定的布局或者控制好内容的宽度（给内层加width）。 </p>
+<p>14、躲猫猫bug<br>在IE6和IE7下，躲猫猫bug是一个非常恼人的问题。一个撑破了容器的浮动元素，如果在他之后有不浮动的内容，并且有一些定义了:hover的链接，当鼠标移到那些链接上时，在IE6下就会触发躲猫猫。<br>解决方法很简单：<br>1.在（那个未浮动的）内容之后添加一个<span style="clear: both;"> </span><br>2.触发包含了这些链接的容器的hasLayout，一个简单的方法就是给其定义height:1%; </p>
+<p>15、绝对定位元素的1像素间距bug<br>IE6下的这个错误是由于进位处理误差造成（IE7已修复），当绝对定位元素的父元素高或宽为奇数时，bottom和right会产生错误。唯一的解决办法就是给父元素定义明确的高宽值，但对于液态布局没有完美的解决方法。 </p>
+<p>16、3像素间距bug<br>在IE6中，当文本(或无浮动元素)跟在一个浮动的元素之后，文本和这个浮动元素之间会多出3像素的间隔。<br>给浮动层添加 display:inline 和 -3px 负值margin<br>给中间的内容层定义 margin-right 以纠正-3px </p>
+<p>17、IE下z-index的bug<br>在IE浏览器中，定位元素的z-index层级是相对于各自的父级容器，所以会导致z-index出现错误的表现。解决方法是给其父级元素定义z-index，有些情况下还需要定义position:relative。 </p>
+<p>18、Overflow Bug<br>在IE6/7中，overflow无法正确的隐藏有相对定位position:relative;的子元素。解决方法就是给外包容器.wrap加上position:relative;。 </p>
+<p>19、横向列表宽度bug<br>如果你使用float:left;把<li>横向摆列，并且</li><li>内包含的<a>（或其他）触发了 hasLayout，在IE6下就会有错误的表现。解决方法很简单，只需要给<a>定义同样的float:left;即可。 </a></a></li></p>
+<p>20、列表阶梯bug<br>列表阶梯bug通常会在给<li>的子元素<a>使用float:left;时触发，我们本意是要做一个横向的列表(通常 是导航栏)，但IE却可能呈现出垂直的或者阶梯状。解决办法就是给<li>定义float:left;而非子元素<a>，或者 给<li>定义display:inline;也可以解决。 </li></a></li></a></li></p>
+<p>21、垂直列表间隙bug<br>当我们使用<li> 包含一个块级子元素时，IE6(IE7也有可能)会错误地给每条列表元素（</li><li>）之间添加空隙。<br>解决方法：把<a>flaot并且清除float来解决这个问题；另外一个办法就是触发<a>的hasLayout（如定 义高宽、使用zoom:1;）；也可以给<li> 定义display:inline;来解决此问题；另外还有一个极有趣的方法，给包含的文本末尾添加一个空格。 </li></a></a></li></p>
+<p>22、IE6中的:hover<br>在IE6中，除了(需要有href属性)才能触发:hover行为，这妨碍了我们实现许多鼠标触碰效果，但还是有一些法子是可以解决它的。最好是不要用:hover来实现重要的功能，仅仅只用它来强化效果。 </p>
+<p>23、IE6调整窗口大小的 Bug<br>当把body居中放置，改变IE浏览器大小的时候，任何在body里面的相对定位元素都会固定不动了。解决办法：给body定义position:relative;就行了。 </p>
+<p>24、文本重复Bug<br>在IE6中，一些隐藏的元素（如注释、display:none;的元素）被包含在一个浮动元素里，就有可能引发文本重复bug。解决办法：给浮动元素添加display:inline;。</p>
+
           
         
       
@@ -700,281 +975,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/12/first9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/03/12/first9/" itemprop="url">判断设备是否是移动端</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-12T22:25:17+08:00">
-                2014-03-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">判断设备是否为移动端</div><div class="line"></div><div class="line">/**</div><div class="line">* 判断浏览的设备是否为移动设备</div><div class="line">*/</div><div class="line">function isMobileDevice() &#123;</div><div class="line">    var sUserAgent = navigator.userAgent.toLowerCase();</div><div class="line">    var bIsIpad = sUserAgent.match(/ipad/i) == &quot;ipad&quot;;</div><div class="line">    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == &quot;iphone os&quot;;</div><div class="line">    var bIsMidp = sUserAgent.match(/midp/i) == &quot;midp&quot;;</div><div class="line">    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == &quot;rv:1.2.3.4&quot;;</div><div class="line">    var bIsUc = sUserAgent.match(/ucweb/i) == &quot;ucweb&quot;;</div><div class="line">    var bIsAndroid = sUserAgent.match(/android/i) == &quot;android&quot;;</div><div class="line">    var bIsCE = sUserAgent.match(/windows ce/i) == &quot;windows ce&quot;;</div><div class="line">    var bIsWM = sUserAgent.match(/windows mobile/i) == &quot;windows mobile&quot;;</div><div class="line">    if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) &#123;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">    return false;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">if (isMobileDevice()) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/12/first12/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/03/12/first12/" itemprop="url">IE6常见bug总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-12T22:25:17+08:00">
-                2014-03-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1、IE6怪异解析之padding与border算入宽高<br>原因：未加文档声明造成非盒模型解析<br>解决方法：加入文档声明&lt;!doctype html&gt; </p>
-<p>2、IE6在块元素、左右浮动、设定marin时造成margin双倍（双边距）<br>解决方法：display:inline </p>
-<p>3、以下三种其实是同一种bug，其实也不算是个bug，举个例子：父标签高度20，子标签11，垂直居中，20-11=9，9要分给文字的上面与下面，怎么分？IE6就会与其它的不同，所以，尽量避免。<br>1）字体大小为奇数之边框高度少1px<br>解决方法：字体大小设置为偶数或line-height为偶数<br>2）line-height，文本垂直居中差1px<br>解决方法：padding-top代替line-height居中，或line-height加1或减1<br>3）与父标签的宽度的奇偶不同的居中造成1px的偏离<br>解决方法：如果父标签是奇数宽度，则子标签也用奇数宽度;如果是父标签偶数宽度，则子标签也用偶数宽度 </p>
-<p>4、内部盒模型超出父级时，父级被撑大<br>解决方法：父标签使用overflow:hidden </p>
-<p>5、line-height默认行高bug<br>解决方法：line-height设值 </p>
-<p>6、行标签之间会有一小段空白<br>解决方法：float或结构并排(可读性差，不建议) </p>
-<p>7、标签高度无法小于19px<br>解决方法：overflow: hidden; </p>
-<p>8、左浮元素margin-bottom失效<br>解决方法：显示设置高度 or 父标签设置_padding-bottom代替子标签的margin-bottom or 再放个标签让父标签浮动，子标签<br>margin- bottom，即(margin-bottom与float不同时作用于一个标签) </p>
-<p>9、img于块元素中，底边多出空白<br>解决方法：父级设置overflow: hidden; 或 img { display: block; } 或 _margin: -5px; </p>
-<p>10、li之间会有间距<br>解决方法：float: left; </p>
-<p>11、块元素中有文字及右浮动的行元素，行元素换行<br>解决方法：将行元素置于块元素内的文字前 </p>
-<p>12、position下的left，bottom错位<br>解决方法：为父级(relative层)设置宽高或添加*zoom:1 </p>
-<p>13、子级中有设置position，则父级overflow失效<br>解决方法：为父级设置position:relative</p>
-<p>以下是补充：上面要先看</p>
-<p>1、终极方法：条件注释<br><!--[if lte IE 6]> 这段文字仅显示在 IE6及IE6以下版本。 <![endif]--><br><!--[if gte IE 6]> 这段文字仅显示在 IE6及IE6以上版本。 <![endif]--><br><!--[if gt IE 6]> 这段文字仅显示在 IE6以上版本（不包含IE6）。 <![endif]--><br><!--[if IE 5.5]> 这段文字仅显示在 IE5.5。 <![endif]--><br><!--在 IE6及IE6以下版本中加载css--><br><!--[if lte IE 6]> <link type="text/css" rel="stylesheet" href="css/ie6.css" mce_href="css/ie6.css" /><![endif]--><br>缺点是在IE浏览器下可能会增加额外的HTTP请求数。 </p>
-<p>2、CSS选择器区分<br>IE6不支持子选择器；先针对IE6使用常规申明CSS选择器，然后再用子选择器针对IE7+及其他浏览器。 </p>
-<p>复制代码<br>代码如下:</p>
-<p>/<em> IE6 专用 </em>/<br>.content {color:red;}<br>/<em> 其他浏览器 </em>/<br>div&gt;p .content {color:blue;} –&gt;</p>
-<p>3、PNG半透明图片的问题<br>虽然可以通过JS等方式解决，但依然存在载入速度等问题，所以，这个在设计上能避免还是尽量避免为好。以达到网站最大优化。<br>4、IE6下的圆角<br>IE6不支持CSS3的圆角属性，性价比最高的解决方法就是用图片圆角来替代，或者放弃IE6的圆角。 </p>
-<p>5、IE6背景闪烁<br>如果你给链接、按钮用CSS sprites作为背景，你可能会发现在IE6下会有背景图闪烁的现象。造成这个的原因是由于IE6没有将背景图缓存，每次触发hover的时候都会重新加载，可以用JavaScript设置IE6缓存这些图片： </p>
-<p>复制代码<br>代码如下:</p>
-<p>document.execCommand(“BackgroundImageCache”,false,true);</p>
-<p>6、最小高度<br>IE6 不支持min-height属性，但它却认为height就是最小高度。解决方法：使用ie6不支持但其余浏览器支持的属性!important。 </p>
-<p>复制代码<br>代码如下:</p>
-<p>#container {min-height:200px; height:auto !important; height:200px;}</p>
-<p>7、最大高度 </p>
-<p>复制代码<br>代码如下:</p>
-<p>//直接使用ID来改变元素的最大高度<br>var container = document.getElementById(‘container’);<br>container.style.height = (container.scrollHeight &gt; 199) ? “200px” : “auto”;<br>//写成函数来运行<br>function setMaxHeight(elementId, height){<br>var container = document.getElementById(elementId);<br>container.style.height = (container.scrollHeight &gt; (height - 1)) ? height + “px” : “auto”;<br>}<br>//函数示例<br>setMaxHeight(‘container1’, 200);<br>setMaxHeight(‘container2’, 500);</p>
-<p>8、100% 高度<br>在IE6下，如果要给元素定义100%高度，必须要明确定义它的父级元素的高度，如果你需要给元素定义满屏的高度，就得先给html和body定义height:100%;。 </p>
-<p>9、最小宽度<br>同max-height和max-width一样，IE6也不支持min-width。 </p>
-<p>复制代码<br>代码如下:</p>
-<p>//直接使用ID来改变元素的最小宽度<br>var container = document.getElementById(‘container’);<br>container.style.width = (container.clientWidth &lt; width) ? “500px” : “auto”;<br>//写成函数来运行<br>function setMinWidth(elementId, width){<br>var container = document.getElementById(elementId);<br>container.style.width = (container.clientWidth &lt; width) ? width + “px” : “auto”;<br>}<br>//函数示例<br>setMinWidth(‘container1’, 200);<br>setMinWidth(‘container2’, 500);</p>
-<p>10、最大宽度 </p>
-<p>复制代码<br>代码如下:</p>
-<p>//直接使用ID来改变元素的最大宽度<br>var container = document.getElementById(elementId);<br>container.style.width = (container.clientWidth &gt; (width - 1)) ? width + “px” : “auto”;<br>//写成函数来运行<br>function setMaxWidth(elementId, width){<br>var container = document.getElementById(elementId);<br>container.style.width = (container.clientWidth &gt; (width - 1)) ? width + “px” : “auto”;<br>}<br>//函数示例<br>setMaxWidth(‘container1’, 200);<br>setMaxWidth(‘container2’, 500);</p>
-<p>11、双边距Bug<br>当元素浮动时，IE6会错误的把浮动方向的margin值双倍计算。个人觉得较好解决方法是避免float和margin同时使用。 </p>
-<p>12、清除浮动<br>如果你想用div(或其他容器)包裹一个浮动的元素，你会发现必须给div(容器)定义明确的height、width、overflow之中一个属性（除了auto值）才能将浮动元素严实地包裹。 </p>
-<p>复制代码<br>代码如下:</p>
-<p>#container {border:1px solid #333; overflow:auto; height:100%;} </p>
-<p>#floated1 {float:left; height:300px; width:200px; background:#00F;} </p>
-<p>#floated2 {float:right; height:400px; width:200px; background:#F0F;}<br>更多：<a href="http://www.twinsenliang.net/skill/20090413.html" target="_blank" rel="external">http://www.twinsenliang.net/skill/20090413.html</a></p>
-<p>13、浮动层错位<br>当内容超出外包容器定义的宽度时，在IE6中容器会忽视定义的width值，宽度会错误地随内容宽度增长而增长。<br>浮动层错位问题在IE6下没有真正让人满意的解决方法，虽然可以使用overflow:hidden;或overflow:scroll;来修正， 但hidden容易导致其他一些问题，scroll会破坏设计；JavaScript也没法很好地解决这个问题。所以建议是一定要在布局上避免这个问题发 生，使用一个固定的布局或者控制好内容的宽度（给内层加width）。 </p>
-<p>14、躲猫猫bug<br>在IE6和IE7下，躲猫猫bug是一个非常恼人的问题。一个撑破了容器的浮动元素，如果在他之后有不浮动的内容，并且有一些定义了:hover的链接，当鼠标移到那些链接上时，在IE6下就会触发躲猫猫。<br>解决方法很简单：<br>1.在（那个未浮动的）内容之后添加一个<span style="clear: both;"> </span><br>2.触发包含了这些链接的容器的hasLayout，一个简单的方法就是给其定义height:1%; </p>
-<p>15、绝对定位元素的1像素间距bug<br>IE6下的这个错误是由于进位处理误差造成（IE7已修复），当绝对定位元素的父元素高或宽为奇数时，bottom和right会产生错误。唯一的解决办法就是给父元素定义明确的高宽值，但对于液态布局没有完美的解决方法。 </p>
-<p>16、3像素间距bug<br>在IE6中，当文本(或无浮动元素)跟在一个浮动的元素之后，文本和这个浮动元素之间会多出3像素的间隔。<br>给浮动层添加 display:inline 和 -3px 负值margin<br>给中间的内容层定义 margin-right 以纠正-3px </p>
-<p>17、IE下z-index的bug<br>在IE浏览器中，定位元素的z-index层级是相对于各自的父级容器，所以会导致z-index出现错误的表现。解决方法是给其父级元素定义z-index，有些情况下还需要定义position:relative。 </p>
-<p>18、Overflow Bug<br>在IE6/7中，overflow无法正确的隐藏有相对定位position:relative;的子元素。解决方法就是给外包容器.wrap加上position:relative;。 </p>
-<p>19、横向列表宽度bug<br>如果你使用float:left;把<li>横向摆列，并且</li><li>内包含的<a>（或其他）触发了 hasLayout，在IE6下就会有错误的表现。解决方法很简单，只需要给<a>定义同样的float:left;即可。 </a></a></li></p>
-<p>20、列表阶梯bug<br>列表阶梯bug通常会在给<li>的子元素<a>使用float:left;时触发，我们本意是要做一个横向的列表(通常 是导航栏)，但IE却可能呈现出垂直的或者阶梯状。解决办法就是给<li>定义float:left;而非子元素<a>，或者 给<li>定义display:inline;也可以解决。 </li></a></li></a></li></p>
-<p>21、垂直列表间隙bug<br>当我们使用<li> 包含一个块级子元素时，IE6(IE7也有可能)会错误地给每条列表元素（</li><li>）之间添加空隙。<br>解决方法：把<a>flaot并且清除float来解决这个问题；另外一个办法就是触发<a>的hasLayout（如定 义高宽、使用zoom:1;）；也可以给<li> 定义display:inline;来解决此问题；另外还有一个极有趣的方法，给包含的文本末尾添加一个空格。 </li></a></a></li></p>
-<p>22、IE6中的:hover<br>在IE6中，除了(需要有href属性)才能触发:hover行为，这妨碍了我们实现许多鼠标触碰效果，但还是有一些法子是可以解决它的。最好是不要用:hover来实现重要的功能，仅仅只用它来强化效果。 </p>
-<p>23、IE6调整窗口大小的 Bug<br>当把body居中放置，改变IE浏览器大小的时候，任何在body里面的相对定位元素都会固定不动了。解决办法：给body定义position:relative;就行了。 </p>
-<p>24、文本重复Bug<br>在IE6中，一些隐藏的元素（如注释、display:none;的元素）被包含在一个浮动元素里，就有可能引发文本重复bug。解决办法：给浮动元素添加display:inline;。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/12/first14/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1054,6 +1054,117 @@
 <p>我们将uaredirect.js格式化一下。</p>
 <p>uaredirect.js格式化后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line">function uaredirect(f) &#123;</div><div class="line">    try &#123;</div><div class="line">        if (document.getElementById(&quot;bdmark&quot;) != null) &#123;</div><div class="line">            return</div><div class="line">        &#125;</div><div class="line">        var b = false;</div><div class="line">        if (arguments[1]) &#123;</div><div class="line">            var e = window.location.host;</div><div class="line">            var a = window.location.href;</div><div class="line">            if (isSubdomain(arguments[1], e) == 1) &#123;</div><div class="line">                f = f + &quot;/#m/&quot; + a; b = true</div><div class="line">            &#125; else &#123;</div><div class="line">                if (isSubdomain(arguments[1], e) == 2) &#123;</div><div class="line">                    f = f + &quot;/#m/&quot; + a; b = true</div><div class="line">                &#125; else &#123;</div><div class="line">                    f = a; b = false</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125; else &#123;</div><div class="line">            b = true</div><div class="line">        &#125; if (b) &#123;</div><div class="line">            var c = window.location.hash;</div><div class="line">            if (!c.match(&quot;fromapp&quot;)) &#123;</div><div class="line">                if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i))) &#123;</div><div class="line">                    location.replace(f)</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125; catch (d) &#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">function isSubdomain(c, d) &#123;</div><div class="line">    this.getdomain = function (f) &#123;</div><div class="line">        var e = f.indexOf(&quot;://&quot;);</div><div class="line">        if (e &gt; 0) &#123;</div><div class="line">            var h = f.substr(e + 3)</div><div class="line">        &#125; else &#123;</div><div class="line">            var h = f</div><div class="line">        &#125;</div><div class="line">        var g = /^www\./;</div><div class="line">        if (g.test(h)) &#123;</div><div class="line">            h = h.substr(4)</div><div class="line">        &#125;</div><div class="line">        return h</div><div class="line">    &#125;;</div><div class="line">    if (c == d) &#123;</div><div class="line">        return 1</div><div class="line">    &#125; else &#123;</div><div class="line">        var c = this.getdomain(c);</div><div class="line">        var b = this.getdomain(d);</div><div class="line">        if (c == b) &#123;</div><div class="line">            return 1</div><div class="line">        &#125; else &#123;</div><div class="line">            c = c.replace(&quot;.&quot;, &quot;\\.&quot;);</div><div class="line">            var a = new RegExp(&quot;\\.&quot; + c + &quot;$&quot;);</div><div class="line">            if (b.match(a)) &#123;</div><div class="line">                return 2</div><div class="line">            &#125; else &#123;</div><div class="line">                return 0</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/12/first9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/03/12/first9/" itemprop="url">判断设备是否是移动端</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-12T22:25:17+08:00">
+                2014-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">判断设备是否为移动端</div><div class="line"></div><div class="line">/**</div><div class="line">* 判断浏览的设备是否为移动设备</div><div class="line">*/</div><div class="line">function isMobileDevice() &#123;</div><div class="line">    var sUserAgent = navigator.userAgent.toLowerCase();</div><div class="line">    var bIsIpad = sUserAgent.match(/ipad/i) == &quot;ipad&quot;;</div><div class="line">    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == &quot;iphone os&quot;;</div><div class="line">    var bIsMidp = sUserAgent.match(/midp/i) == &quot;midp&quot;;</div><div class="line">    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == &quot;rv:1.2.3.4&quot;;</div><div class="line">    var bIsUc = sUserAgent.match(/ucweb/i) == &quot;ucweb&quot;;</div><div class="line">    var bIsAndroid = sUserAgent.match(/android/i) == &quot;android&quot;;</div><div class="line">    var bIsCE = sUserAgent.match(/windows ce/i) == &quot;windows ce&quot;;</div><div class="line">    var bIsWM = sUserAgent.match(/windows mobile/i) == &quot;windows mobile&quot;;</div><div class="line">    if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) &#123;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">    return false;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">if (isMobileDevice()) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -1319,118 +1430,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/06/first6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/03/06/first6/" itemprop="url">meta标签</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-06T22:25:17+08:00">
-                2014-03-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>视图窗口，移动端特属的标签。<br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no&quot; /&gt;</code><br>是否启动webapp功能，会删除默认的苹果工具栏和菜单栏。<br><code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt;</code><br>这个主要是根据实际的页面设计的主体色为搭配来进行设置。<br><code>&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot; /&gt;</code><br>忽略页面中的数字识别为电话号码,email识别<br><code>&lt;meta name=&quot;format-detection&quot;content=&quot;telephone=no, email=no&quot; /&gt;</code><br>启用360浏览器的极速模式(webkit)<br><code>&lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;/&gt;</code><br>避免IE使用兼容模式<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;/&gt;</code><br>针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓<br><code>&lt;meta name=&quot;HandheldFriendly&quot; content=&quot;true&quot;/&gt;</code><br>微软的老式浏览器<br><code>&lt;meta name=&quot;MobileOptimized&quot; content=&quot;320&quot;/&gt;</code><br>uc强制竖屏<br><code>&lt;meta name=&quot;screen-orientation&quot; content=&quot;portrait&quot;/&gt;</code><br>QQ强制竖屏<br><code>&lt;meta name=&quot;x5-orientation&quot; content=&quot;portrait&quot;/&gt;</code><br>UC强制全屏<br><code>&lt;meta name=&quot;full-screen&quot; content=&quot;yes&quot;/&gt;</code><br>QQ强制全屏<br><code>&lt;meta name=&quot;x5-fullscreen&quot; content=&quot;true&quot;/&gt;</code><br>UC应用模式<br><code>&lt;meta name=&quot;browsermode&quot; content=&quot;application&quot;/&gt;</code><br>QQ应用模式<br><code>&lt;meta name=&quot;x5-page-mode&quot; content=&quot;app&quot;/&gt;</code><br>windows phone 点击无高光<br><code>&lt;meta name=&quot;msapplication-tap-highlight&quot; content=&quot;no&quot;/&gt;</code></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1481,7 +1480,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
