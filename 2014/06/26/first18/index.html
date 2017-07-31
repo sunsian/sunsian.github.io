@@ -100,7 +100,7 @@
 <meta property="og:url" content="https://sunsian.github.io/2014/06/26/first18/index.html">
 <meta property="og:site_name" content="我的博客">
 <meta property="og:description" content="介绍一下CSS的盒子模型？（1）有两种， IE 盒子模型、标准 W3C 盒子模型；IE的content部分包含了 border 和 pading;（2）盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border). CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3新增伪类有那些？1.id选择器（ # myid）2.类选择器（.mycl">
-<meta property="og:updated_time" content="2017-07-31T14:49:31.562Z">
+<meta property="og:updated_time" content="2017-07-31T14:53:34.355Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端面试总结之CSS">
 <meta name="twitter:description" content="介绍一下CSS的盒子模型？（1）有两种， IE 盒子模型、标准 W3C 盒子模型；IE的content部分包含了 border 和 pading;（2）盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border). CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3新增伪类有那些？1.id选择器（ # myid）2.类选择器（.mycl">
@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Accueil
+            Startseite
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -283,7 +283,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-06-26T22:25:17+08:00">
                 2014-06-26
@@ -338,7 +338,14 @@
     width:200px;
     margin:0 auto;
  }</code></p>
-<h4 id="居中一个浮动元素"><a href="#居中一个浮动元素" class="headerlink" title="居中一个浮动元素"></a>居中一个浮动元素</h4><p>  确定容器的宽高 宽500 高 300 的层<br>  设置层的外边距<br> .div {<br>    Width:500px ; height:300px;//高度可以不设<br>    Margin: -150px 0 0 -250px;<br>    position:relative;相对定位<br>    background-color:pink;//方便看效果<br>    left:50%;<br>    top:50%;<br>  } </p>
+<h4 id="居中一个浮动元素"><a href="#居中一个浮动元素" class="headerlink" title="居中一个浮动元素"></a>居中一个浮动元素</h4><p>  确定容器的宽高 宽500 高 300 的层<br>  设置层的外边距<br>  <code>.div { 
+    Width:500px ; height:300px;//高度可以不设
+    Margin: -150px 0 0 -250px;
+    position:relative;相对定位
+    background-color:pink;//方便看效果
+    left:50%;
+    top:50%;
+  }</code></p>
 <h3 id="列出display的值，说明他们的作用。position的值，-relative和absolute定位原点是？"><a href="#列出display的值，说明他们的作用。position的值，-relative和absolute定位原点是？" class="headerlink" title="列出display的值，说明他们的作用。position的值， relative和absolute定位原点是？"></a>列出display的值，说明他们的作用。position的值， relative和absolute定位原点是？</h3><ol>
 <li>block 象块类型元素一样显示。<br>none 缺省值。象行内元素类型一样显示。<br>inline-block 象行内元素一样显示，但其内容象块类型元素一样显示。<br>list-item 象块类型元素一样显示，并添加样式列表标记。</li>
 <li><em>absolute<br>   生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。 
@@ -348,7 +355,10 @@
 <li>static  默认值。没有定位，元素出现在正常的流中<br>*（忽略 top, bottom, left, right z-index 声明）。</li>
 <li>inherit 规定从父元素继承 position 属性的值。</li>
 </ul>
-<h3 id="CSS3有哪些新特性？"><a href="#CSS3有哪些新特性？" class="headerlink" title="CSS3有哪些新特性？"></a>CSS3有哪些新特性？</h3><p>  CSS3实现圆角（border-radius:8px），阴影（box-shadow:10px），<br>  对文字加特效（text-shadow、），线性渐变（gradient），旋转（transform）<br>  transform:rotate(9deg) scale(0.85,0.90) translate(0px,-30px) skew(-9deg,0deg);//旋转,缩放,定位,倾斜<br>  增加了更多的CSS选择器  多背景 rgba </p>
+<h3 id="CSS3有哪些新特性？"><a href="#CSS3有哪些新特性？" class="headerlink" title="CSS3有哪些新特性？"></a>CSS3有哪些新特性？</h3><p><code>CSS3实现圆角（border-radius:8px），阴影（box-shadow:10px），
+  对文字加特效（text-shadow、），线性渐变（gradient），旋转（transform）
+  transform:rotate(9deg) scale(0.85,0.90) translate(0px,-30px) skew(-9deg,0deg);//旋转,缩放,定位,倾斜
+  增加了更多的CSS选择器  多背景 rgba</code></p>
 <h3 id="你怎么来实现页面设计图，你认为前端应该如何高质量完成工作-一个满屏-品-字布局-如何设计"><a href="#你怎么来实现页面设计图，你认为前端应该如何高质量完成工作-一个满屏-品-字布局-如何设计" class="headerlink" title="你怎么来实现页面设计图，你认为前端应该如何高质量完成工作? 一个满屏 品 字布局 如何设计?"></a>你怎么来实现页面设计图，你认为前端应该如何高质量完成工作? 一个满屏 品 字布局 如何设计?</h3><pre><code>首先划分成头部、body、脚部；。。。。。 
 实现效果图是最基本的工作，精确到2px；
 与设计师，产品经理的沟通和项目的参与
@@ -365,7 +375,23 @@
 <li>当然，初始化样式会对SEO有一定的影响，但鱼和熊掌不可兼得，但力求影响最小的情况下初始化。</li>
 </ul>
 <p><em>最简单的初始化方法就是： </em> {padding: 0; margin: 0;} （不建议）</p>
-<p>淘宝的样式初始化： body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }h1, h2, h3, h4, h5, h6{ font-size:100%; }address, cite, dfn, em, var { font-style:normal; }code, kbd, pre, samp { font-family:couriernew, courier, monospace; }small{ font-size:12px; }ul, ol { list-style:none; }a { text-decoration:none; }a:hover { text-decoration:underline; }sup { vertical-align:text-top; }sub{ vertical-align:text-bottom; }legend { color:#000; }fieldset, img { border:0; }button, input, select, textarea { font-size:100%; }table { border-collapse:collapse; border-spacing:0; }<br>absolute的containing block计算方式跟正常流有什么不同？</p>
+<p>淘宝的样式初始化： </p>
+<pre><code>body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+     margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }ul, ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; }
+</code></pre><p>absolute的containing block计算方式跟正常流有什么不同？</p>
 <p>position跟display、margin collapse、overflow、float这些特性相互叠加后会怎么样？</p>
 <p>对BFC规范的理解？</p>
 <p>（W3C CSS 2.1 规范中的一个概念,它决定了元素如何对其内容进行定位,以及与其他元素的关 系和相互作用。）<br>css定义的权重</p>
@@ -501,10 +527,10 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table Des Matières
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Ensemble
+            Übersicht
           </li>
         </ul>
       
@@ -525,7 +551,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">19</span>
-                <span class="site-state-item-name">articles</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -538,7 +564,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               
             </div>
           
@@ -604,11 +630,11 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  Thème -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Pisces
   </a>
