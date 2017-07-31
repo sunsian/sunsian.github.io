@@ -329,22 +329,7 @@
 <p>/<em>
 </em>函数功能：从href获得参数<br><em>sHref:   <a href="http://www.artfh.com/arg.htm?arg1=d&amp;arg2=re" target="_blank" rel="external">http://www.artfh.com/arg.htm?arg1=d&amp;arg2=re</a>
 </em>sArgName:arg1, arg2<br><em>return:    the value of arg. d, re
-</em>/<br>function GetArgsFromHref(sHref, sArgName)<br>{<br>      var args    = sHref.split(“?”);<br>      var retval = “”;</p>
-<pre><code>if(args[0] == sHref) /*参数为空*/
-{
-     return retval; /*无需做任何处理*/
-}  
-var str = args[1];
-args = str.split(&quot;&amp;&quot;);
-for(var i = 0; i &lt; args.length; i ++)
-{
-    str = args[i];
-    var arg = str.split(&quot;=&quot;);
-    if(arg.length &lt;= 1) continue;
-    if(arg[0] == sArgName) retval = arg[1]; 
-}
-return retval;
-</code></pre><p>}</p>
+</em>/<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function GetArgsFromHref(sHref, sArgName)</div><div class="line">&#123;</div><div class="line">      var args    = sHref.split(&quot;?&quot;);</div><div class="line">      var retval = &quot;&quot;;</div><div class="line">    </div><div class="line">      if(args[0] == sHref) /*参数为空*/</div><div class="line">      &#123;</div><div class="line">           return retval; /*无需做任何处理*/</div><div class="line">      &#125;  </div><div class="line">      var str = args[1];</div><div class="line">      args = str.split(&quot;&amp;&quot;);</div><div class="line">      for(var i = 0; i &lt; args.length; i ++)</div><div class="line">      &#123;</div><div class="line">          str = args[i];</div><div class="line">          var arg = str.split(&quot;=&quot;);</div><div class="line">          if(arg.length &lt;= 1) continue;</div><div class="line">          if(arg[0] == sArgName) retval = arg[1]; </div><div class="line">      &#125;</div><div class="line">      return retval;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>方法二:<br>html地址传递参数进行其他事情.</p>
 <p><scrīpt><br>/<em> 用途: 接收地直栏参数 取id=1 根据ID的值 </em>/<br>urlinfo=window.location.href; //获取当前页面的url<br>len=urlinfo.length;//获取url的长度<br>offset=urlinfo.indexOf(“?”);//设置参数字符串开始的位置<br>newsidinfo=urlinfo.substr(offset,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串<br>newsids=newsidinfo.split(“=”);//对获得的参数字符串按照“=”进行分割<br>newsid=newsids[1];//得到参数值<br>newsname=newsids[0];//得到参数名字<br></scrīpt></p>
 <p>方法三:</p>
