@@ -256,6 +256,373 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/02/28/first5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/02/28/first5/" itemprop="url">js中的或和且的运算总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-02-28T22:25:17+08:00">
+                2014-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>||总结<br>1.只要 “||”前面为false，不管 “||”后面是true还是false,都返回后面的值。<br>2.只要 “||”前面为true，不管 “||”后面是true还是false,都返回前面的值。</p>
+<p>&amp;&amp;总结<br>1.只要 “&amp;&amp;”前面为false，不管 “&amp;&amp;”后面是true还是false,都返回前面的值。<br>2.只要 “&amp;&amp;”前面为true，不管 “&amp;&amp;”后面是true还是false,都返回后面的值。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/02/26/first3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/02/26/first3/" itemprop="url">js根据身份证号码判断性别和年龄</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-02-26T22:27:15+08:00">
+                2014-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>/<strong>这是一个超实用的用js根据身份证号码判断性别男女的特效代码，详细看下面的*/<br>/</strong><br>根据身份证号码判断性别<br>15位身份证号码：第7、8位为出生年份(两位数)，第9、10位为出生月份，第11、12位代表出生日<br>18位身份证号码：第7、8、9、10位为出生年份(四位数)，第11、第12位为出生月份，<br>第13、14位代表出生日期，第17位代表性别，奇数为男，偶数为女。<br>*/<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">function showBirthday() &#123;</div><div class="line">    var val = $(&quot;#idCard&quot;).val().trim();//输入的身份证号码</div><div class="line">    var birthdayValue;</div><div class="line">    if (15 == val.length) &#123; //15位身份证号码</div><div class="line">        birthdayValue = val.charAt(6) + val.charAt(7);</div><div class="line">        if (parseInt(birthdayValue) &lt; 10) &#123;</div><div class="line">            birthdayValue = &apos;20&apos; + birthdayValue;</div><div class="line">        &#125; else &#123;</div><div class="line">            birthdayValue = &apos;19&apos; + birthdayValue;</div><div class="line">        &#125;</div><div class="line">        //性别判断,给radio男女赋值,出生日期赋值</div><div class="line">        birthdayValue = birthdayValue + &apos;-&apos; + val.charAt(8) + val.charAt(9) + &apos;-&apos; + val.charAt(10) + val.charAt(11);</div><div class="line">        if (parseInt(val.charAt(14) / 2) * 2 != val.charAt(14))</div><div class="line">            $(&quot;#RadioGroup1_0&quot;).attr(&quot;checked&quot;, true);</div><div class="line">        else</div><div class="line">            $(&quot;#RadioGroup1_1&quot;).attr(&quot;checked&quot;, true);</div><div class="line">        $(&quot;#datepicker2&quot;).val(birthdayValue);</div><div class="line">    &#125;</div><div class="line">    if (18 == val.length) &#123; //18位身份证号码</div><div class="line">        //性别判断,给radio男女赋值,出生日期赋值</div><div class="line">        birthdayValue = val.charAt(6) + val.charAt(7) + val.charAt(8) + val.charAt(9) + &apos;-&apos; + val.charAt(10) + val.charAt(11)</div><div class="line">            + &apos;-&apos; + val.charAt(12) + val.charAt(13);</div><div class="line">        if (parseInt(val.charAt(16) / 2) * 2 != val.charAt(16))</div><div class="line">            $(&quot;#RadioGroup1_0&quot;).attr(&quot;checked&quot;, true);</div><div class="line">        else</div><div class="line">            $(&quot;#RadioGroup1_1&quot;).attr(&quot;checked&quot;, true);</div><div class="line">        $(&quot;#datepicker2&quot;).val(birthdayValue);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">// 18位身份证号最后一位校验</div><div class="line">function IDCard(Num) &#123;</div><div class="line">    if (Num.length != 18)</div><div class="line">        return false;</div><div class="line">    var x = 0;</div><div class="line">    var y = &apos;&apos;;</div><div class="line">    for (i = 18; i &gt;= 2; i--)</div><div class="line">        x = x + (square(2, (i - 1)) % 11) * parseInt(Num.charAt(19 - i - 1));</div><div class="line">    x %= 11;</div><div class="line">    y = 12 - x;</div><div class="line">    if (x == 0)</div><div class="line">        y = &apos;1&apos;;</div><div class="line">    if (x == 1)</div><div class="line">        y = &apos;0&apos;;</div><div class="line">    if (x == 2)</div><div class="line">        y = &apos;X&apos;;</div><div class="line">    return y;</div><div class="line">&#125;</div><div class="line">// 求得x的y次方</div><div class="line">function square(x, y) &#123;</div><div class="line">    var i = 1;</div><div class="line">    for (j = 1; j &lt;= y; j++)</div><div class="line">        i *= x;</div><div class="line">    return i;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/02/26/first2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/02/26/first2/" itemprop="url">js获取屏幕大小</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-02-26T21:48:28+08:00">
+                2014-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>&quot;屏幕分辨率为：&quot;+screen.width+&quot;*&quot;+screen.height
+
+&quot;屏幕可用大小：&quot;+screen.availWidth+&quot;*&quot;+screen.availHeight
+
+&quot;网页可见区域宽：&quot;+document.body.clientWidth
+
+&quot;网页可见区域高：&quot;+document.body.clientHeight
+
+&quot;网页可见区域宽(包括边线的宽)：&quot;+document.body.offsetWidth 
+
+&quot;网页可见区域高(包括边线的宽)：&quot;+document.body.offsetHeight 
+
+&quot;网页正文全文宽：&quot;+document.body.scrollWidth
+
+&quot;网页正文全文高：&quot;+document.body.scrollHeight
+
+&quot;网页被卷去的高：&quot;+document.body.scrollTop
+
+&quot;网页被卷去的左：&quot;+document.body.scrollLeft
+
+&quot;网页正文部分上：&quot;+window.screenTop
+
+&quot;网页正文部分左：&quot;+window.screenLeft
+
+&quot;屏幕分辨率的高：&quot;+window.screen.height
+
+&quot;屏幕分辨率的宽：&quot;+window.screen.width
+
+&quot;屏幕可用工作区高度：&quot;+window.screen.availHeight
+
+&quot;屏幕可用工作区宽度：&quot;+window.screen.availWidth
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/02/10/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -537,7 +904,7 @@ tap-highlight-color: rgba(0,0,0,0;)//去除背景高亮
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
