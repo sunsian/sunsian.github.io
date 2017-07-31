@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="1、全局规则之一，不要写标签、不要写class，所有CSS都用style属性，什么元素需要什么样式就用style写内联的CSS。 2、全局规则之二，少用图片，邮箱不会过滤你的img标签，但是系统往往会默认不载入陌生来信的图片，如果用了很多图片的邮件，在图片没有载入的情况下，丑陋无比甚至看不清内容，没耐心的用户直接就删除了。所有图片必须存在宽高和alt标签，且alt内容不宜过多不能出现特殊字符，页面">
+<meta name="description" content="12345678910111213141516171819202122232425261、全局规则之一，不要写&amp;lt;style&amp;gt;标签、不要写class，所有CSS都用style属性，什么元素需要什么样式就用style写内联的CSS。2、全局规则之二，少用图片，邮箱不会过滤你的img标签，但是系统往往会默认不载入陌生来信的图片，如果用了很多图片的邮件，在图片没有载入的情况下，丑陋无比甚至看不">
 <meta name="keywords" content="总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="email中html页面需要注意的几点">
 <meta property="og:url" content="https://sunsian.github.io/2014/04/19/first13/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="1、全局规则之一，不要写标签、不要写class，所有CSS都用style属性，什么元素需要什么样式就用style写内联的CSS。 2、全局规则之二，少用图片，邮箱不会过滤你的img标签，但是系统往往会默认不载入陌生来信的图片，如果用了很多图片的邮件，在图片没有载入的情况下，丑陋无比甚至看不清内容，没耐心的用户直接就删除了。所有图片必须存在宽高和alt标签，且alt内容不宜过多不能出现特殊字符，页面">
-<meta property="og:updated_time" content="2017-07-31T03:16:16.859Z">
+<meta property="og:description" content="12345678910111213141516171819202122232425261、全局规则之一，不要写&amp;lt;style&amp;gt;标签、不要写class，所有CSS都用style属性，什么元素需要什么样式就用style写内联的CSS。2、全局规则之二，少用图片，邮箱不会过滤你的img标签，但是系统往往会默认不载入陌生来信的图片，如果用了很多图片的邮件，在图片没有载入的情况下，丑陋无比甚至看不">
+<meta property="og:updated_time" content="2017-07-31T03:36:45.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="email中html页面需要注意的几点">
-<meta name="twitter:description" content="1、全局规则之一，不要写标签、不要写class，所有CSS都用style属性，什么元素需要什么样式就用style写内联的CSS。 2、全局规则之二，少用图片，邮箱不会过滤你的img标签，但是系统往往会默认不载入陌生来信的图片，如果用了很多图片的邮件，在图片没有载入的情况下，丑陋无比甚至看不清内容，没耐心的用户直接就删除了。所有图片必须存在宽高和alt标签，且alt内容不宜过多不能出现特殊字符，页面">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425261、全局规则之一，不要写&amp;lt;style&amp;gt;标签、不要写class，所有CSS都用style属性，什么元素需要什么样式就用style写内联的CSS。2、全局规则之二，少用图片，邮箱不会过滤你的img标签，但是系统往往会默认不载入陌生来信的图片，如果用了很多图片的邮件，在图片没有载入的情况下，丑陋无比甚至看不">
 
 
 
@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -283,7 +283,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-04-19T22:25:17+08:00">
                 2014-04-19
@@ -320,20 +320,7 @@
       
 
       
-        <p>1、全局规则之一，不要写<style>标签、不要写class，所有CSS都用style属性，什么元素需要什么样式就用style写内联的CSS。</p>
-<p>2、全局规则之二，少用图片，邮箱不会过滤你的img标签，但是系统往往会默认不载入陌生来信的图片，如果用了很多图片的邮件，在图片没有载入的情况下，丑陋无比甚至看不清内容，没耐心的用户直接就删除了。所有图片必须存在宽高和alt标签，且alt内容不宜过多不能出现特殊字符，页面所有图片地址必须为绝对地址，图片链接禁止使用热区，因为map标记在outlook中无法进行正常的点击，不能打开该链接指向的网址。</p>
-<p>3、不要在style里面写float、position这些style，因为会被过滤。那么如何实现左右布局或者更复杂的布局呢？使用table制作页面，且必须设置宽度，而div格式由于有些属性不被邮件客户端完全支持，所以建议避免作用。</p>
-<p>4、style内容里面background可以设置color，但是img会被过滤，就是说不能通过CSS来设置背景图片了。但是有一个很有意思的元素 属性，也叫background，里面可以定义一个图片路径，这是个不错的替代方案，虽然这样功能有限，比如无法定位背景图片了，有总比没有好。例如要给 一个单元格加一个背景，必须这样写：<br><code>&lt;td background=”http://image1.koubei.com/images/common/logo_koubei.gif”&gt;&lt;/td&gt;</code></p>
-<p>5、div模式的邮箱不支持flash，iframe模式的有待验证。</p>
-<p>最后提一句，sohu的邮箱很怪异，会在每个文本段后面加一个空格，导致原本正常的排版一行放不下而换行，从而使某些布局错乱。所以，如果你要兼容sohu邮箱的话，遇到一些紧凑的布局就要格外小心了，尽量减少文本段的数量，留足宽度。</p>
-<p>6、页面显示宽度400px-800px，高度一般控制在一屏以内。</p>
-<p>7、页面不向出现js代码及flash内容（如需要动画全用gif）</p>
-<p>8、页面的内容最好以文字的形式来呈现。</p>
-<p>9、DTD声明中<html xmlns=http://www.w3.org/1999/xhtml>请改为<html></p>
-<p>10、链接的打开方式统一为：_blank</p>
-<p>11、mailto的正确写法：例：<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;&#58;&#x78;&#x78;&#x78;&#x40;&#x31;&#54;&#51;&#x2e;&#x63;&#111;&#x6d;">&#x78;&#x78;&#x78;&#x40;&#x31;&#54;&#51;&#x2e;&#x63;&#111;&#x6d;</a> xxx@163.com</a></p>
-<p>12、代码干净严谨，删除不必要的空格及回车，总代码量&lt;50K</p>
-</style></p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">1、全局规则之一，不要写&lt;style&gt;标签、不要写class，所有CSS都用style属性，什么元素需要什么样式就用style写内联的CSS。</div><div class="line"></div><div class="line">2、全局规则之二，少用图片，邮箱不会过滤你的img标签，但是系统往往会默认不载入陌生来信的图片，如果用了很多图片的邮件，在图片没有载入的情况下，丑陋无比甚至看不清内容，没耐心的用户直接就删除了。所有图片必须存在宽高和alt标签，且alt内容不宜过多不能出现特殊字符，页面所有图片地址必须为绝对地址，图片链接禁止使用热区，因为map标记在outlook中无法进行正常的点击，不能打开该链接指向的网址。</div><div class="line"></div><div class="line">3、不要在style里面写float、position这些style，因为会被过滤。那么如何实现左右布局或者更复杂的布局呢？使用table制作页面，且必须设置宽度，而div格式由于有些属性不被邮件客户端完全支持，所以建议避免作用。</div><div class="line"></div><div class="line">4、style内容里面background可以设置color，但是img会被过滤，就是说不能通过CSS来设置背景图片了。但是有一个很有意思的元素 属性，也叫background，里面可以定义一个图片路径，这是个不错的替代方案，虽然这样功能有限，比如无法定位背景图片了，有总比没有好。例如要给 一个单元格加一个背景，必须这样写：</div><div class="line">`&lt;td background=”http://image1.koubei.com/images/common/logo_koubei.gif”&gt;&lt;/td&gt;`</div><div class="line"></div><div class="line">5、div模式的邮箱不支持flash，iframe模式的有待验证。</div><div class="line"></div><div class="line">最后提一句，sohu的邮箱很怪异，会在每个文本段后面加一个空格，导致原本正常的排版一行放不下而换行，从而使某些布局错乱。所以，如果你要兼容sohu邮箱的话，遇到一些紧凑的布局就要格外小心了，尽量减少文本段的数量，留足宽度。</div><div class="line"></div><div class="line">6、页面显示宽度400px-800px，高度一般控制在一屏以内。</div><div class="line"></div><div class="line">7、页面不向出现js代码及flash内容（如需要动画全用gif）</div><div class="line"></div><div class="line">8、页面的内容最好以文字的形式来呈现。</div><div class="line"> </div><div class="line">9、DTD声明中&lt;html xmlns=http://www.w3.org/1999/xhtml&gt;请改为&lt;html&gt;</div><div class="line"></div><div class="line">10、链接的打开方式统一为：_blank</div><div class="line"></div><div class="line">11、mailto的正确写法：例：&lt;mailto:xxx@163.com&gt; xxx@163.com&lt;/a&gt;</div><div class="line"></div><div class="line">12、代码干净严谨，删除不必要的空格及回车，总代码量&lt;50K</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -452,7 +439,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">16</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -465,7 +452,7 @@
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               
             </div>
           
@@ -515,7 +502,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
