@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;    function disDate()&amp;#123;//var now=new Date();//var year = now.getFullYear();">
+<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;    function disDate()&amp;#123;        var now=new Date();        var year = now.getFul">
 <meta name="keywords" content="总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="获取当前日期">
 <meta property="og:url" content="https://sunsian.github.io/2014/03/10/first8/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;    function disDate()&amp;#123;//var now=new Date();//var year = now.getFullYear();">
-<meta property="og:updated_time" content="2017-07-31T02:29:18.432Z">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;    function disDate()&amp;#123;        var now=new Date();        var year = now.getFul">
+<meta property="og:updated_time" content="2017-07-31T02:33:02.688Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="获取当前日期">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;    function disDate()&amp;#123;//var now=new Date();//var year = now.getFullYear();">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;    function disDate()&amp;#123;        var now=new Date();        var year = now.getFul">
 
 
 
@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -283,7 +283,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-10T22:25:17+08:00">
                 2014-03-10
@@ -320,7 +320,7 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    function disDate()&#123;</div><div class="line">//</div><div class="line">var now=new Date();</div><div class="line">//</div><div class="line">var year = now.getFullYear();</div><div class="line">var month = now.getMonth()+1;</div><div class="line">var date = now.getDate();</div><div class="line">var hour = now.getHours();</div><div class="line">var minute = now.getMinutes();</div><div class="line">var second = now.getSeconds();</div><div class="line">var ms = now.getMilliseconds();</div><div class="line">var day = now.getDay();</div><div class="line">var strDay=&quot;&quot;;</div><div class="line">switch(day)&#123;</div><div class="line">    case 1:</div><div class="line">    strDay=&quot;星期一&quot;;break;</div><div class="line">    case 2:</div><div class="line">    strDay=&quot;星期二&quot;;break;</div><div class="line">    case 3:</div><div class="line">    strDay=&quot;星期三&quot;;break;</div><div class="line">    case 4:</div><div class="line">    strDay=&quot;星期四&quot;;break;</div><div class="line">    case 5:</div><div class="line">    strDay=&quot;星期五&quot;;break;</div><div class="line">    case 6:</div><div class="line">    strDay=&quot;星期六&quot;;break;</div><div class="line">    case 0:</div><div class="line">    strDay=&quot;星期日&quot;;break;</div><div class="line">&#125;</div><div class="line">var nowStr=year+&quot;年&quot;+month+&quot;月&quot;+date+&quot;日&quot;</div><div class="line">+hour+&quot;时&quot;+minute+&quot;分&quot;+second+&quot;秒&quot;</div><div class="line">+ms+&quot;毫秒&quot;+strDay;</div><div class="line"></div><div class="line">//年加分1</div><div class="line">now.setFullYear(year+1);</div><div class="line">var nextStr= now.toLocaleString();</div><div class="line">alert(&quot;当前时间是:&quot;+nowStr+&quot;\n\n一年后今天:&quot;+nextStr);</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    function disDate()&#123;</div><div class="line">        var now=new Date();</div><div class="line">        var year = now.getFullYear();</div><div class="line">        var month = now.getMonth()+1;</div><div class="line">        var date = now.getDate();</div><div class="line">        var hour = now.getHours();</div><div class="line">        var minute = now.getMinutes();</div><div class="line">        var second = now.getSeconds();</div><div class="line">        var ms = now.getMilliseconds();</div><div class="line">        var day = now.getDay();</div><div class="line">        var strDay=&quot;&quot;;</div><div class="line">        switch(day)&#123;</div><div class="line">            case 1:</div><div class="line">            strDay=&quot;星期一&quot;;break;</div><div class="line">            case 2:</div><div class="line">            strDay=&quot;星期二&quot;;break;</div><div class="line">            case 3:</div><div class="line">            strDay=&quot;星期三&quot;;break;</div><div class="line">            case 4:</div><div class="line">            strDay=&quot;星期四&quot;;break;</div><div class="line">            case 5:</div><div class="line">            strDay=&quot;星期五&quot;;break;</div><div class="line">            case 6:</div><div class="line">            strDay=&quot;星期六&quot;;break;</div><div class="line">            case 0:</div><div class="line">            strDay=&quot;星期日&quot;;break;</div><div class="line">        &#125;</div><div class="line">        var nowStr=year+&quot;年&quot;+month+&quot;月&quot;+date+&quot;日&quot;</div><div class="line">        +hour+&quot;时&quot;+minute+&quot;分&quot;+second+&quot;秒&quot;</div><div class="line">        +ms+&quot;毫秒&quot;+strDay;</div><div class="line"></div><div class="line">        //年加分1</div><div class="line">        now.setFullYear(year+1);</div><div class="line">        var nextStr= now.toLocaleString();</div><div class="line">        alert(&quot;当前时间是:&quot;+nowStr+&quot;\n\n一年后今天:&quot;+nextStr);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -371,6 +371,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/03/12/first9/" rel="prev" title="获取当前日期">
+                获取当前日期 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -434,8 +438,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">9</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -448,7 +452,7 @@
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               
             </div>
           
@@ -498,7 +502,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
