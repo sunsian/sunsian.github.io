@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -285,7 +285,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-04-05T22:25:17+08:00">
                 2015-04-05
@@ -346,23 +346,16 @@
 </ol>
 <p>函数参数的传递：</p>
 <ol>
-<li>ECMA中所有函数的参数都是按值传递的；<br><code>function setName(obj) {
-obj.name=&quot;sunsian&quot;
-obj=new Object()
-obj.name=&quot;jing&quot;
-}
-var person=new Object()
-setName(person)
-alert(person.name)</code></li>
+<li>ECMA中所有函数的参数都是按值传递的；<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function setName(obj) &#123;</div><div class="line">    obj.name=&quot;sunsian&quot;</div><div class="line">    obj=new Object()</div><div class="line">    obj.name=&quot;jing&quot;</div><div class="line">&#125;</div><div class="line">var person=new Object()</div><div class="line">setName(person)</div><div class="line">alert(person.name)</div></pre></td></tr></table></figure>
+</li>
 </ol>
 <p>两种变量类型检测</p>
 <ol>
 <li>Typeof操作符是检测基本类型的最佳工具；</li>
 <li>如果变量值是nul或者对象，typeof 将返回“object”；</li>
 <li>Instanceof用于检测引用类型，可以检测到具体的，它是什么类型的实例；</li>
-<li>如果变量是给定引用类型的实例，instanceof操作符会返回true;<br><code>alert(person instanceof Object) // 变量person是Object吗？
-alert(colors instanceof Array) // 变量colors是Array吗？
-alert(pattren instanceof RegExp) // 变量pattren是RegExp吗？</code></li>
+<li>如果变量是给定引用类型的实例，instanceof操作符会返回true;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alert(person instanceof Object) // 变量person是Object吗？</div><div class="line">alert(colors instanceof Array) // 变量colors是Array吗？</div><div class="line">alert(pattren instanceof RegExp) // 变量pattren是RegExp吗？</div></pre></td></tr></table></figure>
+</li>
 </ol>
 <p>参数的传递<br>ECMAScript所有的函数的参数都是按值传递的。<br>函数外部的值赋值给函数内部的参数，与一个变量复制到另一个变量一样。<br>基本类型值的传递和基本类型一样，引用类型的传递和引用类型的复制一样。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function addTen(num) &#123;</div><div class="line">    num +=10;</div><div class="line">    return num;</div><div class="line">&#125;</div><div class="line">var count = 20;</div><div class="line">var result = addTen(count);</div><div class="line">console.log(count); //20没有变化</div><div class="line">console.log(result);// 30</div></pre></td></tr></table></figure></p>
 <p>引用类型也是按值传递<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function setName(obj) &#123;</div><div class="line">    obj.name = &apos;kenny&apos;;</div><div class="line">    obj = new Object();</div><div class="line">    obj.name = &apos;kongyun&apos;;</div><div class="line">&#125;</div><div class="line">var person = new Object();</div><div class="line">setName(person);</div><div class="line">console.log(person.name); // &apos;kenny&apos;</div></pre></td></tr></table></figure></p>
@@ -444,7 +437,7 @@ alert(pattren instanceof RegExp) // 变量pattren是RegExp吗？</code></li>
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-03-10T22:25:17+08:00">
                 2015-03-10
@@ -618,7 +611,7 @@ cached.find(&#39;p.classB&#39;);</code><br>根据测试，缓存比不缓存，�
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-02-15T22:25:17+08:00">
                 2015-02-15
@@ -731,7 +724,7 @@ cached.find(&#39;p.classB&#39;);</code><br>根据测试，缓存比不缓存，�
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-12-01T22:25:17+08:00">
                 2014-12-01
@@ -843,7 +836,7 @@ cached.find(&#39;p.classB&#39;);</code><br>根据测试，缓存比不缓存，�
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-11-15T22:25:17+08:00">
                 2014-11-15
@@ -955,7 +948,7 @@ cached.find(&#39;p.classB&#39;);</code><br>根据测试，缓存比不缓存，�
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-10-01T22:25:17+08:00">
                 2014-10-01
@@ -1279,7 +1272,7 @@ XHR Multipart Streaming
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-09-26T22:25:17+08:00">
                 2014-09-26
@@ -1496,7 +1489,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-09-05T22:25:17+08:00">
                 2014-09-05
@@ -1659,7 +1652,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-08-20T22:25:17+08:00">
                 2014-08-20
@@ -1770,7 +1763,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-07-25T22:25:17+08:00">
                 2014-07-25
@@ -1894,7 +1887,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">25</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1907,7 +1900,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               
             </div>
           
@@ -1957,7 +1950,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
