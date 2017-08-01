@@ -100,7 +100,7 @@
 <meta property="og:url" content="https://sunsian.github.io/2014/06/26/first18/index.html">
 <meta property="og:site_name" content="我的博客">
 <meta property="og:description" content="介绍一下CSS的盒子模型？（1）有两种， IE 盒子模型、标准 W3C 盒子模型；IE的content部分包含了 border 和 pading;（2）盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border). CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3新增伪类有那些？1.id选择器（ # myid）2.类选择器（.mycl">
-<meta property="og:updated_time" content="2017-07-31T14:53:34.355Z">
+<meta property="og:updated_time" content="2017-08-01T13:09:03.977Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端面试总结之CSS">
 <meta name="twitter:description" content="介绍一下CSS的盒子模型？（1）有两种， IE 盒子模型、标准 W3C 盒子模型；IE的content部分包含了 border 和 pading;（2）盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border). CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3新增伪类有那些？1.id选择器（ # myid）2.类选择器（.mycl">
@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -283,7 +283,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-06-26T22:25:17+08:00">
                 2014-06-26
@@ -396,15 +396,14 @@ table { border-collapse:collapse; border-spacing:0; }
 <p>对BFC规范的理解？</p>
 <p>（W3C CSS 2.1 规范中的一个概念,它决定了元素如何对其内容进行定位,以及与其他元素的关 系和相互作用。）<br>css定义的权重</p>
 <p>以下是权重的规则：标签的权重为1，class的权重为10，id的权重为100，以下例子是演示各种定义的权重值：<br>/<em>权重为1</em>/div{}/<em>权重为10</em>/.class1{}/<em>权重为100</em>/#id1{}/<em>权重为100+1=101</em>/#id1 div{}/<em>权重为10+1=11</em>/.class1 div{}/<em>权重为10+10+1=21</em>/.class1 .class2 div{} </p>
-<p>如果权重相同，则最后定义的样式会起作用，但是应该避免这种情况出现<br>解释下浮动和它的工作原理？清除浮动的技巧</p>
-<p>浮动元素脱离文档流，不占据空间。浮动元素碰到包含它的边框或者浮动元素的边框停留。<br>技巧:</p>
-<p>1.使用空标签清除浮动。</p>
-<p>   这种方法是在所有浮动标签后面添加一个空标签 定义css clear:both. 弊端就是增加了无意义标签。</p>
+<p>如果权重相同，则最后定义的样式会起作用，但是应该避免这种情况出现</p>
+<h3 id="解释下浮动和它的工作原理？清除浮动的技巧"><a href="#解释下浮动和它的工作原理？清除浮动的技巧" class="headerlink" title="解释下浮动和它的工作原理？清除浮动的技巧"></a>解释下浮动和它的工作原理？清除浮动的技巧</h3><p>浮动元素脱离文档流，不占据空间。浮动元素碰到包含它的边框或者浮动元素的边框停留。</p>
+<h4 id="技巧"><a href="#技巧" class="headerlink" title="技巧:"></a>技巧:</h4><p>1.使用空标签清除浮动。<br>   这种方法是在所有浮动标签后面添加一个空标签 定义css clear:both. 弊端就是增加了无意义标签。</p>
 <p>2.使用overflow。</p>
 <p>   给包含浮动元素的父标签添加css属性 overflow:auto; zoom:1; zoom:1用于兼容IE6。</p>
 <p>3.使用after伪对象清除浮动。</p>
 <p>   该方法只适用于非IE浏览器。具体写法可参照以下示例。使用中需注意以下几点。一、该方法中必须为需要清除浮动元素的伪对象中设置 height:0，否则该元素会比实际高出若干像素；</p>
-<p>  4.在html页面添加：<div class="’clear’"></div></p>
+<p>4.在html页面添加：<code>&lt;div class=’clear’&gt;&lt;/div&gt;</code></p>
 <h3 id="用过媒体查询，针对移动端的布局吗？"><a href="#用过媒体查询，针对移动端的布局吗？" class="headerlink" title="用过媒体查询，针对移动端的布局吗？"></a>用过媒体查询，针对移动端的布局吗？</h3><p>用过   @media screen and (min-width:480px){ }</p>
 <h3 id="使用-CSS-预处理器吗？喜欢那个？"><a href="#使用-CSS-预处理器吗？喜欢那个？" class="headerlink" title="使用 CSS 预处理器吗？喜欢那个？"></a>使用 CSS 预处理器吗？喜欢那个？</h3><p>三款 CSS 预处理器框架，分别是 Sass、Less CSS、Stylus。    喜欢哪个？Sass</p>
 <h3 id="什么是CSS预处理器？"><a href="#什么是CSS预处理器？" class="headerlink" title="什么是CSS预处理器？"></a>什么是CSS预处理器？</h3><p> CSS 预处理器是一种语言用来为 CSS 增加一些编程的的特性，无需考虑浏览器的兼容性问题，例如你可以在 CSS 中使用变量、简单的程序逻辑、函数等等在编程语言中的一些基本技巧，可以让你的 CSS 更见简洁，适应性更强，代码更直观等诸多好处。</p>
@@ -479,6 +478,10 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2014/07/01/first19/" rel="prev" title="前端面试总结之CSS">
+                前端面试总结之CSS <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -527,10 +530,10 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -550,8 +553,8 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">19</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -564,7 +567,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               
             </div>
           
@@ -598,7 +601,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍一下CSS的盒子模型？"><span class="nav-number">1.</span> <span class="nav-text">介绍一下CSS的盒子模型？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-选择符有哪些？哪些属性可以继承？优先级算法如何计算？-CSS3新增伪类有那些？"><span class="nav-number">2.</span> <span class="nav-text">CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3新增伪类有那些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何居中div？如何居中一个浮动元素？"><span class="nav-number">3.</span> <span class="nav-text">如何居中div？如何居中一个浮动元素？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#居中一个浮动元素"><span class="nav-number">3.1.</span> <span class="nav-text">居中一个浮动元素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出display的值，说明他们的作用。position的值，-relative和absolute定位原点是？"><span class="nav-number">4.</span> <span class="nav-text">列出display的值，说明他们的作用。position的值， relative和absolute定位原点是？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3有哪些新特性？"><span class="nav-number">5.</span> <span class="nav-text">CSS3有哪些新特性？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你怎么来实现页面设计图，你认为前端应该如何高质量完成工作-一个满屏-品-字布局-如何设计"><span class="nav-number">6.</span> <span class="nav-text">你怎么来实现页面设计图，你认为前端应该如何高质量完成工作? 一个满屏 品 字布局 如何设计?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常使用的库有哪些？常用的前端开发工具？开发过什么应用或组件？"><span class="nav-number">7.</span> <span class="nav-text">常使用的库有哪些？常用的前端开发工具？开发过什么应用或组件？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要初始化CSS样式。"><span class="nav-number">8.</span> <span class="nav-text">为什么要初始化CSS样式。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用过媒体查询，针对移动端的布局吗？"><span class="nav-number">9.</span> <span class="nav-text">用过媒体查询，针对移动端的布局吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-CSS-预处理器吗？喜欢那个？"><span class="nav-number">10.</span> <span class="nav-text">使用 CSS 预处理器吗？喜欢那个？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是CSS预处理器？"><span class="nav-number">11.</span> <span class="nav-text">什么是CSS预处理器？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#title和alt区别？"><span class="nav-number">12.</span> <span class="nav-text">title和alt区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释css-sprites-如何使用。"><span class="nav-number">13.</span> <span class="nav-text">解释css sprites,如何使用。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-Sprites优点"><span class="nav-number">14.</span> <span class="nav-text">CSS Sprites优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-Sprites缺点"><span class="nav-number">15.</span> <span class="nav-text">CSS Sprites缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在书写高效css文件时会有哪些问题需要考虑"><span class="nav-number">16.</span> <span class="nav-text">在书写高效css文件时会有哪些问题需要考虑</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍一下CSS的盒子模型？"><span class="nav-number">1.</span> <span class="nav-text">介绍一下CSS的盒子模型？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-选择符有哪些？哪些属性可以继承？优先级算法如何计算？-CSS3新增伪类有那些？"><span class="nav-number">2.</span> <span class="nav-text">CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3新增伪类有那些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何居中div？如何居中一个浮动元素？"><span class="nav-number">3.</span> <span class="nav-text">如何居中div？如何居中一个浮动元素？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#居中一个浮动元素"><span class="nav-number">3.1.</span> <span class="nav-text">居中一个浮动元素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出display的值，说明他们的作用。position的值，-relative和absolute定位原点是？"><span class="nav-number">4.</span> <span class="nav-text">列出display的值，说明他们的作用。position的值， relative和absolute定位原点是？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3有哪些新特性？"><span class="nav-number">5.</span> <span class="nav-text">CSS3有哪些新特性？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你怎么来实现页面设计图，你认为前端应该如何高质量完成工作-一个满屏-品-字布局-如何设计"><span class="nav-number">6.</span> <span class="nav-text">你怎么来实现页面设计图，你认为前端应该如何高质量完成工作? 一个满屏 品 字布局 如何设计?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常使用的库有哪些？常用的前端开发工具？开发过什么应用或组件？"><span class="nav-number">7.</span> <span class="nav-text">常使用的库有哪些？常用的前端开发工具？开发过什么应用或组件？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要初始化CSS样式。"><span class="nav-number">8.</span> <span class="nav-text">为什么要初始化CSS样式。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释下浮动和它的工作原理？清除浮动的技巧"><span class="nav-number">9.</span> <span class="nav-text">解释下浮动和它的工作原理？清除浮动的技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#技巧"><span class="nav-number">9.1.</span> <span class="nav-text">技巧:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用过媒体查询，针对移动端的布局吗？"><span class="nav-number">10.</span> <span class="nav-text">用过媒体查询，针对移动端的布局吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-CSS-预处理器吗？喜欢那个？"><span class="nav-number">11.</span> <span class="nav-text">使用 CSS 预处理器吗？喜欢那个？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是CSS预处理器？"><span class="nav-number">12.</span> <span class="nav-text">什么是CSS预处理器？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#title和alt区别？"><span class="nav-number">13.</span> <span class="nav-text">title和alt区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释css-sprites-如何使用。"><span class="nav-number">14.</span> <span class="nav-text">解释css sprites,如何使用。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-Sprites优点"><span class="nav-number">15.</span> <span class="nav-text">CSS Sprites优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-Sprites缺点"><span class="nav-number">16.</span> <span class="nav-text">CSS Sprites缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在书写高效css文件时会有哪些问题需要考虑"><span class="nav-number">17.</span> <span class="nav-text">在书写高效css文件时会有哪些问题需要考虑</span></a></li></ol></div>
             
 
           </div>
@@ -630,7 +633,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
