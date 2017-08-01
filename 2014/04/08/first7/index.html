@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="总结," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="方法一:下面是javascrīpt的一种实现方法, 这个函数是通过window.location.href中的分割符获得各个参数。 有了这个函数，就可以在页面之间传递参数了。 / 函数功能：从href获得参数sHref:   http://www.artfh.com/arg.htm?arg1=d&amp;amp;arg2=re sArgName:arg1, arg2return:    the value">
+<meta name="keywords" content="总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="url传参">
+<meta property="og:url" content="https://sunsian.github.io/2014/04/08/first7/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="方法一:下面是javascrīpt的一种实现方法, 这个函数是通过window.location.href中的分割符获得各个参数。 有了这个函数，就可以在页面之间传递参数了。 / 函数功能：从href获得参数sHref:   http://www.artfh.com/arg.htm?arg1=d&amp;amp;arg2=re sArgName:arg1, arg2return:    the value">
+<meta property="og:updated_time" content="2017-08-01T14:04:21.085Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="url传参">
+<meta name="twitter:description" content="方法一:下面是javascrīpt的一种实现方法, 这个函数是通过window.location.href中的分割符获得各个参数。 有了这个函数，就可以在页面之间传递参数了。 / 函数功能：从href获得参数sHref:   http://www.artfh.com/arg.htm?arg1=d&amp;amp;arg2=re sArgName:arg1, arg2return:    the value">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://sunsian.github.io/2014/04/08/first7/"/>
+
+
+
+
+
+  <title>url传参 | 我的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">我的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">每天进步一点点</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/04/08/first7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">url传参</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-04-08T22:25:17+08:00">
+                2014-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>方法一:<br>下面是javascrīpt的一种实现方法, 这个函数是通过window.location.href中的分割符获得各个参数。</p>
+<p>有了这个函数，就可以在页面之间传递参数了。</p>
+<p>/<em>
+</em>函数功能：从href获得参数<br><em>sHref:   <a href="http://www.artfh.com/arg.htm?arg1=d&amp;arg2=re" target="_blank" rel="external">http://www.artfh.com/arg.htm?arg1=d&amp;arg2=re</a>
+</em>sArgName:arg1, arg2<br><em>return:    the value of arg. d, re
+</em>/<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function GetArgsFromHref(sHref, sArgName) &#123;</div><div class="line">    var args = sHref.split(&quot;?&quot;);</div><div class="line">    var retval = &quot;&quot;;</div><div class="line"></div><div class="line">    if (args[0] == sHref) /*参数为空*/ &#123;</div><div class="line">        return retval; /*无需做任何处理*/</div><div class="line">    &#125;</div><div class="line">    var str = args[1];</div><div class="line">    args = str.split(&quot;&amp;&quot;);</div><div class="line">    for (var i = 0; i &lt; args.length; i++) &#123;</div><div class="line">        str = args[i];</div><div class="line">        var arg = str.split(&quot;=&quot;);</div><div class="line">        if (arg.length &lt;= 1) continue;</div><div class="line">        if (arg[0] == sArgName) retval = arg[1];</div><div class="line">    &#125;</div><div class="line">    return retval;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>方法二:<br>html地址传递参数进行其他事情.</p>
+<p><scrīpt><br>/<em> 用途: 接收地直栏参数 取id=1 根据ID的值 </em>/<br>urlinfo=window.location.href; //获取当前页面的url<br>len=urlinfo.length;//获取url的长度<br>offset=urlinfo.indexOf(“?”);//设置参数字符串开始的位置<br>newsidinfo=urlinfo.substr(offset,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串<br>newsids=newsidinfo.split(“=”);//对获得的参数字符串按照“=”进行分割<br>newsid=newsids[1];//得到参数值<br>newsname=newsids[0];//得到参数名字<br></scrīpt></p>
+<p>方法三:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">function getvalue(name) &#123;</div><div class="line">    var str = window.location.search;   //location.search是从当前URL的?号开始的字符串 例如：http://www.51job.com/viewthread.jsp?tid=22720 它的search就是?</div><div class="line"></div><div class="line">    tid = 22720</div><div class="line"></div><div class="line">    if (str.indexOf(name) != -1) &#123;</div><div class="line">        var pos_start = str.indexOf(name) + name.length + 1;</div><div class="line">        var pos_end = str.indexOf(&quot;&amp;&quot;, pos_start);</div><div class="line">        if (pos_end == -1) &#123;</div><div class="line">            alert(str.substring(pos_start));</div><div class="line">        &#125; else &#123;</div><div class="line">            alert(&quot;对不起这个值不存在！&quot;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>方法四:<br>做中英转换的时候，要准确的获取参数并取出，所以做了一个简单的html中用js获取当取地址栏的一个Object。<br>里面有三个方法：<br>1、request.QueryString(“参数”)//获取指定参数，返回字符串;<br>2、request.QueryStrings();//获取全部参数，并返回数组;<br>3、request.setQuery(“参数”,”参数的值”);//如果当前地址栏有此参数，那么将更新此参数，否则返回一个新的地址栏参数字符串。<br>例如：<br>当前地址栏参数字符串为：?name=a&amp;site=never_online<br>alert(request.setQuery(“name”,”blueDestiny”))<br>如果地址栏参数中有”name”，那么返回?name=blueDestiny&amp;site=never_online<br>setQuery方法有自动追加参数的功能。如：<br>当前地址栏参数字符串为：?site=never_online<br>alert(request.setQuery(“name”,”blueDestiny”))<br>则返回?site=never_online&amp;name=blueDestiny<br>同理，如果地址栏没有参数，也会自动追加参数<br>alert(request.setQuery(“name”,”blueDestiny”))<br>返回?name=blueDestiny<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">var request = &#123; var request = &#123;</div><div class="line">    QueryString: function (val) &#123;</div><div class="line">        var uri = window.location.search;</div><div class="line">        var re = new RegExp(&quot;&quot; + val + &quot;\=([^\&amp;\?]*)&quot;, &quot;ig&quot;);</div><div class="line">        return ((uri.match(re)) ? (uri.match(re)[0].substr(val.length + 1)) : null);</div><div class="line">    &#125;,</div><div class="line">    QueryStrings: function () &#123;</div><div class="line">        var uri = window.location.search;</div><div class="line">        var re = /\w*\=([^\&amp;\?]*)/ig;</div><div class="line">        var retval = [];</div><div class="line">        while ((arr = re.exec(uri)) != null)</div><div class="line">            retval.push(arr[0]);</div><div class="line">        return retval;</div><div class="line">    &#125;,</div><div class="line">    setQuery: function (val1, val2) &#123;</div><div class="line">        var a = this.QueryStrings();</div><div class="line">        var retval = &quot;&quot;;</div><div class="line">        var seted = false;</div><div class="line">        var re = new RegExp(&quot;^&quot; + val1 + &quot;\=([^\&amp;\?]*)$&quot;, &quot;ig&quot;);</div><div class="line">        for (var i = 0; i &lt; a.length; i++) &#123;</div><div class="line">            if (re.test(a[i])) &#123;</div><div class="line">                seted = true;</div><div class="line">                a[i] = val1 + &quot;=&quot; + val2;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        retval = a.join(&quot;&amp;&quot;);</div><div class="line">        return &quot;?&quot; + retval + (seted ? &quot;&quot; : (retval ? &quot;&amp;&quot; : &quot;&quot;) + val1 + &quot;=&quot; + val2);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">alert(request.setQuery(&quot;e&quot;, &quot;b&quot;)) </div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/03/16/first6/" rel="next" title="meta标签">
+                <i class="fa fa-chevron-left"></i> meta标签
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/04/16/first8/" rel="prev" title="获取当前日期">
+                获取当前日期 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="念念不忘" />
+          <p class="site-author-name" itemprop="name">念念不忘</p>
+           
+              <p class="site-description motion-element" itemprop="description">一入代码深似海</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">念念不忘</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

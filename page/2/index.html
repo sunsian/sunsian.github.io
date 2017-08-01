@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -256,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/12/first14/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/07/12/first14/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -275,7 +275,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/03/12/first14/" itemprop="url">用百度siteapp的uaredirect.js判断用户访问端而进行域名的自动跳转</a></h1>
+                <a class="post-title-link" href="/2014/07/12/first14/" itemprop="url">用百度siteapp的uaredirect.js判断用户访问端而进行域名的自动跳转</a></h1>
         
 
         <div class="post-meta">
@@ -285,10 +285,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-12T22:25:17+08:00">
-                2014-03-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-07-12T22:25:17+08:00">
+                2014-07-12
               </time>
             
 
@@ -377,7 +377,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/12/first9/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/07/09/first13/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -396,7 +396,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/03/12/first9/" itemprop="url">判断设备是否是移动端</a></h1>
+                <a class="post-title-link" href="/2014/07/09/first13/" itemprop="url">email中html页面需要注意的几点</a></h1>
         
 
         <div class="post-meta">
@@ -406,10 +406,507 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-12T22:25:17+08:00">
-                2014-03-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-07-09T22:25:17+08:00">
+                2014-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">1、全局规则之一，不要写&lt;style&gt;标签、不要写class，所有CSS都用style属性，什么元素需要什么样式就用style写内联的CSS。</div><div class="line"></div><div class="line">2、全局规则之二，少用图片，邮箱不会过滤你的img标签，但是系统往往会默认不载入陌生来信的图片，如果用了很多图片的邮件，在图片没有载入的情况下，丑陋无比甚至看不清内容，没耐心的用户直接就删除了。所有图片必须存在宽高和alt标签，且alt内容不宜过多不能出现特殊字符，页面所有图片地址必须为绝对地址，图片链接禁止使用热区，因为map标记在outlook中无法进行正常的点击，不能打开该链接指向的网址。</div><div class="line"></div><div class="line">3、不要在style里面写float、position这些style，因为会被过滤。那么如何实现左右布局或者更复杂的布局呢？使用table制作页面，且必须设置宽度，而div格式由于有些属性不被邮件客户端完全支持，所以建议避免作用。</div><div class="line"></div><div class="line">4、style内容里面background可以设置color，但是img会被过滤，就是说不能通过CSS来设置背景图片了。但是有一个很有意思的元素 属性，也叫background，里面可以定义一个图片路径，这是个不错的替代方案，虽然这样功能有限，比如无法定位背景图片了，有总比没有好。例如要给 一个单元格加一个背景，必须这样写：</div><div class="line">`&lt;td background=”http://image1.koubei.com/images/common/logo_koubei.gif”&gt;&lt;/td&gt;`</div><div class="line"></div><div class="line">5、div模式的邮箱不支持flash，iframe模式的有待验证。</div><div class="line"></div><div class="line">最后提一句，sohu的邮箱很怪异，会在每个文本段后面加一个空格，导致原本正常的排版一行放不下而换行，从而使某些布局错乱。所以，如果你要兼容sohu邮箱的话，遇到一些紧凑的布局就要格外小心了，尽量减少文本段的数量，留足宽度。</div><div class="line"></div><div class="line">6、页面显示宽度400px-800px，高度一般控制在一屏以内。</div><div class="line"></div><div class="line">7、页面不向出现js代码及flash内容（如需要动画全用gif）</div><div class="line"></div><div class="line">8、页面的内容最好以文字的形式来呈现。</div><div class="line"> </div><div class="line">9、DTD声明中&lt;html xmlns=http://www.w3.org/1999/xhtml&gt;请改为&lt;html&gt;</div><div class="line"></div><div class="line">10、链接的打开方式统一为：_blank</div><div class="line"></div><div class="line">11、mailto的正确写法：例：&lt;mailto:xxx@163.com&gt; xxx@163.com&lt;/a&gt;</div><div class="line"></div><div class="line">12、代码干净严谨，删除不必要的空格及回车，总代码量&lt;50K</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/06/12/first12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/06/12/first12/" itemprop="url">IE6常见bug总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-06-12T22:25:17+08:00">
+                2014-06-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、IE6怪异解析之padding与border算入宽高<br>原因：未加文档声明造成非盒模型解析<br>解决方法：加入文档声明&lt;!doctype html&gt; </p>
+<p>2、IE6在块元素、左右浮动、设定marin时造成margin双倍（双边距）<br>解决方法：display:inline </p>
+<p>3、以下三种其实是同一种bug，其实也不算是个bug，举个例子：父标签高度20，子标签11，垂直居中，20-11=9，9要分给文字的上面与下面，怎么分？IE6就会与其它的不同，所以，尽量避免。<br>1）字体大小为奇数之边框高度少1px<br>解决方法：字体大小设置为偶数或line-height为偶数<br>2）line-height，文本垂直居中差1px<br>解决方法：padding-top代替line-height居中，或line-height加1或减1<br>3）与父标签的宽度的奇偶不同的居中造成1px的偏离<br>解决方法：如果父标签是奇数宽度，则子标签也用奇数宽度;如果是父标签偶数宽度，则子标签也用偶数宽度 </p>
+<p>4、内部盒模型超出父级时，父级被撑大<br>解决方法：父标签使用overflow:hidden </p>
+<p>5、line-height默认行高bug<br>解决方法：line-height设值 </p>
+<p>6、行标签之间会有一小段空白<br>解决方法：float或结构并排(可读性差，不建议) </p>
+<p>7、标签高度无法小于19px<br>解决方法：overflow: hidden; </p>
+<p>8、左浮元素margin-bottom失效<br>解决方法：显示设置高度 or 父标签设置_padding-bottom代替子标签的margin-bottom or 再放个标签让父标签浮动，子标签<br>margin- bottom，即(margin-bottom与float不同时作用于一个标签) </p>
+<p>9、img于块元素中，底边多出空白<br>解决方法：父级设置overflow: hidden; 或 img { display: block; } 或 _margin: -5px; </p>
+<p>10、li之间会有间距<br>解决方法：float: left; </p>
+<p>11、块元素中有文字及右浮动的行元素，行元素换行<br>解决方法：将行元素置于块元素内的文字前 </p>
+<p>12、position下的left，bottom错位<br>解决方法：为父级(relative层)设置宽高或添加*zoom:1 </p>
+<p>13、子级中有设置position，则父级overflow失效<br>解决方法：为父级设置position:relative</p>
+<p>以下是补充：上面要先看</p>
+<p>1、终极方法：条件注释<br><!--[if lte IE 6]> 这段文字仅显示在 IE6及IE6以下版本。 <![endif]--><br><!--[if gte IE 6]> 这段文字仅显示在 IE6及IE6以上版本。 <![endif]--><br><!--[if gt IE 6]> 这段文字仅显示在 IE6以上版本（不包含IE6）。 <![endif]--><br><!--[if IE 5.5]> 这段文字仅显示在 IE5.5。 <![endif]--><br><!--在 IE6及IE6以下版本中加载css--><br><!--[if lte IE 6]> <link type="text/css" rel="stylesheet" href="css/ie6.css" mce_href="css/ie6.css" /><![endif]--><br>缺点是在IE浏览器下可能会增加额外的HTTP请求数。 </p>
+<p>2、CSS选择器区分<br>IE6不支持子选择器；先针对IE6使用常规申明CSS选择器，然后再用子选择器针对IE7+及其他浏览器。 </p>
+<p>复制代码<br>代码如下:</p>
+<p>/<em> IE6 专用 </em>/<br>.content {color:red;}<br>/<em> 其他浏览器 </em>/<br>div&gt;p .content {color:blue;} –&gt;</p>
+<p>3、PNG半透明图片的问题<br>虽然可以通过JS等方式解决，但依然存在载入速度等问题，所以，这个在设计上能避免还是尽量避免为好。以达到网站最大优化。<br>4、IE6下的圆角<br>IE6不支持CSS3的圆角属性，性价比最高的解决方法就是用图片圆角来替代，或者放弃IE6的圆角。 </p>
+<p>5、IE6背景闪烁<br>如果你给链接、按钮用CSS sprites作为背景，你可能会发现在IE6下会有背景图闪烁的现象。造成这个的原因是由于IE6没有将背景图缓存，每次触发hover的时候都会重新加载，可以用JavaScript设置IE6缓存这些图片： </p>
+<p>复制代码<br>代码如下:</p>
+<p>document.execCommand(“BackgroundImageCache”,false,true);</p>
+<p>6、最小高度<br>IE6 不支持min-height属性，但它却认为height就是最小高度。解决方法：使用ie6不支持但其余浏览器支持的属性!important。 </p>
+<p>复制代码<br>代码如下:</p>
+<p>#container {min-height:200px; height:auto !important; height:200px;}</p>
+<p>7、最大高度 </p>
+<p>复制代码<br>代码如下:</p>
+<p>//直接使用ID来改变元素的最大高度<br>var container = document.getElementById(‘container’);<br>container.style.height = (container.scrollHeight &gt; 199) ? “200px” : “auto”;<br>//写成函数来运行<br>function setMaxHeight(elementId, height){<br>var container = document.getElementById(elementId);<br>container.style.height = (container.scrollHeight &gt; (height - 1)) ? height + “px” : “auto”;<br>}<br>//函数示例<br>setMaxHeight(‘container1’, 200);<br>setMaxHeight(‘container2’, 500);</p>
+<p>8、100% 高度<br>在IE6下，如果要给元素定义100%高度，必须要明确定义它的父级元素的高度，如果你需要给元素定义满屏的高度，就得先给html和body定义height:100%;。 </p>
+<p>9、最小宽度<br>同max-height和max-width一样，IE6也不支持min-width。 </p>
+<p>复制代码<br>代码如下:</p>
+<p>//直接使用ID来改变元素的最小宽度<br>var container = document.getElementById(‘container’);<br>container.style.width = (container.clientWidth &lt; width) ? “500px” : “auto”;<br>//写成函数来运行<br>function setMinWidth(elementId, width){<br>var container = document.getElementById(elementId);<br>container.style.width = (container.clientWidth &lt; width) ? width + “px” : “auto”;<br>}<br>//函数示例<br>setMinWidth(‘container1’, 200);<br>setMinWidth(‘container2’, 500);</p>
+<p>10、最大宽度 </p>
+<p>复制代码<br>代码如下:</p>
+<p>//直接使用ID来改变元素的最大宽度<br>var container = document.getElementById(elementId);<br>container.style.width = (container.clientWidth &gt; (width - 1)) ? width + “px” : “auto”;<br>//写成函数来运行<br>function setMaxWidth(elementId, width){<br>var container = document.getElementById(elementId);<br>container.style.width = (container.clientWidth &gt; (width - 1)) ? width + “px” : “auto”;<br>}<br>//函数示例<br>setMaxWidth(‘container1’, 200);<br>setMaxWidth(‘container2’, 500);</p>
+<p>11、双边距Bug<br>当元素浮动时，IE6会错误的把浮动方向的margin值双倍计算。个人觉得较好解决方法是避免float和margin同时使用。 </p>
+<p>12、清除浮动<br>如果你想用div(或其他容器)包裹一个浮动的元素，你会发现必须给div(容器)定义明确的height、width、overflow之中一个属性（除了auto值）才能将浮动元素严实地包裹。 </p>
+<p>复制代码<br>代码如下:</p>
+<p>#container {border:1px solid #333; overflow:auto; height:100%;} </p>
+<p>#floated1 {float:left; height:300px; width:200px; background:#00F;} </p>
+<p>#floated2 {float:right; height:400px; width:200px; background:#F0F;}<br>更多：<a href="http://www.twinsenliang.net/skill/20090413.html" target="_blank" rel="external">http://www.twinsenliang.net/skill/20090413.html</a></p>
+<p>13、浮动层错位<br>当内容超出外包容器定义的宽度时，在IE6中容器会忽视定义的width值，宽度会错误地随内容宽度增长而增长。<br>浮动层错位问题在IE6下没有真正让人满意的解决方法，虽然可以使用overflow:hidden;或overflow:scroll;来修正， 但hidden容易导致其他一些问题，scroll会破坏设计；JavaScript也没法很好地解决这个问题。所以建议是一定要在布局上避免这个问题发 生，使用一个固定的布局或者控制好内容的宽度（给内层加width）。 </p>
+<p>14、躲猫猫bug<br>在IE6和IE7下，躲猫猫bug是一个非常恼人的问题。一个撑破了容器的浮动元素，如果在他之后有不浮动的内容，并且有一些定义了:hover的链接，当鼠标移到那些链接上时，在IE6下就会触发躲猫猫。<br>解决方法很简单：<br>1.在（那个未浮动的）内容之后添加一个<span style="clear: both;"> </span><br>2.触发包含了这些链接的容器的hasLayout，一个简单的方法就是给其定义height:1%; </p>
+<p>15、绝对定位元素的1像素间距bug<br>IE6下的这个错误是由于进位处理误差造成（IE7已修复），当绝对定位元素的父元素高或宽为奇数时，bottom和right会产生错误。唯一的解决办法就是给父元素定义明确的高宽值，但对于液态布局没有完美的解决方法。 </p>
+<p>16、3像素间距bug<br>在IE6中，当文本(或无浮动元素)跟在一个浮动的元素之后，文本和这个浮动元素之间会多出3像素的间隔。<br>给浮动层添加 display:inline 和 -3px 负值margin<br>给中间的内容层定义 margin-right 以纠正-3px </p>
+<p>17、IE下z-index的bug<br>在IE浏览器中，定位元素的z-index层级是相对于各自的父级容器，所以会导致z-index出现错误的表现。解决方法是给其父级元素定义z-index，有些情况下还需要定义position:relative。 </p>
+<p>18、Overflow Bug<br>在IE6/7中，overflow无法正确的隐藏有相对定位position:relative;的子元素。解决方法就是给外包容器.wrap加上position:relative;。 </p>
+<p>19、横向列表宽度bug<br>如果你使用float:left;把<li>横向摆列，并且</li><li>内包含的<a>（或其他）触发了 hasLayout，在IE6下就会有错误的表现。解决方法很简单，只需要给<a>定义同样的float:left;即可。 </a></a></li></p>
+<p>20、列表阶梯bug<br>列表阶梯bug通常会在给<li>的子元素<a>使用float:left;时触发，我们本意是要做一个横向的列表(通常 是导航栏)，但IE却可能呈现出垂直的或者阶梯状。解决办法就是给<li>定义float:left;而非子元素<a>，或者 给<li>定义display:inline;也可以解决。 </li></a></li></a></li></p>
+<p>21、垂直列表间隙bug<br>当我们使用<li> 包含一个块级子元素时，IE6(IE7也有可能)会错误地给每条列表元素（</li><li>）之间添加空隙。<br>解决方法：把<a>flaot并且清除float来解决这个问题；另外一个办法就是触发<a>的hasLayout（如定 义高宽、使用zoom:1;）；也可以给<li> 定义display:inline;来解决此问题；另外还有一个极有趣的方法，给包含的文本末尾添加一个空格。 </li></a></a></li></p>
+<p>22、IE6中的:hover<br>在IE6中，除了(需要有href属性)才能触发:hover行为，这妨碍了我们实现许多鼠标触碰效果，但还是有一些法子是可以解决它的。最好是不要用:hover来实现重要的功能，仅仅只用它来强化效果。 </p>
+<p>23、IE6调整窗口大小的 Bug<br>当把body居中放置，改变IE浏览器大小的时候，任何在body里面的相对定位元素都会固定不动了。解决办法：给body定义position:relative;就行了。 </p>
+<p>24、文本重复Bug<br>在IE6中，一些隐藏的元素（如注释、display:none;的元素）被包含在一个浮动元素里，就有可能引发文本重复bug。解决办法：给浮动元素添加display:inline;。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/06/02/first11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/06/02/first11/" itemprop="url">tab栏写法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-06-02T22:25:17+08:00">
+                2014-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">Html代码</div><div class="line">&lt;body&gt;</div><div class="line">     &lt;ul id=&quot;menu&quot;&gt;</div><div class="line">         &lt;li class=&quot;tabFocus&quot;&gt;家居&lt;/li&gt;</div><div class="line">         &lt;li&gt;电器&lt;/li&gt;</div><div class="line">         &lt;li&gt;二手&lt;/li&gt;</div><div class="line">     &lt;/ul&gt;</div><div class="line">     &lt;ul id=&quot;content&quot;&gt;</div><div class="line">         &lt;li class=&quot;conFocus&quot;&gt;我是家居的内容&lt;/li&gt;</div><div class="line">         &lt;li&gt;欢迎您来到电器城&lt;/li&gt;</div><div class="line">         &lt;li&gt;二手市场，产品丰富多彩&lt;/li&gt;</div><div class="line">     &lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">jquery代码</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">        $(function() &#123;</div><div class="line">            $(&quot;#menu li&quot;).each(function(index) &#123; //带参数遍历各个选项卡</div><div class="line">                $(this).click(function() &#123; //注册每个选卡的单击事件</div><div class="line">                    $(&quot;#menu li.tabFocus&quot;).removeClass(&quot;tabFocus&quot;); //移除已选中的样式</div><div class="line">                    $(this).addClass(&quot;tabFocus&quot;); //增加当前选中项的样式</div><div class="line">                    //显示选项卡对应的内容并隐藏未被选中的内容</div><div class="line">                    $(&quot;#content li:eq(&quot; + index + &quot;)&quot;).show()</div><div class="line">                    .siblings().hide();//#menu与#content在html层没有嵌套关联，但因为其ul序列相同，用index值可以巧妙的将两者关联。</div><div class="line">                &#125;);</div><div class="line">            &#125;);</div><div class="line">        &#125;)</div><div class="line">    &lt;/script&gt;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/05/16/first10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/05/16/first10/" itemprop="url">去除html标签，获取文本</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-05-16T22:25:17+08:00">
+                2014-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    function delHtmlTag(str)&#123;</div><div class="line">    　　return str.replace(/&lt;[^&gt;]+&gt;/g,&quot;&quot;);//去掉所有的html标记</div><div class="line">    &#125;</div><div class="line">　　var str = &quot;&lt;div class=&apos;questions&apos;&gt;&lt;ul&gt;</div><div class="line"></div><div class="line">　　　　　　　　&lt;li&gt;&lt;a href=&apos;qusDetail.html&apos;&gt;问题详细页&lt;/a&gt;&lt;/li&gt;</div><div class="line"></div><div class="line">　　　　　　　　&lt;li&gt;&lt;a href=&apos;qusDetail.html&apos;&gt;问题详细页&lt;/a&gt;&lt;/li&gt;</div><div class="line"></div><div class="line">　　　　　　　　&lt;li&gt;&lt;a href=&apos;qusDetail.html&apos;&gt;问题详细页&lt;/a&gt;&lt;/li&gt;　　</div><div class="line"></div><div class="line">　　　　　　&lt;/ul&gt;&lt;/div&gt;&quot;;</div><div class="line">    str = delHtmlTag(str);</div><div class="line">    alert(str);</div><div class="line"></div><div class="line">弹出的str就只是文本内容没有标签</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/05/12/first9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/05/12/first9/" itemprop="url">判断设备是否是移动端</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-05-12T22:25:17+08:00">
+                2014-05-12
               </time>
             
 
@@ -488,7 +985,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/10/first8/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/04/16/first8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -507,7 +1004,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/03/10/first8/" itemprop="url">获取当前日期</a></h1>
+                <a class="post-title-link" href="/2014/04/16/first8/" itemprop="url">获取当前日期</a></h1>
         
 
         <div class="post-meta">
@@ -517,10 +1014,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-10T22:25:17+08:00">
-                2014-03-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-04-16T22:25:17+08:00">
+                2014-04-16
               </time>
             
 
@@ -599,7 +1096,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/08/first7/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/04/08/first7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -618,7 +1115,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/03/08/first7/" itemprop="url">url传参</a></h1>
+                <a class="post-title-link" href="/2014/04/08/first7/" itemprop="url">url传参</a></h1>
         
 
         <div class="post-meta">
@@ -628,10 +1125,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-08T22:25:17+08:00">
-                2014-03-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-04-08T22:25:17+08:00">
+                2014-04-08
               </time>
             
 
@@ -720,7 +1217,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/06/first6/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/16/first6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -739,7 +1236,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/03/06/first6/" itemprop="url">meta标签</a></h1>
+                <a class="post-title-link" href="/2014/03/16/first6/" itemprop="url">meta标签</a></h1>
         
 
         <div class="post-meta">
@@ -749,10 +1246,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-06T22:25:17+08:00">
-                2014-03-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-16T22:25:17+08:00">
+                2014-03-16
               </time>
             
 
@@ -832,7 +1329,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/02/28/first4/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/12/first5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -851,7 +1348,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/02/28/first4/" itemprop="url">常用的正则表达式</a></h1>
+                <a class="post-title-link" href="/2014/03/12/first5/" itemprop="url">js中的或和且的运算总结</a></h1>
         
 
         <div class="post-meta">
@@ -861,139 +1358,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-02-28T22:25:17+08:00">
-                2014-02-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>匹配中文字符的正则表达式： [\u4e00-\u9fa5]<br>评注：匹配中文还真是个头疼的事，有了这个表达式就好办了</p>
-<p>匹配双字节字符(包括汉字在内)：[^x00-xff]<br>评注：可以用来计算字符串的长度（一个双字节字符长度计2，ASCII字符计1）</p>
-<p>匹配空白行的正则表达式：ns*r<br>评注：可以用来删除空白行</p>
-<p>匹配HTML标记的正则表达式：&lt; (S<em>?)[^&gt;]</em>&gt;.<em>?|&lt; .</em>? /&gt;<br>评注：网上流传的版本太糟糕，上面这个也仅仅能匹配部分，对于复杂的嵌套标记依旧无能为力</p>
-<p>匹配首尾空白字符的正则表达式：^s<em>|s</em>$<br>评注：可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式</p>
-<p>匹配Email地址的正则表达式：w+([-+.]w+)<em>@w+([-.]w+)</em>.w+([-.]w+)*<br>评注：表单验证时很实用</p>
-<p>匹配网址URL的正则表达式：[a-zA-z]+://[^s]*<br>评注：网上流传的版本功能很有限，上面这个基本可以满足需求</p>
-<p>匹配帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$<br>评注：表单验证时很实用</p>
-<p>匹配国内电话号码：d{3}-d{8}|d{4}-d{7}<br>评注：匹配形式如 0511-4405222 或 021-87888822</p>
-<p>匹配腾讯QQ号：[1-9][0-9]{4,}<br>评注：腾讯QQ号从10000开始</p>
-<p>匹配中国邮政编码：[1-9]d{5}(?!d)<br>评注：中国邮政编码为6位数字</p>
-<p>匹配身份证：d{15}|d{18}<br>评注：中国的身份证为15位或18位</p>
-<p>匹配ip地址：d+.d+.d+.d+<br>评注：提取ip地址时有用</p>
-<p>匹配特定数字：<br>^\d+(.\d+)?$ //匹配非负数（包括0和正数）<br>^[1-9]d<em>$　 　 //匹配正整数<br>^-[1-9]d</em>$ 　 //匹配负整数<br>^-?[1-9]d<em>$　　 //匹配整数<br>^[1-9]d</em>|0$　 //匹配非负整数（正整数 + 0）<br>^-[1-9]d<em>|0$　　 //匹配非正整数（负整数 + 0）<br>^[1-9]d</em>.d<em>|0.d</em>[1-9]d<em>$　　 //匹配正浮点数<br>^-([1-9]d</em>.d<em>|0.d</em>[1-9]d<em>)$　 //匹配负浮点数<br>^-?([1-9]d</em>.d<em>|0.d</em>[1-9]d<em>|0?.0+|0)$　 //匹配浮点数<br>^[1-9]d</em>.d<em>|0.d</em>[1-9]d<em>|0?.0+|0$　　 //匹配非负浮点数（正浮点数 + 0）<br>^(-([1-9]d</em>.d<em>|0.d</em>[1-9]d*))|0?.0+|0$　　//匹配非正浮点数（负浮点数 + 0）<br>评注：处理大量数据时有用，具体应用时注意修正</p>
-<p>匹配特定字符串：<br>^[A-Za-z]+$　　//匹配由26个英文字母组成的字符串<br>^[A-Z]+$　　//匹配由26个英文字母的大写组成的字符串<br>^[a-z]+$　　//匹配由26个英文字母的小写组成的字符串<br>^[A-Za-z0-9]+$　　//匹配由数字和26个英文字母组成的字符串<br>^w+$　　//匹配由数字、26个英文字母或者下划线组成的字符串</p>
-<p>在使用RegularExpressionValidator验证控件时的验证功能及其验证表达式介绍如下:<br>只能输入数字：“^[0-9]<em>$”<br>只能输入n位的数字：“^d{n}$”<br>只能输入至少n位数字：“^d{n,}$”<br>只能输入m-n位的数字：“^d{m,n}$”<br>只能输入零和非零开头的数字：“^(0|[1-9][0-9]</em>)$”<br>只能输入有两位小数的正实数：“^[0-9]+(.[0-9]{2})?$”<br>只能输入有1-3位小数的正实数：“^[0-9]+(.[0-9]{1,3})?$”<br>只能输入非零的正整数：“^+?[1-9][0-9]<em>$”<br>只能输入非零的负整数：“^-[1-9][0-9]</em>$”<br>只能输入长度为3的字符：“^.{3}$”<br>只能输入由26个英文字母组成的字符串：“^[A-Za-z]+$”<br>只能输入由26个大写英文字母组成的字符串：“^[A-Z]+$”<br>只能输入由26个小写英文字母组成的字符串：“^[a-z]+$”<br>只能输入由数字和26个英文字母组成的字符串：“^[A-Za-z0-9]+$”<br>只能输入由数字、26个英文字母或者下划线组成的字符串：“^w+$”<br>验证用户密码:“^[a-zA-Z]w{5,17}$”正确格式为：以字母开头，长度在6-18之间，</p>
-<p>只能包含字符、数字和下划线。<br>验证是否含有^%&amp;’,;=?$”等字符：“[^%&amp;’,;=?$x22]+”<br>只能输入汉字：“^[u4e00-u9fa5],{0,}$”<br>验证Email地址：“^w+[-+.]w+)<em>@w+([-.]w+)</em>.w+([-.]w+)<em>$”<br>验证InternetURL：“^<a href="http://([w-]+.)+[w-]+(/[w-./?%&amp;=" target="_blank" rel="external">http://([w-]+.)+[w-]+(/[w-./?%&amp;=</a>]</em>)?$”<br>验证电话号码：“^((d{3,4})|d{3,4}-)?d{7,8}$”<br>电话号码的正确格式为：“XXXX-XXXXXXX”，“XXXX-XXXXXXXX”，“XXX-XXXXXXX”，“XXX-XXXXXXXX”，“XXXXXXX”，“XXXXXXXX”。<br>验证身份证号（15位或18位数字）：“^d{15}|d{18}$”<br>验证一年的12个月：“^(0?[1-9]|1[0-2])$”正确格式为：“01”-“09”和“1”“12”<br>验证一个月的31天：“^((0?[1-9])|((1|2)[0-9])|30|31)$”<br>正确格式为：“01”“09”和“1”“31”。</p>
-<p>匹配中文字符的正则表达式： [u4e00-u9fa5]<br>匹配双字节字符(包括汉字在内)：[^x00-xff]<br>匹配空行的正则表达式：n[s| ]<em>r<br>匹配HTML标记的正则表达式：/&lt; (.</em>)&gt;.<em>|&lt; (.</em>) /&gt;/<br>匹配首尾空格的正则表达式：(^s<em>)|(s</em>$)<br>匹配Email地址的正则表达式：w+([-+.]w+)<em>@w+([-.]w+)</em>.w+([-.]w+)<em><br>匹配网址URL的正则表达式：<a href="http://([w-]+.)+[w-]+(/[w-" target="_blank" rel="external">http://([w-]+.)+[w-]+(/[w-</a> ./?%&amp;=]</em>)?</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/02/28/first5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/02/28/first5/" itemprop="url">js中的或和且的运算总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-02-28T22:25:17+08:00">
-                2014-02-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-12T22:25:17+08:00">
+                2014-03-12
               </time>
             
 
@@ -1031,380 +1399,6 @@
           
             <p>||总结<br>1.只要 “||”前面为false，不管 “||”后面是true还是false,都返回后面的值。<br>2.只要 “||”前面为true，不管 “||”后面是true还是false,都返回前面的值。</p>
 <p>&amp;&amp;总结<br>1.只要 “&amp;&amp;”前面为false，不管 “&amp;&amp;”后面是true还是false,都返回前面的值。<br>2.只要 “&amp;&amp;”前面为true，不管 “&amp;&amp;”后面是true还是false,都返回后面的值。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/02/26/first3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/02/26/first3/" itemprop="url">js根据身份证号码判断性别和年龄</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-02-26T22:27:15+08:00">
-                2014-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>/<strong>这是一个超实用的用js根据身份证号码判断性别男女的特效代码，详细看下面的*/<br>/</strong><br>根据身份证号码判断性别<br>15位身份证号码：第7、8位为出生年份(两位数)，第9、10位为出生月份，第11、12位代表出生日<br>18位身份证号码：第7、8、9、10位为出生年份(四位数)，第11、第12位为出生月份，<br>第13、14位代表出生日期，第17位代表性别，奇数为男，偶数为女。<br>*/<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">function showBirthday() &#123;</div><div class="line">    var val = $(&quot;#idCard&quot;).val().trim();//输入的身份证号码</div><div class="line">    var birthdayValue;</div><div class="line">    if (15 == val.length) &#123; //15位身份证号码</div><div class="line">        birthdayValue = val.charAt(6) + val.charAt(7);</div><div class="line">        if (parseInt(birthdayValue) &lt; 10) &#123;</div><div class="line">            birthdayValue = &apos;20&apos; + birthdayValue;</div><div class="line">        &#125; else &#123;</div><div class="line">            birthdayValue = &apos;19&apos; + birthdayValue;</div><div class="line">        &#125;</div><div class="line">        //性别判断,给radio男女赋值,出生日期赋值</div><div class="line">        birthdayValue = birthdayValue + &apos;-&apos; + val.charAt(8) + val.charAt(9) + &apos;-&apos; + val.charAt(10) + val.charAt(11);</div><div class="line">        if (parseInt(val.charAt(14) / 2) * 2 != val.charAt(14))</div><div class="line">            $(&quot;#RadioGroup1_0&quot;).attr(&quot;checked&quot;, true);</div><div class="line">        else</div><div class="line">            $(&quot;#RadioGroup1_1&quot;).attr(&quot;checked&quot;, true);</div><div class="line">        $(&quot;#datepicker2&quot;).val(birthdayValue);</div><div class="line">    &#125;</div><div class="line">    if (18 == val.length) &#123; //18位身份证号码</div><div class="line">        //性别判断,给radio男女赋值,出生日期赋值</div><div class="line">        birthdayValue = val.charAt(6) + val.charAt(7) + val.charAt(8) + val.charAt(9) + &apos;-&apos; + val.charAt(10) + val.charAt(11)</div><div class="line">            + &apos;-&apos; + val.charAt(12) + val.charAt(13);</div><div class="line">        if (parseInt(val.charAt(16) / 2) * 2 != val.charAt(16))</div><div class="line">            $(&quot;#RadioGroup1_0&quot;).attr(&quot;checked&quot;, true);</div><div class="line">        else</div><div class="line">            $(&quot;#RadioGroup1_1&quot;).attr(&quot;checked&quot;, true);</div><div class="line">        $(&quot;#datepicker2&quot;).val(birthdayValue);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">// 18位身份证号最后一位校验</div><div class="line">function IDCard(Num) &#123;</div><div class="line">    if (Num.length != 18)</div><div class="line">        return false;</div><div class="line">    var x = 0;</div><div class="line">    var y = &apos;&apos;;</div><div class="line">    for (i = 18; i &gt;= 2; i--)</div><div class="line">        x = x + (square(2, (i - 1)) % 11) * parseInt(Num.charAt(19 - i - 1));</div><div class="line">    x %= 11;</div><div class="line">    y = 12 - x;</div><div class="line">    if (x == 0)</div><div class="line">        y = &apos;1&apos;;</div><div class="line">    if (x == 1)</div><div class="line">        y = &apos;0&apos;;</div><div class="line">    if (x == 2)</div><div class="line">        y = &apos;X&apos;;</div><div class="line">    return y;</div><div class="line">&#125;</div><div class="line">// 求得x的y次方</div><div class="line">function square(x, y) &#123;</div><div class="line">    var i = 1;</div><div class="line">    for (j = 1; j &lt;= y; j++)</div><div class="line">        i *= x;</div><div class="line">    return i;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/02/26/first2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/02/26/first2/" itemprop="url">js获取屏幕大小</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-02-26T21:48:28+08:00">
-                2014-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <pre><code>&quot;屏幕分辨率为：&quot;+screen.width+&quot;*&quot;+screen.height
-
-&quot;屏幕可用大小：&quot;+screen.availWidth+&quot;*&quot;+screen.availHeight
-
-&quot;网页可见区域宽：&quot;+document.body.clientWidth
-
-&quot;网页可见区域高：&quot;+document.body.clientHeight
-
-&quot;网页可见区域宽(包括边线的宽)：&quot;+document.body.offsetWidth 
-
-&quot;网页可见区域高(包括边线的宽)：&quot;+document.body.offsetHeight 
-
-&quot;网页正文全文宽：&quot;+document.body.scrollWidth
-
-&quot;网页正文全文高：&quot;+document.body.scrollHeight
-
-&quot;网页被卷去的高：&quot;+document.body.scrollTop
-
-&quot;网页被卷去的左：&quot;+document.body.scrollLeft
-
-&quot;网页正文部分上：&quot;+window.screenTop
-
-&quot;网页正文部分左：&quot;+window.screenLeft
-
-&quot;屏幕分辨率的高：&quot;+window.screen.height
-
-&quot;屏幕分辨率的宽：&quot;+window.screen.width
-
-&quot;屏幕可用工作区高度：&quot;+window.screen.availHeight
-
-&quot;屏幕可用工作区宽度：&quot;+window.screen.availWidth
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/02/10/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/02/10/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-02-10T22:25:17+08:00">
-                2014-02-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
           
         
@@ -1489,8 +1483,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">21</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1503,7 +1497,7 @@
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               
             </div>
           
@@ -1553,7 +1547,7 @@
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="总结," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="使用最新版本的jQueryjQuery的版本更新很快，你应该总是使用最新的版本。因为新版本会改进性能，还有很多新功能。  用对选择器   在jQuery中，你可以用多种选择器，选择同一个网页元素。每种选择器的性能是不一样的，你应该了解它们的性能差异。 1.最快的选择器：id选择器和元素标签选择器 举例来说，下面的语句性能最佳：$(&amp;#39;#id&amp;#39;) $(&amp;#39;form&amp;#39;)">
+<meta name="keywords" content="总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery性能提升">
+<meta property="og:url" content="https://sunsian.github.io/2015/03/10/first24/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="使用最新版本的jQueryjQuery的版本更新很快，你应该总是使用最新的版本。因为新版本会改进性能，还有很多新功能。  用对选择器   在jQuery中，你可以用多种选择器，选择同一个网页元素。每种选择器的性能是不一样的，你应该了解它们的性能差异。 1.最快的选择器：id选择器和元素标签选择器 举例来说，下面的语句性能最佳：$(&amp;#39;#id&amp;#39;) $(&amp;#39;form&amp;#39;)">
+<meta property="og:updated_time" content="2017-08-01T14:43:11.450Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jquery性能提升">
+<meta name="twitter:description" content="使用最新版本的jQueryjQuery的版本更新很快，你应该总是使用最新的版本。因为新版本会改进性能，还有很多新功能。  用对选择器   在jQuery中，你可以用多种选择器，选择同一个网页元素。每种选择器的性能是不一样的，你应该了解它们的性能差异。 1.最快的选择器：id选择器和元素标签选择器 举例来说，下面的语句性能最佳：$(&amp;#39;#id&amp;#39;) $(&amp;#39;form&amp;#39;)">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://sunsian.github.io/2015/03/10/first24/"/>
+
+
+
+
+
+  <title>jquery性能提升 | 我的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">我的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">每天进步一点点</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/03/10/first24/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jquery性能提升</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-03-10T22:25:17+08:00">
+                2015-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li><p>使用最新版本的jQuery<br>jQuery的版本更新很快，你应该总是使用最新的版本。因为新版本会改进性能，还有很多新功能。</p>
+</li>
+<li><p>用对选择器</p>
+</li>
+</ol>
+<p>在jQuery中，你可以用多种选择器，选择同一个网页元素。每种选择器的性能是不一样的，你应该了解它们的性能差异。</p>
+<p>1.最快的选择器：id选择器和元素标签选择器</p>
+<p>举例来说，下面的语句性能最佳：<br><code>$(&#39;#id&#39;)
+$(&#39;form&#39;)
+$(&#39;input&#39;)</code><br>遇到这些选择器的时候，jQuery内部会自动调用浏览器的原生方法（比如getElementById()），所以它们的执行速度快。<br>2.较慢的选择器：class选择器<br>$(‘.className’)的性能，取决于不同的浏览器。<br>Firefox、Safari、Chrome、Opera浏览器，都有原生方法getElementByClassName()，所以速度并不慢。但是，IE5-IE8都没有部署这个方法，所以这个选择器在IE中会相当慢。</p>
+<p>3.最慢的选择器：伪类选择器和属性选择器<br>先来看例子。找出网页中所有的隐藏元素，就要用到伪类选择器：<br>$(‘:hidden’)<br>属性选择器的例子则是：<br>$(‘[attribute=value]’)<br>这两种语句是最慢的，因为浏览器没有针对它们的原生方法。但是，一些浏览器的新版本，增加了querySelector()和querySelectorAll()方法，因此会使这类选择器的性能有大幅提高。</p>
+<ol>
+<li>理解子元素和父元素的关系<br>下面六个选择器，都是从父元素中选择子元素。你知道哪个速度最快，哪个速度最慢吗？<br><code>$(&#39;.child&#39;, $parent)
+$parent.find(&#39;.child&#39;)
+$parent.children(&#39;.child&#39;)
+$(&#39;#parent &gt; .child&#39;)
+$(&#39;#parent .child&#39;)
+$(&#39;.child&#39;, $(&#39;#parent&#39;))</code><br>我们一句句来看。<br>(1) $(‘.child’, $parent)<br>这条语句的意思是，给定一个DOM对象，然后从中选择一个子元素。jQuery会自动把这条语句转成$.parent.find(‘child’)，这会导致一定的性能损失。它比最快的形式慢了5%-10%。</li>
+</ol>
+<p>(2) $parent.find(‘.child’)<br>这条是最快的语句。.find()方法会调用浏览器的原生方法（getElementById，getElementByName，getElementByTagName等等），所以速度较快。</p>
+<p>(3) $parent.children(‘.child’)<br>这条语句在jQuery内部，会使用$.sibling()和javascript的nextSibling()方法，一个个遍历节点。它比最快的形式大约慢50%。</p>
+<p>(4) $(‘#parent &gt; .child’)<br>jQuery内部使用Sizzle引擎，处理各种选择器。Sizzle引擎的选择顺序是从右到左，所以这条语句是先选.child，然后再一个个过滤出父元素#parent，这导致它比最快的形式大约慢70%。</p>
+<p>(5) $(‘#parent .child’)<br>这条语句与上一条是同样的情况。但是，上一条只选择直接的子元素，这一条可以于选择多级子元素，所以它的速度更慢，大概比最快的形式慢了77%。</p>
+<p>(6) $(‘.child’, $(‘#parent’))<br>jQuery内部会将这条语句转成$(‘#parent’).find(‘.child’)，比最快的形式慢了23%。</p>
+<p>所以，最佳选择是$parent.find(‘.child’)。而且，由于$parent往往在前面的操作已经生成，jQuery会进行缓存，所以进一步加快了执行速度。</p>
+<ol>
+<li>不要过度使用jQuery<br>jQuery速度再快，也无法与原生的javascript方法相比。所以有原生方法可以使用的场合，尽量避免使用jQuery。<br>请看下面的例子，为a元素绑定一个处理点击事件的函数：<br><code>$(&#39;a&#39;).click(function(){
+ &lt;strong&gt;alert($(this).attr(&#39;id&#39;));&lt;/strong&gt;
+});</code><br>段代码的意思是，点击a元素后，弹出该元素的id属性。为了获取这个属性，必须连续两次调用jQuery，第一次是$(this)，第二次是attr(‘id’)。</li>
+</ol>
+<p>事实上，这种处理完全不必要。更正确的写法是，直接采用javascript原生方法，调用this.id：<br><code>$(&#39;a&#39;).click(function(){
+    &lt;strong&gt;alert(this.id);&lt;/strong&gt;
+});</code><br>根据测试，this.id的速度比$(this).attr(‘id’)快了20多倍。</p>
+<ol>
+<li><p>做好缓存<br>选中某一个网页元素，是开销很大的步骤。所以，使用选择器的次数应该越少越好，并且尽可能缓存选中的结果，便于以后反复使用。<br><code>jQuery(&#39;#top&#39;).find(&#39;p.classA&#39;);
+jQuery(&#39;#top&#39;).find(&#39;p.classB&#39;);</code><br>更好的写法是：<br><code>&lt;strong&gt;var cached = jQuery(&#39;#top&#39;);&lt;/strong&gt;
+cached.find(&#39;p.classA&#39;);
+cached.find(&#39;p.classB&#39;);</code><br>根据测试，缓存比不缓存，快了2-3倍。</p>
+</li>
+<li><p>使用链式写法<br>jQuery的一大特点，就是允许使用链式写法。<br>$(‘div’).find(‘h3’).eq(2).html(‘Hello’);<br>采用链式写法时，jQuery自动缓存每一步的结果，因此比非链式写法要快。根据测试，链式写法比（不使用缓存的）非链式写法，大约快了25%。</p>
+</li>
+<li><p>事件的委托处理（Event Delegation）<br>javascript的事件模型，采用”冒泡”模式，也就是说，子元素的事件会逐级向上”冒泡”，成为父元素的事件。</p>
+</li>
+</ol>
+<p>利用这一点，可以大大简化事件的绑定。比如，有一个表格（table元素），里面有100个格子（td元素），现在要求在每个格子上面绑定一个点击事件（click），请问是否需要将下面的命令执行100次？<br>$(“td”).bind(“click”, function(){<br>$(this).toggleClass(“click”);<br>});<br>回答是不需要，我们只要把这个事件绑定在table元素上面就可以了，因为td元素发生点击事件之后，这个事件会”冒泡”到父元素table上面，从而被监听到。<br>因此，这个事件只需要在父元素绑定1次即可，而不需要在子元素上绑定100次，从而大大提高性能。这就叫事件的”委托处理”，也就是子元素”委托”父元素处理这个事件。</p>
+<p>具体的写法有两种。第一种是采用.delegate()方法：<br>$(“table”).delegate(“td”, “click”, function(){<br>    $(this).toggleClass(“click”);<br>});<br>$(“table”).each(function(){<br>    $(“td”, this).live(“click”, function(){<br>        $(this).toggleClass(“click”);<br>    });<br>});<br>这两种写法基本等价。唯一的区别在于，.delegate()是当事件冒泡到指定的父元素时触发，.live()则是当事件冒泡到文档的根元素后触 发，因此.delegate()比.live()稍快一点。此外，这两种方法相比传统的.bind()方法还有一个好处，那就是对动态插入的元素也有 效，.bind()只对已经存在的DOM元素有效，对动态插入的元素无效。</p>
+<p>根据测试，委托处理比不委托处理，快了几十倍。在委托处理的情况<br>下，.delegate()又比.live()大约快26%。</p>
+<ol>
+<li>少改动DOM结构<br>（1）改动DOM结构开销很大，因此不要频繁使用.append()、.insertBefore()和.insetAfter()这样的方法。<br>如果要插入多个元素，就先把它们合并，然后再一次性插入。根据测试，合并插入比不合并插入，快了将近10倍。<br>（2）如果你要对一个DOM元素进行大量处理，应该先用.detach()方法，把这个元素从DOM中取出来，处理完毕以后，再重新插回文档。根据测试，使用.detach()方法比不使用时，快了60%。<br>（3）如果你要在DOM元素上储存数据，不要写成下面这样：<br>var elem = $(‘#elem’);<br><strong>elem.data(key,value);</strong></li>
+</ol>
+<p>而要写成<br>var elem = $(‘#elem’);<br><strong>$.data(elem,key,value);</strong></p>
+<p>根据测试， 后一种写法要比前一种写法，快了将近10倍。因为elem.data()方法是定义在jQuery函数的prototype对象上面的， 而$.data()方法是定义jQuery函数上面的，调用的时候不从复杂的jQuery对象上调用，所以速度快得多。（此处可以参阅下面第10点。）</p>
+<ol>
+<li>正确处理循环</li>
+</ol>
+<p>循环总是一种比较耗时的操作，如果可以使用复杂的选择器直接选中元素，就不要使用循环，去一个个辨认元素。<br>javascript原生循环方法for和while，要比jQuery的.each()方法快，应该优先使用原生方法。</p>
+<ol>
+<li>尽量少生成jQuery对象<br>每当你使用一次选择器（比如$(‘#id’)），就会生成一个jQuery对象。jQuery对象是一个很庞大的对象，带有很多属性和方法，会占用不少资源。所以，尽量少生成jQuery对象。</li>
+</ol>
+<p>举例来说，许多jQuery方法都有两个版本，一个是供jQuery对象使用的版本，另一个是供jQuery函数使用的版本。下面两个例子，都是取出一个元素的文本，使用的都是text()方法。你既可以使用针对jQuery对象的版本：<br>var $text = $(“#text”);<br><strong>var $ts = $text.text();</strong></p>
+<p>也可以使用针对jQuery函数的版本：<br>var $text = $(“#text”);<br><strong>var $ts = $.text($text);</strong></p>
+<p>由于后一种针对jQuery函数的版本不通过jQuery对象操作，所以相对开销较小，速度比较快。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/02/15/first23/" rel="next" title="移动端a标签给高度和行高一致不居中">
+                <i class="fa fa-chevron-left"></i> 移动端a标签给高度和行高一致不居中
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/04/05/first25/" rel="prev" title="js的基础类型和引用类型">
+                js的基础类型和引用类型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="念念不忘" />
+          <p class="site-author-name" itemprop="name">念念不忘</p>
+           
+              <p class="site-description motion-element" itemprop="description">一入代码深似海</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">念念不忘</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

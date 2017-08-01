@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -256,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/08/15/first20/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/04/05/first25/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -275,7 +275,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/08/15/first20/" itemprop="url">ie6和ie7上z-index不起作用的问题解决</a></h1>
+                <a class="post-title-link" href="/2015/04/05/first25/" itemprop="url">js的基础类型和引用类型</a></h1>
         
 
         <div class="post-meta">
@@ -285,10 +285,569 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-08-15T22:25:17+08:00">
-                2014-08-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-04-05T22:25:17+08:00">
+                2015-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>两种类型：</p>
+<ol>
+<li>ECMAScript变量包含两种不同类型的值：基本类型值、引用类型值；</li>
+<li>基本类型值：指的是保存在栈内存中的简单数据段；</li>
+<li>引用类型值：指的是那些保存在堆内存中的对象，意思是，变量中保存的实际上只是一个指针，这个指针执行内存中的另一个位置，由该位置保存对象；</li>
+</ol>
+<p>两种访问方式：</p>
+<ol>
+<li>基本类型值：按值访问，操作的是他们实际保存的值；</li>
+<li>引用类型值：按引用访问，当查询时，我们需要先从栈中读取内存地址，然后再顺藤摸瓜地找到保存在堆内存中的值；<br><img src="./images/pic1png" alt="pic1"></li>
+</ol>
+<p>两种类型复制</p>
+<ol>
+<li>基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上；<br><img src="./images/pic2png" alt="pic2"></li>
+</ol>
+<ol>
+<li><p>引用类型变量的复制：复制的是存储在栈中的指针，将指针复制到栈中未新变量分配的空间中，而这个指针副本和原指针执行存储在堆中的同一个对象；</p>
+</li>
+<li><p>复制操作结束后，两个变量实际上将引用同一个对象；因此改变其中的一个，将影响另一个；</p>
+</li>
+</ol>
+<p>函数参数的传递：</p>
+<ol>
+<li>ECMA中所有函数的参数都是按值传递的；<br><code>function setName(obj) {
+obj.name=&quot;sunsian&quot;
+obj=new Object()
+obj.name=&quot;jing&quot;
+}
+var person=new Object()
+setName(person)
+alert(person.name)</code></li>
+</ol>
+<p>两种变量类型检测</p>
+<ol>
+<li>Typeof操作符是检测基本类型的最佳工具；</li>
+<li>如果变量值是nul或者对象，typeof 将返回“object”；</li>
+<li>Instanceof用于检测引用类型，可以检测到具体的，它是什么类型的实例；</li>
+<li>如果变量是给定引用类型的实例，instanceof操作符会返回true;<br><code>alert(person instanceof Object) // 变量person是Object吗？
+alert(colors instanceof Array) // 变量colors是Array吗？
+alert(pattren instanceof RegExp) // 变量pattren是RegExp吗？</code></li>
+</ol>
+<p>参数的传递<br>ECMAScript所有的函数的参数都是按值传递的。<br>函数外部的值赋值给函数内部的参数，与一个变量复制到另一个变量一样。<br>基本类型值的传递和基本类型一样，引用类型的传递和引用类型的复制一样。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function addTen(num) &#123;</div><div class="line">    num +=10;</div><div class="line">    return num;</div><div class="line">&#125;</div><div class="line">var count = 20;</div><div class="line">var result = addTen(count);</div><div class="line">console.log(count); //20没有变化</div><div class="line">console.log(result);// 30</div></pre></td></tr></table></figure></p>
+<p>引用类型也是按值传递<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function setName(obj) &#123;</div><div class="line">    obj.name = &apos;kenny&apos;;</div><div class="line">    obj = new Object();</div><div class="line">    obj.name = &apos;kongyun&apos;;</div><div class="line">&#125;</div><div class="line">var person = new Object();</div><div class="line">setName(person);</div><div class="line">console.log(person.name); // &apos;kenny&apos;</div></pre></td></tr></table></figure></p>
+<p>即使在函数内部修改了参数的值，但原始的引用（person对象，存储在堆上）仍保持不变。<br>具体传递的obj不是指针而是指针引用的对象（副本copy）。<br>实际上，当在函数内部重写obj时，这个变量的引用的就是一个局部对象了，<br>而这个局部对象会在函数执行完毕后立即被销毁。</p>
+<p>类似于这种例子 - -</p>
+<p>var a = [1, 2];<br>var b = a;<br>a = {a:1, b:2};//虽然a改变了，但是b依然没变，值传递，复制了个指针</p>
+<h3 id="扩展：值传递与引用传递"><a href="#扩展：值传递与引用传递" class="headerlink" title="扩展：值传递与引用传递"></a>扩展：值传递与引用传递</h3><p>值传递：call by value<br>引用传递：call by Call by reference<br>值传递和引用传递，属于函数调用时参数的求值策略(Evaluation Strategy)，<br>这是对调用函数时，求值和传值的方式的描述，而非传递的内容的类型（内容指：是值类型还是引用类型，是值还是指针）。<br>值类型/引用类型，是用于区分两种内存分配方式，值类型在调用栈上分配，引用类型在堆上分配。<br>一个描述内存分配方式，一个描述参数求值策略，两者之间无任何依赖或约束关系。</p>
+<h4 id="区别-值传递-引用传递"><a href="#区别-值传递-引用传递" class="headerlink" title="区别    值传递    引用传递"></a>区别    值传递    引用传递</h4><p>根本区别    会创建副本(copy)    不创建副本<br>所以    函数中无法改变原始对象    函数中可以改变原始对象<br>对于值传递，无论是值类型还是引用类型，都会在调用栈上创建一个副本，不同是，对于值类型而言，这个副本就是整个原始值的复制。而对于引用类型而言，由于引用类型的实例在堆中，在栈上只有它的一个引用（一般情况下是指针），其副本也只是这个引用的复制，而不是整个原始对象的复制。</p>
+<p>这便引出了值类型和引用类型（这不是在说值传递）的最大区别：值类型用做参数会被复制，但是很多人误以为这个区别是值类型的特性。其实这是值传递带来的效果，和值类型本身没有关系。只是最终结果是这样。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/03/10/first24/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/03/10/first24/" itemprop="url">jquery性能提升</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-03-10T22:25:17+08:00">
+                2015-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><p>使用最新版本的jQuery<br>jQuery的版本更新很快，你应该总是使用最新的版本。因为新版本会改进性能，还有很多新功能。</p>
+</li>
+<li><p>用对选择器</p>
+</li>
+</ol>
+<p>在jQuery中，你可以用多种选择器，选择同一个网页元素。每种选择器的性能是不一样的，你应该了解它们的性能差异。</p>
+<p>1.最快的选择器：id选择器和元素标签选择器</p>
+<p>举例来说，下面的语句性能最佳：<br><code>$(&#39;#id&#39;)
+$(&#39;form&#39;)
+$(&#39;input&#39;)</code><br>遇到这些选择器的时候，jQuery内部会自动调用浏览器的原生方法（比如getElementById()），所以它们的执行速度快。<br>2.较慢的选择器：class选择器<br>$(‘.className’)的性能，取决于不同的浏览器。<br>Firefox、Safari、Chrome、Opera浏览器，都有原生方法getElementByClassName()，所以速度并不慢。但是，IE5-IE8都没有部署这个方法，所以这个选择器在IE中会相当慢。</p>
+<p>3.最慢的选择器：伪类选择器和属性选择器<br>先来看例子。找出网页中所有的隐藏元素，就要用到伪类选择器：<br>$(‘:hidden’)<br>属性选择器的例子则是：<br>$(‘[attribute=value]’)<br>这两种语句是最慢的，因为浏览器没有针对它们的原生方法。但是，一些浏览器的新版本，增加了querySelector()和querySelectorAll()方法，因此会使这类选择器的性能有大幅提高。</p>
+<ol>
+<li>理解子元素和父元素的关系<br>下面六个选择器，都是从父元素中选择子元素。你知道哪个速度最快，哪个速度最慢吗？<br><code>$(&#39;.child&#39;, $parent)
+$parent.find(&#39;.child&#39;)
+$parent.children(&#39;.child&#39;)
+$(&#39;#parent &gt; .child&#39;)
+$(&#39;#parent .child&#39;)
+$(&#39;.child&#39;, $(&#39;#parent&#39;))</code><br>我们一句句来看。<br>(1) $(‘.child’, $parent)<br>这条语句的意思是，给定一个DOM对象，然后从中选择一个子元素。jQuery会自动把这条语句转成$.parent.find(‘child’)，这会导致一定的性能损失。它比最快的形式慢了5%-10%。</li>
+</ol>
+<p>(2) $parent.find(‘.child’)<br>这条是最快的语句。.find()方法会调用浏览器的原生方法（getElementById，getElementByName，getElementByTagName等等），所以速度较快。</p>
+<p>(3) $parent.children(‘.child’)<br>这条语句在jQuery内部，会使用$.sibling()和javascript的nextSibling()方法，一个个遍历节点。它比最快的形式大约慢50%。</p>
+<p>(4) $(‘#parent &gt; .child’)<br>jQuery内部使用Sizzle引擎，处理各种选择器。Sizzle引擎的选择顺序是从右到左，所以这条语句是先选.child，然后再一个个过滤出父元素#parent，这导致它比最快的形式大约慢70%。</p>
+<p>(5) $(‘#parent .child’)<br>这条语句与上一条是同样的情况。但是，上一条只选择直接的子元素，这一条可以于选择多级子元素，所以它的速度更慢，大概比最快的形式慢了77%。</p>
+<p>(6) $(‘.child’, $(‘#parent’))<br>jQuery内部会将这条语句转成$(‘#parent’).find(‘.child’)，比最快的形式慢了23%。</p>
+<p>所以，最佳选择是$parent.find(‘.child’)。而且，由于$parent往往在前面的操作已经生成，jQuery会进行缓存，所以进一步加快了执行速度。</p>
+<ol>
+<li>不要过度使用jQuery<br>jQuery速度再快，也无法与原生的javascript方法相比。所以有原生方法可以使用的场合，尽量避免使用jQuery。<br>请看下面的例子，为a元素绑定一个处理点击事件的函数：<br><code>$(&#39;a&#39;).click(function(){
+ &lt;strong&gt;alert($(this).attr(&#39;id&#39;));&lt;/strong&gt;
+});</code><br>段代码的意思是，点击a元素后，弹出该元素的id属性。为了获取这个属性，必须连续两次调用jQuery，第一次是$(this)，第二次是attr(‘id’)。</li>
+</ol>
+<p>事实上，这种处理完全不必要。更正确的写法是，直接采用javascript原生方法，调用this.id：<br><code>$(&#39;a&#39;).click(function(){
+    &lt;strong&gt;alert(this.id);&lt;/strong&gt;
+});</code><br>根据测试，this.id的速度比$(this).attr(‘id’)快了20多倍。</p>
+<ol>
+<li><p>做好缓存<br>选中某一个网页元素，是开销很大的步骤。所以，使用选择器的次数应该越少越好，并且尽可能缓存选中的结果，便于以后反复使用。<br><code>jQuery(&#39;#top&#39;).find(&#39;p.classA&#39;);
+jQuery(&#39;#top&#39;).find(&#39;p.classB&#39;);</code><br>更好的写法是：<br><code>&lt;strong&gt;var cached = jQuery(&#39;#top&#39;);&lt;/strong&gt;
+cached.find(&#39;p.classA&#39;);
+cached.find(&#39;p.classB&#39;);</code><br>根据测试，缓存比不缓存，快了2-3倍。</p>
+</li>
+<li><p>使用链式写法<br>jQuery的一大特点，就是允许使用链式写法。<br>$(‘div’).find(‘h3’).eq(2).html(‘Hello’);<br>采用链式写法时，jQuery自动缓存每一步的结果，因此比非链式写法要快。根据测试，链式写法比（不使用缓存的）非链式写法，大约快了25%。</p>
+</li>
+<li><p>事件的委托处理（Event Delegation）<br>javascript的事件模型，采用”冒泡”模式，也就是说，子元素的事件会逐级向上”冒泡”，成为父元素的事件。</p>
+</li>
+</ol>
+<p>利用这一点，可以大大简化事件的绑定。比如，有一个表格（table元素），里面有100个格子（td元素），现在要求在每个格子上面绑定一个点击事件（click），请问是否需要将下面的命令执行100次？<br>$(“td”).bind(“click”, function(){<br>$(this).toggleClass(“click”);<br>});<br>回答是不需要，我们只要把这个事件绑定在table元素上面就可以了，因为td元素发生点击事件之后，这个事件会”冒泡”到父元素table上面，从而被监听到。<br>因此，这个事件只需要在父元素绑定1次即可，而不需要在子元素上绑定100次，从而大大提高性能。这就叫事件的”委托处理”，也就是子元素”委托”父元素处理这个事件。</p>
+<p>具体的写法有两种。第一种是采用.delegate()方法：<br>$(“table”).delegate(“td”, “click”, function(){<br>    $(this).toggleClass(“click”);<br>});<br>$(“table”).each(function(){<br>    $(“td”, this).live(“click”, function(){<br>        $(this).toggleClass(“click”);<br>    });<br>});<br>这两种写法基本等价。唯一的区别在于，.delegate()是当事件冒泡到指定的父元素时触发，.live()则是当事件冒泡到文档的根元素后触 发，因此.delegate()比.live()稍快一点。此外，这两种方法相比传统的.bind()方法还有一个好处，那就是对动态插入的元素也有 效，.bind()只对已经存在的DOM元素有效，对动态插入的元素无效。</p>
+<p>根据测试，委托处理比不委托处理，快了几十倍。在委托处理的情况<br>下，.delegate()又比.live()大约快26%。</p>
+<ol>
+<li>少改动DOM结构<br>（1）改动DOM结构开销很大，因此不要频繁使用.append()、.insertBefore()和.insetAfter()这样的方法。<br>如果要插入多个元素，就先把它们合并，然后再一次性插入。根据测试，合并插入比不合并插入，快了将近10倍。<br>（2）如果你要对一个DOM元素进行大量处理，应该先用.detach()方法，把这个元素从DOM中取出来，处理完毕以后，再重新插回文档。根据测试，使用.detach()方法比不使用时，快了60%。<br>（3）如果你要在DOM元素上储存数据，不要写成下面这样：<br>var elem = $(‘#elem’);<br><strong>elem.data(key,value);</strong></li>
+</ol>
+<p>而要写成<br>var elem = $(‘#elem’);<br><strong>$.data(elem,key,value);</strong></p>
+<p>根据测试， 后一种写法要比前一种写法，快了将近10倍。因为elem.data()方法是定义在jQuery函数的prototype对象上面的， 而$.data()方法是定义jQuery函数上面的，调用的时候不从复杂的jQuery对象上调用，所以速度快得多。（此处可以参阅下面第10点。）</p>
+<ol>
+<li>正确处理循环</li>
+</ol>
+<p>循环总是一种比较耗时的操作，如果可以使用复杂的选择器直接选中元素，就不要使用循环，去一个个辨认元素。<br>javascript原生循环方法for和while，要比jQuery的.each()方法快，应该优先使用原生方法。</p>
+<ol>
+<li>尽量少生成jQuery对象<br>每当你使用一次选择器（比如$(‘#id’)），就会生成一个jQuery对象。jQuery对象是一个很庞大的对象，带有很多属性和方法，会占用不少资源。所以，尽量少生成jQuery对象。</li>
+</ol>
+<p>举例来说，许多jQuery方法都有两个版本，一个是供jQuery对象使用的版本，另一个是供jQuery函数使用的版本。下面两个例子，都是取出一个元素的文本，使用的都是text()方法。你既可以使用针对jQuery对象的版本：<br>var $text = $(“#text”);<br><strong>var $ts = $text.text();</strong></p>
+<p>也可以使用针对jQuery函数的版本：<br>var $text = $(“#text”);<br><strong>var $ts = $.text($text);</strong></p>
+<p>由于后一种针对jQuery函数的版本不通过jQuery对象操作，所以相对开销较小，速度比较快。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/02/15/first23/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/02/15/first23/" itemprop="url">移动端a标签给高度和行高一致不居中</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-02-15T22:25:17+08:00">
+                2015-02-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>目测一下，你这个应该是在UC浏览器，chrome浏览器没有这种情况，导致这个bug的原因是：UC为了优化移动用户体验将字体大小会放大到16px，我估计你的html的font-size应该是100px，那么你最终的font-size是12px，在UC会变成16px，所以就导致了你的bug了。<br>解决方法是，在head里面增加一个meta标签如下：<br>`</p>
+<p><meta name="wap-font-scale" content="no"><br>`<br>但是写了这个方法并没有解决<br>只能a不给高度用padding来撑</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/12/01/first21/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/12/01/first21/" itemprop="url">a标签添加点击事件导致事件失效</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-12-01T22:25:17+08:00">
+                2014-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>有时候给a标签添加点击事件会引起页面刷新导致点击事件看不到效果,但是会看到一瞬间的闪现，打断点调试可以观察到，点击事件之后，页面又刷新了<br><img src="./images/resolve2.png" alt="resolve2"><br>原因：a标签的href会导致默认的页面跳转事件，如果为空值，就会刷新页面，所以就会出现上述的问题。可以改为href=’#’或者href=”JavaScript:;”等。<br>或者使用e.preventDefault();解决。<br>解决方法给函数内部添加return  false；</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/11/15/first20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/11/15/first20/" itemprop="url">ie6和ie7上z-index不起作用的问题解决</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-11-15T22:25:17+08:00">
+                2014-11-15
               </time>
             
 
@@ -368,7 +927,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/07/01/first19/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/10/01/first19/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -387,7 +946,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/07/01/first19/" itemprop="url">前端面试总结之JavaScript</a></h1>
+                <a class="post-title-link" href="/2014/10/01/first19/" itemprop="url">前端面试总结之JavaScript</a></h1>
         
 
         <div class="post-meta">
@@ -397,10 +956,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-07-01T22:25:17+08:00">
-                2014-07-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-10-01T22:25:17+08:00">
+                2014-10-01
               </time>
             
 
@@ -692,7 +1251,7 @@ XHR Multipart Streaming
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/06/26/first18/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/09/26/first18/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -711,7 +1270,7 @@ XHR Multipart Streaming
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/06/26/first18/" itemprop="url">前端面试总结之CSS</a></h1>
+                <a class="post-title-link" href="/2014/09/26/first18/" itemprop="url">前端面试总结之CSS</a></h1>
         
 
         <div class="post-meta">
@@ -721,10 +1280,10 @@ XHR Multipart Streaming
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-06-26T22:25:17+08:00">
-                2014-06-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-09-26T22:25:17+08:00">
+                2014-09-26
               </time>
             
 
@@ -909,7 +1468,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/06/25/first17/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/09/05/first17/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -928,7 +1487,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/06/25/first17/" itemprop="url">前端面试总结之HTML</a></h1>
+                <a class="post-title-link" href="/2014/09/05/first17/" itemprop="url">前端面试总结之HTML</a></h1>
         
 
         <div class="post-meta">
@@ -938,10 +1497,10 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-06-25T22:25:17+08:00">
-                2014-06-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-09-05T22:25:17+08:00">
+                2014-09-05
               </time>
             
 
@@ -1072,7 +1631,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/06/20/first16/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/08/20/first16/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -1091,7 +1650,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/06/20/first16/" itemprop="url">移动端rem初始化</a></h1>
+                <a class="post-title-link" href="/2014/08/20/first16/" itemprop="url">移动端rem初始化</a></h1>
         
 
         <div class="post-meta">
@@ -1101,10 +1660,10 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-06-20T22:25:17+08:00">
-                2014-06-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-08-20T22:25:17+08:00">
+                2014-08-20
               </time>
             
 
@@ -1183,7 +1742,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/04/25/first15/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/07/25/first15/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -1202,7 +1761,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/04/25/first15/" itemprop="url">js获取索引的不同</a></h1>
+                <a class="post-title-link" href="/2014/07/25/first15/" itemprop="url">js获取索引的不同</a></h1>
         
 
         <div class="post-meta">
@@ -1212,10 +1771,10 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-04-25T22:25:17+08:00">
-                2014-04-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-07-25T22:25:17+08:00">
+                2014-07-25
               </time>
             
 
@@ -1252,503 +1811,6 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
         
           
             <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">html代码</div><div class="line">    &lt;ul class=&quot;list&quot;&gt;</div><div class="line">        &lt;li class=&quot;btn1&quot;&gt;btn1&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn2&quot;&gt;btn2&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn3&quot;&gt;btn3&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    &lt;ul class=&quot;list&quot;&gt;</div><div class="line">        &lt;li class=&quot;btn1&quot;&gt;btn1&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn2&quot;&gt;btn2&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn3&quot;&gt;btn3&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    &lt;ul class=&quot;list&quot;&gt;</div><div class="line">        &lt;li class=&quot;btn1&quot;&gt;btn1&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn2&quot;&gt;btn2&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn3&quot;&gt;btn3&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    js代码</div><div class="line">    &lt;script&gt;</div><div class="line">        $(function()&#123;</div><div class="line">            $(&apos;.list .btn1&apos;).click(function () &#123;</div><div class="line">                // 表示返回点击的btn1在其父级元素中的索引位置</div><div class="line">                $(this).index()</div><div class="line">                // 在所有的btn1元素中返回当前你点击的btn1的索引位置</div><div class="line">                $(&apos;.list .btn1&apos;).index(this)</div><div class="line">            &#125;)</div><div class="line">        &#125;)</div><div class="line">    &lt;/script&gt;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/04/19/first13/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/04/19/first13/" itemprop="url">email中html页面需要注意的几点</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-04-19T22:25:17+08:00">
-                2014-04-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">1、全局规则之一，不要写&lt;style&gt;标签、不要写class，所有CSS都用style属性，什么元素需要什么样式就用style写内联的CSS。</div><div class="line"></div><div class="line">2、全局规则之二，少用图片，邮箱不会过滤你的img标签，但是系统往往会默认不载入陌生来信的图片，如果用了很多图片的邮件，在图片没有载入的情况下，丑陋无比甚至看不清内容，没耐心的用户直接就删除了。所有图片必须存在宽高和alt标签，且alt内容不宜过多不能出现特殊字符，页面所有图片地址必须为绝对地址，图片链接禁止使用热区，因为map标记在outlook中无法进行正常的点击，不能打开该链接指向的网址。</div><div class="line"></div><div class="line">3、不要在style里面写float、position这些style，因为会被过滤。那么如何实现左右布局或者更复杂的布局呢？使用table制作页面，且必须设置宽度，而div格式由于有些属性不被邮件客户端完全支持，所以建议避免作用。</div><div class="line"></div><div class="line">4、style内容里面background可以设置color，但是img会被过滤，就是说不能通过CSS来设置背景图片了。但是有一个很有意思的元素 属性，也叫background，里面可以定义一个图片路径，这是个不错的替代方案，虽然这样功能有限，比如无法定位背景图片了，有总比没有好。例如要给 一个单元格加一个背景，必须这样写：</div><div class="line">`&lt;td background=”http://image1.koubei.com/images/common/logo_koubei.gif”&gt;&lt;/td&gt;`</div><div class="line"></div><div class="line">5、div模式的邮箱不支持flash，iframe模式的有待验证。</div><div class="line"></div><div class="line">最后提一句，sohu的邮箱很怪异，会在每个文本段后面加一个空格，导致原本正常的排版一行放不下而换行，从而使某些布局错乱。所以，如果你要兼容sohu邮箱的话，遇到一些紧凑的布局就要格外小心了，尽量减少文本段的数量，留足宽度。</div><div class="line"></div><div class="line">6、页面显示宽度400px-800px，高度一般控制在一屏以内。</div><div class="line"></div><div class="line">7、页面不向出现js代码及flash内容（如需要动画全用gif）</div><div class="line"></div><div class="line">8、页面的内容最好以文字的形式来呈现。</div><div class="line"> </div><div class="line">9、DTD声明中&lt;html xmlns=http://www.w3.org/1999/xhtml&gt;请改为&lt;html&gt;</div><div class="line"></div><div class="line">10、链接的打开方式统一为：_blank</div><div class="line"></div><div class="line">11、mailto的正确写法：例：&lt;mailto:xxx@163.com&gt; xxx@163.com&lt;/a&gt;</div><div class="line"></div><div class="line">12、代码干净严谨，删除不必要的空格及回车，总代码量&lt;50K</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/04/12/first12/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/04/12/first12/" itemprop="url">IE6常见bug总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-04-12T22:25:17+08:00">
-                2014-04-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1、IE6怪异解析之padding与border算入宽高<br>原因：未加文档声明造成非盒模型解析<br>解决方法：加入文档声明&lt;!doctype html&gt; </p>
-<p>2、IE6在块元素、左右浮动、设定marin时造成margin双倍（双边距）<br>解决方法：display:inline </p>
-<p>3、以下三种其实是同一种bug，其实也不算是个bug，举个例子：父标签高度20，子标签11，垂直居中，20-11=9，9要分给文字的上面与下面，怎么分？IE6就会与其它的不同，所以，尽量避免。<br>1）字体大小为奇数之边框高度少1px<br>解决方法：字体大小设置为偶数或line-height为偶数<br>2）line-height，文本垂直居中差1px<br>解决方法：padding-top代替line-height居中，或line-height加1或减1<br>3）与父标签的宽度的奇偶不同的居中造成1px的偏离<br>解决方法：如果父标签是奇数宽度，则子标签也用奇数宽度;如果是父标签偶数宽度，则子标签也用偶数宽度 </p>
-<p>4、内部盒模型超出父级时，父级被撑大<br>解决方法：父标签使用overflow:hidden </p>
-<p>5、line-height默认行高bug<br>解决方法：line-height设值 </p>
-<p>6、行标签之间会有一小段空白<br>解决方法：float或结构并排(可读性差，不建议) </p>
-<p>7、标签高度无法小于19px<br>解决方法：overflow: hidden; </p>
-<p>8、左浮元素margin-bottom失效<br>解决方法：显示设置高度 or 父标签设置_padding-bottom代替子标签的margin-bottom or 再放个标签让父标签浮动，子标签<br>margin- bottom，即(margin-bottom与float不同时作用于一个标签) </p>
-<p>9、img于块元素中，底边多出空白<br>解决方法：父级设置overflow: hidden; 或 img { display: block; } 或 _margin: -5px; </p>
-<p>10、li之间会有间距<br>解决方法：float: left; </p>
-<p>11、块元素中有文字及右浮动的行元素，行元素换行<br>解决方法：将行元素置于块元素内的文字前 </p>
-<p>12、position下的left，bottom错位<br>解决方法：为父级(relative层)设置宽高或添加*zoom:1 </p>
-<p>13、子级中有设置position，则父级overflow失效<br>解决方法：为父级设置position:relative</p>
-<p>以下是补充：上面要先看</p>
-<p>1、终极方法：条件注释<br><!--[if lte IE 6]> 这段文字仅显示在 IE6及IE6以下版本。 <![endif]--><br><!--[if gte IE 6]> 这段文字仅显示在 IE6及IE6以上版本。 <![endif]--><br><!--[if gt IE 6]> 这段文字仅显示在 IE6以上版本（不包含IE6）。 <![endif]--><br><!--[if IE 5.5]> 这段文字仅显示在 IE5.5。 <![endif]--><br><!--在 IE6及IE6以下版本中加载css--><br><!--[if lte IE 6]> <link type="text/css" rel="stylesheet" href="css/ie6.css" mce_href="css/ie6.css" /><![endif]--><br>缺点是在IE浏览器下可能会增加额外的HTTP请求数。 </p>
-<p>2、CSS选择器区分<br>IE6不支持子选择器；先针对IE6使用常规申明CSS选择器，然后再用子选择器针对IE7+及其他浏览器。 </p>
-<p>复制代码<br>代码如下:</p>
-<p>/<em> IE6 专用 </em>/<br>.content {color:red;}<br>/<em> 其他浏览器 </em>/<br>div&gt;p .content {color:blue;} –&gt;</p>
-<p>3、PNG半透明图片的问题<br>虽然可以通过JS等方式解决，但依然存在载入速度等问题，所以，这个在设计上能避免还是尽量避免为好。以达到网站最大优化。<br>4、IE6下的圆角<br>IE6不支持CSS3的圆角属性，性价比最高的解决方法就是用图片圆角来替代，或者放弃IE6的圆角。 </p>
-<p>5、IE6背景闪烁<br>如果你给链接、按钮用CSS sprites作为背景，你可能会发现在IE6下会有背景图闪烁的现象。造成这个的原因是由于IE6没有将背景图缓存，每次触发hover的时候都会重新加载，可以用JavaScript设置IE6缓存这些图片： </p>
-<p>复制代码<br>代码如下:</p>
-<p>document.execCommand(“BackgroundImageCache”,false,true);</p>
-<p>6、最小高度<br>IE6 不支持min-height属性，但它却认为height就是最小高度。解决方法：使用ie6不支持但其余浏览器支持的属性!important。 </p>
-<p>复制代码<br>代码如下:</p>
-<p>#container {min-height:200px; height:auto !important; height:200px;}</p>
-<p>7、最大高度 </p>
-<p>复制代码<br>代码如下:</p>
-<p>//直接使用ID来改变元素的最大高度<br>var container = document.getElementById(‘container’);<br>container.style.height = (container.scrollHeight &gt; 199) ? “200px” : “auto”;<br>//写成函数来运行<br>function setMaxHeight(elementId, height){<br>var container = document.getElementById(elementId);<br>container.style.height = (container.scrollHeight &gt; (height - 1)) ? height + “px” : “auto”;<br>}<br>//函数示例<br>setMaxHeight(‘container1’, 200);<br>setMaxHeight(‘container2’, 500);</p>
-<p>8、100% 高度<br>在IE6下，如果要给元素定义100%高度，必须要明确定义它的父级元素的高度，如果你需要给元素定义满屏的高度，就得先给html和body定义height:100%;。 </p>
-<p>9、最小宽度<br>同max-height和max-width一样，IE6也不支持min-width。 </p>
-<p>复制代码<br>代码如下:</p>
-<p>//直接使用ID来改变元素的最小宽度<br>var container = document.getElementById(‘container’);<br>container.style.width = (container.clientWidth &lt; width) ? “500px” : “auto”;<br>//写成函数来运行<br>function setMinWidth(elementId, width){<br>var container = document.getElementById(elementId);<br>container.style.width = (container.clientWidth &lt; width) ? width + “px” : “auto”;<br>}<br>//函数示例<br>setMinWidth(‘container1’, 200);<br>setMinWidth(‘container2’, 500);</p>
-<p>10、最大宽度 </p>
-<p>复制代码<br>代码如下:</p>
-<p>//直接使用ID来改变元素的最大宽度<br>var container = document.getElementById(elementId);<br>container.style.width = (container.clientWidth &gt; (width - 1)) ? width + “px” : “auto”;<br>//写成函数来运行<br>function setMaxWidth(elementId, width){<br>var container = document.getElementById(elementId);<br>container.style.width = (container.clientWidth &gt; (width - 1)) ? width + “px” : “auto”;<br>}<br>//函数示例<br>setMaxWidth(‘container1’, 200);<br>setMaxWidth(‘container2’, 500);</p>
-<p>11、双边距Bug<br>当元素浮动时，IE6会错误的把浮动方向的margin值双倍计算。个人觉得较好解决方法是避免float和margin同时使用。 </p>
-<p>12、清除浮动<br>如果你想用div(或其他容器)包裹一个浮动的元素，你会发现必须给div(容器)定义明确的height、width、overflow之中一个属性（除了auto值）才能将浮动元素严实地包裹。 </p>
-<p>复制代码<br>代码如下:</p>
-<p>#container {border:1px solid #333; overflow:auto; height:100%;} </p>
-<p>#floated1 {float:left; height:300px; width:200px; background:#00F;} </p>
-<p>#floated2 {float:right; height:400px; width:200px; background:#F0F;}<br>更多：<a href="http://www.twinsenliang.net/skill/20090413.html" target="_blank" rel="external">http://www.twinsenliang.net/skill/20090413.html</a></p>
-<p>13、浮动层错位<br>当内容超出外包容器定义的宽度时，在IE6中容器会忽视定义的width值，宽度会错误地随内容宽度增长而增长。<br>浮动层错位问题在IE6下没有真正让人满意的解决方法，虽然可以使用overflow:hidden;或overflow:scroll;来修正， 但hidden容易导致其他一些问题，scroll会破坏设计；JavaScript也没法很好地解决这个问题。所以建议是一定要在布局上避免这个问题发 生，使用一个固定的布局或者控制好内容的宽度（给内层加width）。 </p>
-<p>14、躲猫猫bug<br>在IE6和IE7下，躲猫猫bug是一个非常恼人的问题。一个撑破了容器的浮动元素，如果在他之后有不浮动的内容，并且有一些定义了:hover的链接，当鼠标移到那些链接上时，在IE6下就会触发躲猫猫。<br>解决方法很简单：<br>1.在（那个未浮动的）内容之后添加一个<span style="clear: both;"> </span><br>2.触发包含了这些链接的容器的hasLayout，一个简单的方法就是给其定义height:1%; </p>
-<p>15、绝对定位元素的1像素间距bug<br>IE6下的这个错误是由于进位处理误差造成（IE7已修复），当绝对定位元素的父元素高或宽为奇数时，bottom和right会产生错误。唯一的解决办法就是给父元素定义明确的高宽值，但对于液态布局没有完美的解决方法。 </p>
-<p>16、3像素间距bug<br>在IE6中，当文本(或无浮动元素)跟在一个浮动的元素之后，文本和这个浮动元素之间会多出3像素的间隔。<br>给浮动层添加 display:inline 和 -3px 负值margin<br>给中间的内容层定义 margin-right 以纠正-3px </p>
-<p>17、IE下z-index的bug<br>在IE浏览器中，定位元素的z-index层级是相对于各自的父级容器，所以会导致z-index出现错误的表现。解决方法是给其父级元素定义z-index，有些情况下还需要定义position:relative。 </p>
-<p>18、Overflow Bug<br>在IE6/7中，overflow无法正确的隐藏有相对定位position:relative;的子元素。解决方法就是给外包容器.wrap加上position:relative;。 </p>
-<p>19、横向列表宽度bug<br>如果你使用float:left;把<li>横向摆列，并且</li><li>内包含的<a>（或其他）触发了 hasLayout，在IE6下就会有错误的表现。解决方法很简单，只需要给<a>定义同样的float:left;即可。 </a></a></li></p>
-<p>20、列表阶梯bug<br>列表阶梯bug通常会在给<li>的子元素<a>使用float:left;时触发，我们本意是要做一个横向的列表(通常 是导航栏)，但IE却可能呈现出垂直的或者阶梯状。解决办法就是给<li>定义float:left;而非子元素<a>，或者 给<li>定义display:inline;也可以解决。 </li></a></li></a></li></p>
-<p>21、垂直列表间隙bug<br>当我们使用<li> 包含一个块级子元素时，IE6(IE7也有可能)会错误地给每条列表元素（</li><li>）之间添加空隙。<br>解决方法：把<a>flaot并且清除float来解决这个问题；另外一个办法就是触发<a>的hasLayout（如定 义高宽、使用zoom:1;）；也可以给<li> 定义display:inline;来解决此问题；另外还有一个极有趣的方法，给包含的文本末尾添加一个空格。 </li></a></a></li></p>
-<p>22、IE6中的:hover<br>在IE6中，除了(需要有href属性)才能触发:hover行为，这妨碍了我们实现许多鼠标触碰效果，但还是有一些法子是可以解决它的。最好是不要用:hover来实现重要的功能，仅仅只用它来强化效果。 </p>
-<p>23、IE6调整窗口大小的 Bug<br>当把body居中放置，改变IE浏览器大小的时候，任何在body里面的相对定位元素都会固定不动了。解决办法：给body定义position:relative;就行了。 </p>
-<p>24、文本重复Bug<br>在IE6中，一些隐藏的元素（如注释、display:none;的元素）被包含在一个浮动元素里，就有可能引发文本重复bug。解决办法：给浮动元素添加display:inline;。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/20/first11/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/03/20/first11/" itemprop="url">tab栏写法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-20T22:25:17+08:00">
-                2014-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">Html代码</div><div class="line">&lt;body&gt;</div><div class="line">     &lt;ul id=&quot;menu&quot;&gt;</div><div class="line">         &lt;li class=&quot;tabFocus&quot;&gt;家居&lt;/li&gt;</div><div class="line">         &lt;li&gt;电器&lt;/li&gt;</div><div class="line">         &lt;li&gt;二手&lt;/li&gt;</div><div class="line">     &lt;/ul&gt;</div><div class="line">     &lt;ul id=&quot;content&quot;&gt;</div><div class="line">         &lt;li class=&quot;conFocus&quot;&gt;我是家居的内容&lt;/li&gt;</div><div class="line">         &lt;li&gt;欢迎您来到电器城&lt;/li&gt;</div><div class="line">         &lt;li&gt;二手市场，产品丰富多彩&lt;/li&gt;</div><div class="line">     &lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">jquery代码</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">        $(function() &#123;</div><div class="line">            $(&quot;#menu li&quot;).each(function(index) &#123; //带参数遍历各个选项卡</div><div class="line">                $(this).click(function() &#123; //注册每个选卡的单击事件</div><div class="line">                    $(&quot;#menu li.tabFocus&quot;).removeClass(&quot;tabFocus&quot;); //移除已选中的样式</div><div class="line">                    $(this).addClass(&quot;tabFocus&quot;); //增加当前选中项的样式</div><div class="line">                    //显示选项卡对应的内容并隐藏未被选中的内容</div><div class="line">                    $(&quot;#content li:eq(&quot; + index + &quot;)&quot;).show()</div><div class="line">                    .siblings().hide();//#menu与#content在html层没有嵌套关联，但因为其ul序列相同，用index值可以巧妙的将两者关联。</div><div class="line">                &#125;);</div><div class="line">            &#125;);</div><div class="line">        &#125;)</div><div class="line">    &lt;/script&gt;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/16/first10/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/03/16/first10/" itemprop="url">去除html标签，获取文本</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-16T22:25:17+08:00">
-                2014-03-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    function delHtmlTag(str)&#123;</div><div class="line">    　　return str.replace(/&lt;[^&gt;]+&gt;/g,&quot;&quot;);//去掉所有的html标记</div><div class="line">    &#125;</div><div class="line">　　var str = &quot;&lt;div class=&apos;questions&apos;&gt;&lt;ul&gt;</div><div class="line"></div><div class="line">　　　　　　　　&lt;li&gt;&lt;a href=&apos;qusDetail.html&apos;&gt;问题详细页&lt;/a&gt;&lt;/li&gt;</div><div class="line"></div><div class="line">　　　　　　　　&lt;li&gt;&lt;a href=&apos;qusDetail.html&apos;&gt;问题详细页&lt;/a&gt;&lt;/li&gt;</div><div class="line"></div><div class="line">　　　　　　　　&lt;li&gt;&lt;a href=&apos;qusDetail.html&apos;&gt;问题详细页&lt;/a&gt;&lt;/li&gt;　　</div><div class="line"></div><div class="line">　　　　　　&lt;/ul&gt;&lt;/div&gt;&quot;;</div><div class="line">    str = delHtmlTag(str);</div><div class="line">    alert(str);</div><div class="line"></div><div class="line">弹出的str就只是文本内容没有标签</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
           
         
       
@@ -1832,8 +1894,8 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">21</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1846,7 +1908,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               
             </div>
           
@@ -1896,7 +1958,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
