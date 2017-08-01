@@ -93,17 +93,20 @@
 
 
 
-<meta name="description" content="视图窗口，移动端特属的标签。&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no&amp;quot; /&amp;gt;是否启动webapp功能，会删除默认的苹果工具栏和菜单栏。&amp;lt;meta name">
+<meta name="description" content="遇到的问题如图示解决方法给父级元素添加position:relative;z-index 给最上面的z-index值越大，效果如图示。">
 <meta name="keywords" content="总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="meta标签">
-<meta property="og:url" content="https://sunsian.github.io/2014/03/06/first6/index.html">
+<meta property="og:title" content="ie6和ie7上z-index不起作用的问题解决">
+<meta property="og:url" content="https://sunsian.github.io/2014/08/15/first20/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="视图窗口，移动端特属的标签。&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no&amp;quot; /&amp;gt;是否启动webapp功能，会删除默认的苹果工具栏和菜单栏。&amp;lt;meta name">
-<meta property="og:updated_time" content="2017-07-31T02:09:12.473Z">
+<meta property="og:description" content="遇到的问题如图示解决方法给父级元素添加position:relative;z-index 给最上面的z-index值越大，效果如图示。">
+<meta property="og:image" content="https://sunsian.github.io/2014/08/15/first20/images/bug1.png">
+<meta property="og:image" content="https://sunsian.github.io/2014/08/15/first20/images/resolve1.png">
+<meta property="og:updated_time" content="2017-08-01T13:57:58.287Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="meta标签">
-<meta name="twitter:description" content="视图窗口，移动端特属的标签。&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no&amp;quot; /&amp;gt;是否启动webapp功能，会删除默认的苹果工具栏和菜单栏。&amp;lt;meta name">
+<meta name="twitter:title" content="ie6和ie7上z-index不起作用的问题解决">
+<meta name="twitter:description" content="遇到的问题如图示解决方法给父级元素添加position:relative;z-index 给最上面的z-index值越大，效果如图示。">
+<meta name="twitter:image" content="https://sunsian.github.io/2014/08/15/first20/images/bug1.png">
 
 
 
@@ -131,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://sunsian.github.io/2014/03/06/first6/"/>
+  <link rel="canonical" href="https://sunsian.github.io/2014/08/15/first20/"/>
 
 
 
 
 
-  <title>meta标签 | 我的博客</title>
+  <title>ie6和ie7上z-index不起作用的问题解决 | 我的博客</title>
   
 
 
@@ -256,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/06/first6/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/08/15/first20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -273,7 +276,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">meta标签</h1>
+          <h1 class="post-title" itemprop="name headline">ie6和ie7上z-index不起作用的问题解决</h1>
         
 
         <div class="post-meta">
@@ -285,8 +288,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-06T22:25:17+08:00">
-                2014-03-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-08-15T22:25:17+08:00">
+                2014-08-15
               </time>
             
 
@@ -320,7 +323,7 @@
       
 
       
-        <p>视图窗口，移动端特属的标签。<br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no&quot; /&gt;</code><br>是否启动webapp功能，会删除默认的苹果工具栏和菜单栏。<br><code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt;</code><br>这个主要是根据实际的页面设计的主体色为搭配来进行设置。<br><code>&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot; /&gt;</code><br>忽略页面中的数字识别为电话号码,email识别<br><code>&lt;meta name=&quot;format-detection&quot;content=&quot;telephone=no, email=no&quot; /&gt;</code><br>启用360浏览器的极速模式(webkit)<br><code>&lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;/&gt;</code><br>避免IE使用兼容模式<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;/&gt;</code><br>针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓<br><code>&lt;meta name=&quot;HandheldFriendly&quot; content=&quot;true&quot;/&gt;</code><br>微软的老式浏览器<br><code>&lt;meta name=&quot;MobileOptimized&quot; content=&quot;320&quot;/&gt;</code><br>uc强制竖屏<br><code>&lt;meta name=&quot;screen-orientation&quot; content=&quot;portrait&quot;/&gt;</code><br>QQ强制竖屏<br><code>&lt;meta name=&quot;x5-orientation&quot; content=&quot;portrait&quot;/&gt;</code><br>UC强制全屏<br><code>&lt;meta name=&quot;full-screen&quot; content=&quot;yes&quot;/&gt;</code><br>QQ强制全屏<br><code>&lt;meta name=&quot;x5-fullscreen&quot; content=&quot;true&quot;/&gt;</code><br>UC应用模式<br><code>&lt;meta name=&quot;browsermode&quot; content=&quot;application&quot;/&gt;</code><br>QQ应用模式<br><code>&lt;meta name=&quot;x5-page-mode&quot; content=&quot;app&quot;/&gt;</code><br>windows phone 点击无高光<br><code>&lt;meta name=&quot;msapplication-tap-highlight&quot; content=&quot;no&quot;/&gt;</code></p>
+        <p>遇到的问题如图示<br><img src="./images/bug1.png" alt="bug1"><br>解决方法给父级元素添加position:relative;z-index 给最上面的z-index值越大，效果如图示。<br><img src="./images/resolve1.png" alt="resolve1"></p>
 
       
     </div>
@@ -363,8 +366,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/02/28/first4/" rel="next" title="常用的正则表达式">
-                <i class="fa fa-chevron-left"></i> 常用的正则表达式
+              <a href="/2014/07/01/first19/" rel="next" title="前端面试总结之JavaScript">
+                <i class="fa fa-chevron-left"></i> 前端面试总结之JavaScript
               </a>
             
           </div>
@@ -372,10 +375,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2014/03/08/first7/" rel="prev" title="url传参">
-                url传参 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
