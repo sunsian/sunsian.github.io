@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="总结," />
 
 
 
@@ -93,16 +93,17 @@
 
 
 
-<meta name="description" content="&amp;quot;屏幕分辨率为：&amp;quot;+screen.width+&amp;quot;*&amp;quot;+screen.height  &amp;quot;屏幕可用大小：&amp;quot;+screen.availWidth+&amp;quot;*&amp;quot;+screen.availHeight  &amp;quot;网页可见区域宽：&amp;quot;+document.body.clientWidth  &amp;quot;网页可见区域高：&amp;quo">
+<meta name="description" content="常见的报错error    ReferenceError：作用域判别错误，通过作用域链的搜寻找不到相应的变量。 TypeError：可以通过作用域搜索到变量，但是对变量的操作不合法。  SyntaxError：语法错误">
+<meta name="keywords" content="总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js获取屏幕大小">
-<meta property="og:url" content="https://sunsian.github.io/2014/02/26/first2/index.html">
+<meta property="og:title" content="js常见报错信息">
+<meta property="og:url" content="https://sunsian.github.io/2015/05/05/first26/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="&amp;quot;屏幕分辨率为：&amp;quot;+screen.width+&amp;quot;*&amp;quot;+screen.height  &amp;quot;屏幕可用大小：&amp;quot;+screen.availWidth+&amp;quot;*&amp;quot;+screen.availHeight  &amp;quot;网页可见区域宽：&amp;quot;+document.body.clientWidth  &amp;quot;网页可见区域高：&amp;quo">
-<meta property="og:updated_time" content="2017-07-31T02:34:25.986Z">
+<meta property="og:description" content="常见的报错error    ReferenceError：作用域判别错误，通过作用域链的搜寻找不到相应的变量。 TypeError：可以通过作用域搜索到变量，但是对变量的操作不合法。  SyntaxError：语法错误">
+<meta property="og:updated_time" content="2017-08-02T14:53:44.391Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js获取屏幕大小">
-<meta name="twitter:description" content="&amp;quot;屏幕分辨率为：&amp;quot;+screen.width+&amp;quot;*&amp;quot;+screen.height  &amp;quot;屏幕可用大小：&amp;quot;+screen.availWidth+&amp;quot;*&amp;quot;+screen.availHeight  &amp;quot;网页可见区域宽：&amp;quot;+document.body.clientWidth  &amp;quot;网页可见区域高：&amp;quo">
+<meta name="twitter:title" content="js常见报错信息">
+<meta name="twitter:description" content="常见的报错error    ReferenceError：作用域判别错误，通过作用域链的搜寻找不到相应的变量。 TypeError：可以通过作用域搜索到变量，但是对变量的操作不合法。  SyntaxError：语法错误">
 
 
 
@@ -130,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://sunsian.github.io/2014/02/26/first2/"/>
+  <link rel="canonical" href="https://sunsian.github.io/2015/05/05/first26/"/>
 
 
 
 
 
-  <title>js获取屏幕大小 | 我的博客</title>
+  <title>js常见报错信息 | 我的博客</title>
   
 
 
@@ -255,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/02/26/first2/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/05/05/first26/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -272,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js获取屏幕大小</h1>
+          <h1 class="post-title" itemprop="name headline">js常见报错信息</h1>
         
 
         <div class="post-meta">
@@ -284,8 +285,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-02-26T21:48:28+08:00">
-                2014-02-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-05-05T22:25:17+08:00">
+                2015-05-05
               </time>
             
 
@@ -319,37 +320,10 @@
       
 
       
-        <pre><code>&quot;屏幕分辨率为：&quot;+screen.width+&quot;*&quot;+screen.height
+        <p>常见的报错error<br>    ReferenceError：作用域判别错误，通过作用域链的搜寻找不到相应的变量。</p>
+<pre><code>TypeError：可以通过作用域搜索到变量，但是对变量的操作不合法。
 
-&quot;屏幕可用大小：&quot;+screen.availWidth+&quot;*&quot;+screen.availHeight
-
-&quot;网页可见区域宽：&quot;+document.body.clientWidth
-
-&quot;网页可见区域高：&quot;+document.body.clientHeight
-
-&quot;网页可见区域宽(包括边线的宽)：&quot;+document.body.offsetWidth 
-
-&quot;网页可见区域高(包括边线的宽)：&quot;+document.body.offsetHeight 
-
-&quot;网页正文全文宽：&quot;+document.body.scrollWidth
-
-&quot;网页正文全文高：&quot;+document.body.scrollHeight
-
-&quot;网页被卷去的高：&quot;+document.body.scrollTop
-
-&quot;网页被卷去的左：&quot;+document.body.scrollLeft
-
-&quot;网页正文部分上：&quot;+window.screenTop
-
-&quot;网页正文部分左：&quot;+window.screenLeft
-
-&quot;屏幕分辨率的高：&quot;+window.screen.height
-
-&quot;屏幕分辨率的宽：&quot;+window.screen.width
-
-&quot;屏幕可用工作区高度：&quot;+window.screen.availHeight
-
-&quot;屏幕可用工作区宽度：&quot;+window.screen.availWidth
+SyntaxError：语法错误
 </code></pre>
       
     </div>
@@ -377,6 +351,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+        </div>
+      
 
       
       
@@ -386,8 +366,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/02/10/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2015/04/05/first25/" rel="next" title="js的基础类型和引用类型">
+                <i class="fa fa-chevron-left"></i> js的基础类型和引用类型
               </a>
             
           </div>
@@ -396,8 +376,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/02/26/first3/" rel="prev" title="js根据身份证号码判断性别和年龄">
-                js根据身份证号码判断性别和年龄 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/06/05/first27/" rel="prev" title="hoisting中的函数声明">
+                hoisting中的函数声明 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

@@ -256,6 +256,235 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/06/05/first27/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/06/05/first27/" itemprop="url">hoisting中的函数声明</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-06-05T22:25:17+08:00">
+                2015-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>直接在函数体内定义的函数声明，整个都会提前；
+
+但是在块中定义的函数声明，只会提升其声明部分，不分配实际的内存空间。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">(function () &#123;</div><div class="line">	console.log(a)</div><div class="line">	console.log(b)</div><div class="line">	&#123;</div><div class="line">		function a() &#123;</div><div class="line">			alert(&apos;sunsian&apos;)</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	function b() &#123; &#125;</div><div class="line">&#125;)()</div><div class="line">undefined</div><div class="line">function b() &#123;&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/05/05/first26/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/05/05/first26/" itemprop="url">js常见报错信息</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-05-05T22:25:17+08:00">
+                2015-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>常见的报错error<br>    ReferenceError：作用域判别错误，通过作用域链的搜寻找不到相应的变量。</p>
+<pre><code>TypeError：可以通过作用域搜索到变量，但是对变量的操作不合法。
+
+SyntaxError：语法错误
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/04/05/first25/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1614,228 +1843,6 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/08/20/first16/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/08/20/first16/" itemprop="url">移动端rem初始化</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-08-20T22:25:17+08:00">
-                2014-08-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">//初始化rem</div><div class="line">(function () &#123;</div><div class="line">    var getStyle = (function () &#123;</div><div class="line">        if (window.currentStyle) &#123;</div><div class="line">            return function (obj, name) &#123;</div><div class="line">                return obj.currentStyle[name];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">            return function (obj, name) &#123;</div><div class="line">                return getComputedStyle(obj, false)[name];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)();</div><div class="line"></div><div class="line">    var addEvent = (function () &#123;</div><div class="line">        if (document.attachEvent) &#123;</div><div class="line">            return function (obj, ev, fn) &#123;</div><div class="line">                obj.attachEvent(&apos;on&apos; + ev, fn);</div><div class="line">            &#125;;</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">            return function (obj, ev, fn) &#123;</div><div class="line">                obj.addEventListener(ev, fn, false);</div><div class="line">            &#125;;</div><div class="line">        &#125;</div><div class="line">    &#125;)();</div><div class="line"></div><div class="line">    var oHtml = document.querySelector(&apos;html&apos;);</div><div class="line">    var fontSize = getStyle(oHtml, &apos;fontSize&apos;).split(&apos;px&apos;)[0];</div><div class="line">    var originalWidth = 320;</div><div class="line"></div><div class="line">    setFontSize();</div><div class="line"></div><div class="line">    addEvent(window, &apos;resize&apos;, function () &#123;</div><div class="line">        setFontSize();</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    function setFontSize() &#123;</div><div class="line">        var size = size || 200;</div><div class="line">        var _fontSize = (getSize()[&apos;width&apos;] * fontSize / 320) &gt; size ? size : (getSize()[&apos;width&apos;] * fontSize / 320);</div><div class="line">        oHtml.style.fontSize = _fontSize + &quot;px&quot;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function getSize() &#123;</div><div class="line">        return &#123;</div><div class="line">            width: document.documentElement.clientWidth || document.body.clientWidth,</div><div class="line">            height: document.documentElement.clientHeight || document.body.clientHeight</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/07/25/first15/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/07/25/first15/" itemprop="url">js获取索引的不同</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-07-25T22:25:17+08:00">
-                2014-07-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">html代码</div><div class="line">    &lt;ul class=&quot;list&quot;&gt;</div><div class="line">        &lt;li class=&quot;btn1&quot;&gt;btn1&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn2&quot;&gt;btn2&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn3&quot;&gt;btn3&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    &lt;ul class=&quot;list&quot;&gt;</div><div class="line">        &lt;li class=&quot;btn1&quot;&gt;btn1&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn2&quot;&gt;btn2&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn3&quot;&gt;btn3&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    &lt;ul class=&quot;list&quot;&gt;</div><div class="line">        &lt;li class=&quot;btn1&quot;&gt;btn1&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn2&quot;&gt;btn2&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;btn3&quot;&gt;btn3&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    js代码</div><div class="line">    &lt;script&gt;</div><div class="line">        $(function()&#123;</div><div class="line">            $(&apos;.list .btn1&apos;).click(function () &#123;</div><div class="line">                // 表示返回点击的btn1在其父级元素中的索引位置</div><div class="line">                $(this).index()</div><div class="line">                // 在所有的btn1元素中返回当前你点击的btn1的索引位置</div><div class="line">                $(&apos;.list .btn1&apos;).index(this)</div><div class="line">            &#125;)</div><div class="line">        &#125;)</div><div class="line">    &lt;/script&gt;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1886,7 +1893,7 @@ title属性有一个很好的用途，即为链接添加描述性文字，特别
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
