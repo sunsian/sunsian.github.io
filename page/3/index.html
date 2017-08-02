@@ -256,6 +256,127 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/04/08/first7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/04/08/first7/" itemprop="url">url传参</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-04-08T22:25:17+08:00">
+                2014-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>方法一:<br>下面是javascrīpt的一种实现方法, 这个函数是通过window.location.href中的分割符获得各个参数。</p>
+<p>有了这个函数，就可以在页面之间传递参数了。</p>
+<p>/<em>
+</em>函数功能：从href获得参数<br><em>sHref:   <a href="http://www.artfh.com/arg.htm?arg1=d&amp;arg2=re" target="_blank" rel="external">http://www.artfh.com/arg.htm?arg1=d&amp;arg2=re</a>
+</em>sArgName:arg1, arg2<br><em>return:    the value of arg. d, re
+</em>/<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function GetArgsFromHref(sHref, sArgName) &#123;</div><div class="line">    var args = sHref.split(&quot;?&quot;);</div><div class="line">    var retval = &quot;&quot;;</div><div class="line"></div><div class="line">    if (args[0] == sHref) /*参数为空*/ &#123;</div><div class="line">        return retval; /*无需做任何处理*/</div><div class="line">    &#125;</div><div class="line">    var str = args[1];</div><div class="line">    args = str.split(&quot;&amp;&quot;);</div><div class="line">    for (var i = 0; i &lt; args.length; i++) &#123;</div><div class="line">        str = args[i];</div><div class="line">        var arg = str.split(&quot;=&quot;);</div><div class="line">        if (arg.length &lt;= 1) continue;</div><div class="line">        if (arg[0] == sArgName) retval = arg[1];</div><div class="line">    &#125;</div><div class="line">    return retval;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>方法二:<br>html地址传递参数进行其他事情.</p>
+<p><scrīpt><br>/<em> 用途: 接收地直栏参数 取id=1 根据ID的值 </em>/<br>urlinfo=window.location.href; //获取当前页面的url<br>len=urlinfo.length;//获取url的长度<br>offset=urlinfo.indexOf(“?”);//设置参数字符串开始的位置<br>newsidinfo=urlinfo.substr(offset,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串<br>newsids=newsidinfo.split(“=”);//对获得的参数字符串按照“=”进行分割<br>newsid=newsids[1];//得到参数值<br>newsname=newsids[0];//得到参数名字<br></scrīpt></p>
+<p>方法三:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">function getvalue(name) &#123;</div><div class="line">    var str = window.location.search;   //location.search是从当前URL的?号开始的字符串 例如：http://www.51job.com/viewthread.jsp?tid=22720 它的search就是?</div><div class="line"></div><div class="line">    tid = 22720</div><div class="line"></div><div class="line">    if (str.indexOf(name) != -1) &#123;</div><div class="line">        var pos_start = str.indexOf(name) + name.length + 1;</div><div class="line">        var pos_end = str.indexOf(&quot;&amp;&quot;, pos_start);</div><div class="line">        if (pos_end == -1) &#123;</div><div class="line">            alert(str.substring(pos_start));</div><div class="line">        &#125; else &#123;</div><div class="line">            alert(&quot;对不起这个值不存在！&quot;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>方法四:<br>做中英转换的时候，要准确的获取参数并取出，所以做了一个简单的html中用js获取当取地址栏的一个Object。<br>里面有三个方法：<br>1、request.QueryString(“参数”)//获取指定参数，返回字符串;<br>2、request.QueryStrings();//获取全部参数，并返回数组;<br>3、request.setQuery(“参数”,”参数的值”);//如果当前地址栏有此参数，那么将更新此参数，否则返回一个新的地址栏参数字符串。<br>例如：<br>当前地址栏参数字符串为：?name=a&amp;site=never_online<br>alert(request.setQuery(“name”,”blueDestiny”))<br>如果地址栏参数中有”name”，那么返回?name=blueDestiny&amp;site=never_online<br>setQuery方法有自动追加参数的功能。如：<br>当前地址栏参数字符串为：?site=never_online<br>alert(request.setQuery(“name”,”blueDestiny”))<br>则返回?site=never_online&amp;name=blueDestiny<br>同理，如果地址栏没有参数，也会自动追加参数<br>alert(request.setQuery(“name”,”blueDestiny”))<br>返回?name=blueDestiny<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">var request = &#123; var request = &#123;</div><div class="line">    QueryString: function (val) &#123;</div><div class="line">        var uri = window.location.search;</div><div class="line">        var re = new RegExp(&quot;&quot; + val + &quot;\=([^\&amp;\?]*)&quot;, &quot;ig&quot;);</div><div class="line">        return ((uri.match(re)) ? (uri.match(re)[0].substr(val.length + 1)) : null);</div><div class="line">    &#125;,</div><div class="line">    QueryStrings: function () &#123;</div><div class="line">        var uri = window.location.search;</div><div class="line">        var re = /\w*\=([^\&amp;\?]*)/ig;</div><div class="line">        var retval = [];</div><div class="line">        while ((arr = re.exec(uri)) != null)</div><div class="line">            retval.push(arr[0]);</div><div class="line">        return retval;</div><div class="line">    &#125;,</div><div class="line">    setQuery: function (val1, val2) &#123;</div><div class="line">        var a = this.QueryStrings();</div><div class="line">        var retval = &quot;&quot;;</div><div class="line">        var seted = false;</div><div class="line">        var re = new RegExp(&quot;^&quot; + val1 + &quot;\=([^\&amp;\?]*)$&quot;, &quot;ig&quot;);</div><div class="line">        for (var i = 0; i &lt; a.length; i++) &#123;</div><div class="line">            if (re.test(a[i])) &#123;</div><div class="line">                seted = true;</div><div class="line">                a[i] = val1 + &quot;=&quot; + val2;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        retval = a.join(&quot;&amp;&quot;);</div><div class="line">        return &quot;?&quot; + retval + (seted ? &quot;&quot; : (retval ? &quot;&amp;&quot; : &quot;&quot;) + val1 + &quot;=&quot; + val2);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">alert(request.setQuery(&quot;e&quot;, &quot;b&quot;)) </div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/03/16/first6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1145,7 +1266,7 @@ tap-highlight-color: rgba(0,0,0,0;)//去除背景高亮
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
