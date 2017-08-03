@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051//初始化rem(function () &amp;#123;    var getStyle = (function () &amp;#123;        if (window.currentStyle) &amp;#123;">
+<meta name="description" content="直接在函数体内定义的函数声明，整个都会提前； 但是在块中定义的函数声明，只会提升其声明部分，不分配实际的内存空间。 123456789101112(function () &amp;#123;	console.log(a)	console.log(b)	&amp;#123;		function a() &amp;#123;			alert(&amp;apos;sunsian&amp;apos;)		&amp;#125;	&amp;#125;	funct">
 <meta name="keywords" content="总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移动端rem初始化">
-<meta property="og:url" content="https://sunsian.github.io/2014/08/20/first16/index.html">
+<meta property="og:title" content="hoisting中的函数声明">
+<meta property="og:url" content="https://sunsian.github.io/2015/06/27/first27/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051//初始化rem(function () &amp;#123;    var getStyle = (function () &amp;#123;        if (window.currentStyle) &amp;#123;">
-<meta property="og:updated_time" content="2017-08-01T14:04:45.807Z">
+<meta property="og:description" content="直接在函数体内定义的函数声明，整个都会提前； 但是在块中定义的函数声明，只会提升其声明部分，不分配实际的内存空间。 123456789101112(function () &amp;#123;	console.log(a)	console.log(b)	&amp;#123;		function a() &amp;#123;			alert(&amp;apos;sunsian&amp;apos;)		&amp;#125;	&amp;#125;	funct">
+<meta property="og:updated_time" content="2017-08-03T14:40:46.014Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移动端rem初始化">
-<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051//初始化rem(function () &amp;#123;    var getStyle = (function () &amp;#123;        if (window.currentStyle) &amp;#123;">
+<meta name="twitter:title" content="hoisting中的函数声明">
+<meta name="twitter:description" content="直接在函数体内定义的函数声明，整个都会提前； 但是在块中定义的函数声明，只会提升其声明部分，不分配实际的内存空间。 123456789101112(function () &amp;#123;	console.log(a)	console.log(b)	&amp;#123;		function a() &amp;#123;			alert(&amp;apos;sunsian&amp;apos;)		&amp;#125;	&amp;#125;	funct">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://sunsian.github.io/2014/08/20/first16/"/>
+  <link rel="canonical" href="https://sunsian.github.io/2015/06/27/first27/"/>
 
 
 
 
 
-  <title>移动端rem初始化 | 我的博客</title>
+  <title>hoisting中的函数声明 | 我的博客</title>
   
 
 
@@ -256,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/08/20/first16/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/06/27/first27/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">移动端rem初始化</h1>
+          <h1 class="post-title" itemprop="name headline">hoisting中的函数声明</h1>
         
 
         <div class="post-meta">
@@ -285,8 +285,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-08-20T22:25:17+08:00">
-                2014-08-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-06-27T22:25:17+08:00">
+                2015-06-27
               </time>
             
 
@@ -320,7 +320,9 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">//初始化rem</div><div class="line">(function () &#123;</div><div class="line">    var getStyle = (function () &#123;</div><div class="line">        if (window.currentStyle) &#123;</div><div class="line">            return function (obj, name) &#123;</div><div class="line">                return obj.currentStyle[name];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">            return function (obj, name) &#123;</div><div class="line">                return getComputedStyle(obj, false)[name];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)();</div><div class="line"></div><div class="line">    var addEvent = (function () &#123;</div><div class="line">        if (document.attachEvent) &#123;</div><div class="line">            return function (obj, ev, fn) &#123;</div><div class="line">                obj.attachEvent(&apos;on&apos; + ev, fn);</div><div class="line">            &#125;;</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">            return function (obj, ev, fn) &#123;</div><div class="line">                obj.addEventListener(ev, fn, false);</div><div class="line">            &#125;;</div><div class="line">        &#125;</div><div class="line">    &#125;)();</div><div class="line"></div><div class="line">    var oHtml = document.querySelector(&apos;html&apos;);</div><div class="line">    var fontSize = getStyle(oHtml, &apos;fontSize&apos;).split(&apos;px&apos;)[0];</div><div class="line">    var originalWidth = 320;</div><div class="line"></div><div class="line">    setFontSize();</div><div class="line"></div><div class="line">    addEvent(window, &apos;resize&apos;, function () &#123;</div><div class="line">        setFontSize();</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    function setFontSize() &#123;</div><div class="line">        var size = size || 200;</div><div class="line">        var _fontSize = (getSize()[&apos;width&apos;] * fontSize / 320) &gt; size ? size : (getSize()[&apos;width&apos;] * fontSize / 320);</div><div class="line">        oHtml.style.fontSize = _fontSize + &quot;px&quot;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function getSize() &#123;</div><div class="line">        return &#123;</div><div class="line">            width: document.documentElement.clientWidth || document.body.clientWidth,</div><div class="line">            height: document.documentElement.clientHeight || document.body.clientHeight</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+        <p>直接在函数体内定义的函数声明，整个都会提前；</p>
+<p>但是在块中定义的函数声明，只会提升其声明部分，不分配实际的内存空间。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">(function () &#123;</div><div class="line">	console.log(a)</div><div class="line">	console.log(b)</div><div class="line">	&#123;</div><div class="line">		function a() &#123;</div><div class="line">			alert(&apos;sunsian&apos;)</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	function b() &#123; &#125;</div><div class="line">&#125;)()</div><div class="line">undefined</div><div class="line">function b() &#123;&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -362,8 +364,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/07/25/first15/" rel="next" title="js获取索引的不同">
-                <i class="fa fa-chevron-left"></i> js获取索引的不同
+              <a href="/2015/05/23/first26/" rel="next" title="js常见报错信息">
+                <i class="fa fa-chevron-left"></i> js常见报错信息
               </a>
             
           </div>
@@ -372,8 +374,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/09/05/first17/" rel="prev" title="前端面试总结之HTML">
-                前端面试总结之HTML <i class="fa fa-chevron-right"></i>
+              <a href="/2015/07/08/first28/" rel="prev" title="前端性能提升的几种方法">
+                前端性能提升的几种方法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

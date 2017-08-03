@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="常见的报错error    ReferenceError：作用域判别错误，通过作用域链的搜寻找不到相应的变量。 TypeError：可以通过作用域搜索到变量，但是对变量的操作不合法。  SyntaxError：语法错误">
+<meta name="description" content="今晚我加的一个前端群里有人问了这样一个问题，下面这段代码在Chrome中运行：123456789101112131415&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;    &amp;lt;head&amp;gt;    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;    &amp;lt;title&amp;gt;&amp;lt;/title&amp;g">
 <meta name="keywords" content="总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js常见报错信息">
-<meta property="og:url" content="https://sunsian.github.io/2015/05/05/first26/index.html">
+<meta property="og:title" content="console.log不是异步">
+<meta property="og:url" content="https://sunsian.github.io/2016/03/24/first33/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="常见的报错error    ReferenceError：作用域判别错误，通过作用域链的搜寻找不到相应的变量。 TypeError：可以通过作用域搜索到变量，但是对变量的操作不合法。  SyntaxError：语法错误">
-<meta property="og:updated_time" content="2017-08-02T14:59:31.315Z">
+<meta property="og:description" content="今晚我加的一个前端群里有人问了这样一个问题，下面这段代码在Chrome中运行：123456789101112131415&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;    &amp;lt;head&amp;gt;    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;    &amp;lt;title&amp;gt;&amp;lt;/title&amp;g">
+<meta property="og:updated_time" content="2017-08-03T14:42:20.149Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js常见报错信息">
-<meta name="twitter:description" content="常见的报错error    ReferenceError：作用域判别错误，通过作用域链的搜寻找不到相应的变量。 TypeError：可以通过作用域搜索到变量，但是对变量的操作不合法。  SyntaxError：语法错误">
+<meta name="twitter:title" content="console.log不是异步">
+<meta name="twitter:description" content="今晚我加的一个前端群里有人问了这样一个问题，下面这段代码在Chrome中运行：123456789101112131415&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;    &amp;lt;head&amp;gt;    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;    &amp;lt;title&amp;gt;&amp;lt;/title&amp;g">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://sunsian.github.io/2015/05/05/first26/"/>
+  <link rel="canonical" href="https://sunsian.github.io/2016/03/24/first33/"/>
 
 
 
 
 
-  <title>js常见报错信息 | 我的博客</title>
+  <title>console.log不是异步 | 我的博客</title>
   
 
 
@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Accueil
+            Startseite
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -256,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/05/05/first26/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2016/03/24/first33/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js常见报错信息</h1>
+          <h1 class="post-title" itemprop="name headline">console.log不是异步</h1>
         
 
         <div class="post-meta">
@@ -283,10 +283,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-05-05T22:25:17+08:00">
-                2015-05-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-03-24T22:25:17+08:00">
+                2016-03-24
               </time>
             
 
@@ -320,11 +320,23 @@
       
 
       
-        <p>常见的报错error<br>    ReferenceError：作用域判别错误，通过作用域链的搜寻找不到相应的变量。</p>
-<pre><code>TypeError：可以通过作用域搜索到变量，但是对变量的操作不合法。
+        <p>今晚我加的一个前端群里有人问了这样一个问题，下面这段代码在Chrome中运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;&lt;/title&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">            var a = &#123;name: &apos;1&apos;&#125;;</div><div class="line">            console.log(a);</div><div class="line">            a.name = &apos;2&apos;;</div><div class="line">            console.log(a);</div><div class="line">    &lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>打开控制台后，却发现运行结果是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Object</div><div class="line">    name: &quot;2&quot;</div><div class="line">    __proto__: Object</div><div class="line">Object</div><div class="line">    name: &quot;2&quot;</div><div class="line">    __proto__: Object</div></pre></td></tr></table></figure></p>
+<p>这个结果不符合我们所期望的第一个输出是name: “1”。</p>
+<p>难道console.log是异步的？</p>
+<p>可是当我将那段JavaScript代码粘贴到控制台直接运行，或是打开控制台后刷新一遍网页，运行结果就会变成：</p>
+<p>Object {name: “1”}<br>Object {name: “2”}<br>这正是我们所期望的结果。</p>
+<p>为什么会这样？</p>
+<p>因为代码在运行的时候控制台没有打开。</p>
+<p>首先明确一点，a所储存的是一个引用类型值的地址，所有对a的操作都会具体到这个地址所对应的那个对象上。其次，console并不是JavaScript提供的对象，而是浏览器的控制台提供的。这具体到不同的浏览器，比如Chrome中是由Devtool的控制台提供，Firefox中是由Firebug的控制台提供。</p>
+<p>在Chrome中，console.log在控制台打开后才起作用，也就是说，当你打开控制台时，console.log才会将之前被传进去的参打印出来。<br>那么问题来了，在上述代码中，传进console.log中的参是一个地址，当代码执行完毕后，打开控制台，console.log开始起作用，那么它打印出的实际上是已经做完全部处理后的对象。这就相当于这样的执行顺序：</p>
+<p>var a = {name: ‘1’};<br>a.name = ‘2’;<br>console.log(a);<br>console.log(a);<br>如果是打开控制台再运行代码，那么console.log是直接起作用的，代码会顺序执行，所以所看到的结果是符合期望的。</p>
+<p>那么该如何解决这个问题？只能在执行的过程中创建新对象来曲线救国了：</p>
+<p>var a = {name: ‘1’};<br>console.log(JSON.parse(JSON.stringify(a)));<br>a.name = ‘2’;<br>console.log(JSON.parse(JSON.stringify(a)));<br>这相当于帮浏览器对要被改变的对象存了个快照。</p>
+<p>当然，只要你开着控制台来执行代码，那么是不会出现这样的问题的。</p>
+<p>最后我认为这不是个BUG，相反这是个节省运算资源的行为。无论控制台是否打开console.log都起作用是十分不妥的。</p>
+<p>开着控制台还会出现不符合期望的结果才是BUG，然而它早就被修复了。</p>
 
-SyntaxError：语法错误
-</code></pre>
       
     </div>
 
@@ -366,8 +378,8 @@ SyntaxError：语法错误
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/04/05/first25/" rel="next" title="js的基础类型和引用类型">
-                <i class="fa fa-chevron-left"></i> js的基础类型和引用类型
+              <a href="/2016/01/12/first32/" rel="next" title="单例模式的弹窗">
+                <i class="fa fa-chevron-left"></i> 单例模式的弹窗
               </a>
             
           </div>
@@ -375,10 +387,6 @@ SyntaxError：语法错误
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/06/05/first27/" rel="prev" title="hoisting中的函数声明">
-                hoisting中的函数声明 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -442,8 +450,8 @@ SyntaxError：语法错误
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">32</span>
-                <span class="site-state-item-name">articles</span>
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -456,7 +464,7 @@ SyntaxError：语法错误
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               
             </div>
           
@@ -506,11 +514,11 @@ SyntaxError：语法错误
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  Thème -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Pisces
   </a>

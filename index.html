@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Accueil
+            Startseite
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -256,6 +256,133 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2016/03/24/first33/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/24/first33/" itemprop="url">console.log不是异步</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-03-24T22:25:17+08:00">
+                2016-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今晚我加的一个前端群里有人问了这样一个问题，下面这段代码在Chrome中运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;&lt;/title&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">            var a = &#123;name: &apos;1&apos;&#125;;</div><div class="line">            console.log(a);</div><div class="line">            a.name = &apos;2&apos;;</div><div class="line">            console.log(a);</div><div class="line">    &lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>打开控制台后，却发现运行结果是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Object</div><div class="line">    name: &quot;2&quot;</div><div class="line">    __proto__: Object</div><div class="line">Object</div><div class="line">    name: &quot;2&quot;</div><div class="line">    __proto__: Object</div></pre></td></tr></table></figure></p>
+<p>这个结果不符合我们所期望的第一个输出是name: “1”。</p>
+<p>难道console.log是异步的？</p>
+<p>可是当我将那段JavaScript代码粘贴到控制台直接运行，或是打开控制台后刷新一遍网页，运行结果就会变成：</p>
+<p>Object {name: “1”}<br>Object {name: “2”}<br>这正是我们所期望的结果。</p>
+<p>为什么会这样？</p>
+<p>因为代码在运行的时候控制台没有打开。</p>
+<p>首先明确一点，a所储存的是一个引用类型值的地址，所有对a的操作都会具体到这个地址所对应的那个对象上。其次，console并不是JavaScript提供的对象，而是浏览器的控制台提供的。这具体到不同的浏览器，比如Chrome中是由Devtool的控制台提供，Firefox中是由Firebug的控制台提供。</p>
+<p>在Chrome中，console.log在控制台打开后才起作用，也就是说，当你打开控制台时，console.log才会将之前被传进去的参打印出来。<br>那么问题来了，在上述代码中，传进console.log中的参是一个地址，当代码执行完毕后，打开控制台，console.log开始起作用，那么它打印出的实际上是已经做完全部处理后的对象。这就相当于这样的执行顺序：</p>
+<p>var a = {name: ‘1’};<br>a.name = ‘2’;<br>console.log(a);<br>console.log(a);<br>如果是打开控制台再运行代码，那么console.log是直接起作用的，代码会顺序执行，所以所看到的结果是符合期望的。</p>
+<p>那么该如何解决这个问题？只能在执行的过程中创建新对象来曲线救国了：</p>
+<p>var a = {name: ‘1’};<br>console.log(JSON.parse(JSON.stringify(a)));<br>a.name = ‘2’;<br>console.log(JSON.parse(JSON.stringify(a)));<br>这相当于帮浏览器对要被改变的对象存了个快照。</p>
+<p>当然，只要你开着控制台来执行代码，那么是不会出现这样的问题的。</p>
+<p>最后我认为这不是个BUG，相反这是个节省运算资源的行为。无论控制台是否打开console.log都起作用是十分不妥的。</p>
+<p>开着控制台还会出现不符合期望的结果才是BUG，然而它早就被修复了。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2016/01/12/first32/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -285,7 +412,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-12T22:25:17+08:00">
                 2016-01-12
@@ -396,7 +523,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-11-18T22:25:17+08:00">
                 2015-11-18
@@ -508,7 +635,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-09-10T22:25:17+08:00">
                 2015-09-10
@@ -594,7 +721,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/08/08/first29/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/08/20/first29/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -613,7 +740,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/08/08/first29/" itemprop="url">html5新特性data-属性</a></h1>
+                <a class="post-title-link" href="/2015/08/20/first29/" itemprop="url">html5新特性data-属性</a></h1>
         
 
         <div class="post-meta">
@@ -623,10 +750,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-08-08T22:25:17+08:00">
-                2015-08-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-08-20T22:25:17+08:00">
+                2015-08-20
               </time>
             
 
@@ -767,7 +894,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-07-08T22:25:17+08:00">
                 2015-07-08
@@ -854,7 +981,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/06/05/first27/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/06/27/first27/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -873,7 +1000,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/06/05/first27/" itemprop="url">hoisting中的函数声明</a></h1>
+                <a class="post-title-link" href="/2015/06/27/first27/" itemprop="url">hoisting中的函数声明</a></h1>
         
 
         <div class="post-meta">
@@ -883,10 +1010,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-06-05T22:25:17+08:00">
-                2015-06-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-06-27T22:25:17+08:00">
+                2015-06-27
               </time>
             
 
@@ -967,7 +1094,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/05/05/first26/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/05/23/first26/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -986,7 +1113,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/05/05/first26/" itemprop="url">js常见报错信息</a></h1>
+                <a class="post-title-link" href="/2015/05/23/first26/" itemprop="url">js常见报错信息</a></h1>
         
 
         <div class="post-meta">
@@ -996,10 +1123,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-05-05T22:25:17+08:00">
-                2015-05-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-05-23T22:25:17+08:00">
+                2015-05-23
               </time>
             
 
@@ -1111,7 +1238,7 @@ SyntaxError：语法错误
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-04-05T22:25:17+08:00">
                 2015-04-05
@@ -1263,7 +1390,7 @@ SyntaxError：语法错误
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-03-10T22:25:17+08:00">
                 2015-03-10
@@ -1376,119 +1503,6 @@ cached.find(&#39;p.classB&#39;);</code><br>根据测试，缓存比不缓存，�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/02/15/first23/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2015/02/15/first23/" itemprop="url">移动端a标签给高度和行高一致不居中</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posté le</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-02-15T22:25:17+08:00">
-                2015-02-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>目测一下，你这个应该是在UC浏览器，chrome浏览器没有这种情况，导致这个bug的原因是：UC为了优化移动用户体验将字体大小会放大到16px，我估计你的html的font-size应该是100px，那么你最终的font-size是12px，在UC会变成16px，所以就导致了你的bug了。<br>解决方法是，在head里面增加一个meta标签如下：<br>`</p>
-<p><meta name="wap-font-scale" content="no"><br>`<br>但是写了这个方法并没有解决<br>只能a不给高度用padding来撑</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1539,8 +1553,8 @@ cached.find(&#39;p.classB&#39;);</code><br>根据测试，缓存比不缓存，�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">32</span>
-                <span class="site-state-item-name">articles</span>
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -1553,7 +1567,7 @@ cached.find(&#39;p.classB&#39;);</code><br>根据测试，缓存比不缓存，�
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               
             </div>
           
@@ -1603,11 +1617,11 @@ cached.find(&#39;p.classB&#39;);</code><br>根据测试，缓存比不缓存，�
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  Thème -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Pisces
   </a>
