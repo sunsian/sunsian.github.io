@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Accueil
           </a>
         </li>
       
@@ -256,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/07/08/first29/">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2016/01/12/first32/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="念念不忘">
@@ -275,7 +275,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/07/08/first29/" itemprop="url">html5新特性data-属性</a></h1>
+                <a class="post-title-link" href="/2016/01/12/first32/" itemprop="url">单例模式的弹窗</a></h1>
         
 
         <div class="post-meta">
@@ -285,10 +285,348 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-07-08T22:25:17+08:00">
-                2015-07-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-12T22:25:17+08:00">
+                2016-01-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">var creatDilog=(function () &#123;</div><div class="line">    var div</div><div class="line">    return function () &#123;</div><div class="line">        if (!div) &#123;</div><div class="line">            div=document.createElement(&apos;div&apos;)</div><div class="line">            div.innerHTML=&quot;单例模式&quot;</div><div class="line">            div.style.display=&apos;none&apos;</div><div class="line">            document.body.appendChild(div)</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        return div</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;)()</div><div class="line">window.onload=function () &#123;</div><div class="line">    document.getElementById(&apos;#box&apos;).onclick=function () &#123;</div><div class="line">        var dilog=creatDilog()</div><div class="line">        dilog.style.display=&apos;block&apos;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/11/18/first31/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/11/18/first31/" itemprop="url">瀑布流的jq实现方式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-11-18T22:25:17+08:00">
+                2015-11-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">function wallFall(parent,child) &#123;</div><div class="line">    var allHeight=[]</div><div class="line">    // 最多多少列</div><div class="line">    var col=Math.floor($(window).width()/$(child).outWidth(true))</div><div class="line">    for (var i = 0; i &lt; col; i++) &#123;</div><div class="line">        allHeight.push(0)</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    $(child).each(function () &#123;</div><div class="line">        var $cur=$(this)</div><div class="line">        var minAllHeight=allHeight[0]</div><div class="line">        var $index=0</div><div class="line">        for (var j = 0; j &lt; allHeight.length; j++) &#123;</div><div class="line">            if (allHeight[j]&lt;minAllHeight) &#123;</div><div class="line">                $index=j</div><div class="line">                minAllHeight=allHeight[j]</div><div class="line">                </div><div class="line">            &#125;</div><div class="line">            var element = array[j];</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        $cur.css(&#123;</div><div class="line">            &apos;left&apos;:$index*$cur.outWidth(true),</div><div class="line">            &apos;top&apos;:minAllHeight</div><div class="line"></div><div class="line">        &#125;)</div><div class="line">        allHeight[$index]=minAllHeight+$cur.outHeight(true)</div><div class="line">    &#125;)</div><div class="line">    $(parent).css(&#123;</div><div class="line">        &apos;width&apos;:col*$(child).outWidth(true),</div><div class="line">        &apos;margin&apos;:&apos;0 auto&apos;</div><div class="line">    &#125;)</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/09/10/first30/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/09/10/first30/" itemprop="url">系统时间转化为字符时间</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-09-10T22:25:17+08:00">
+                2015-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>复制代码<br>var SIGN_REGEXP = /([yMdhsm])(\1*)/g;<br>var DEFAULT_PATTERN = ‘yyyy-MM-dd’;<br>function padding(s, len) {<br>    var len = len - (s + ‘’).length;<br>    for (var i = 0; i &lt; len; i++) { s = ‘0’ + s; }<br>    return s;<br>};<br>export const formatDate = {<br>        //将系统时间转化为字符时间<br>        format: function (date, pattern) {<br>            pattern = pattern || DEFAULT_PATTERN;<br>            return pattern.replace(SIGN_REGEXP, function ($0) {<br>                switch ($0.charAt(0)) {<br>                    case ‘y’: return padding(date.getFullYear(), $0.length);<br>                    case ‘M’: return padding(date.getMonth() + 1, $0.length);<br>                    case ‘d’: return padding(date.getDate(), $0.length);<br>                    case ‘w’: return date.getDay() + 1;<br>                    case ‘h’: return padding(date.getHours(), $0.length);<br>                    case ‘m’: return padding(date.getMinutes(), $0.length);<br>                    case ‘s’: return padding(date.getSeconds(), $0.length);<br>                }<br>            });<br>        },<br>        //转化字符时间为系统时间<br>        parse: function (dateString, pattern) {<br>            var matchs1 = pattern.match(SIGN_REGEXP);<br>            var matchs2 = dateString.match(/(\d)+/g);<br>            if (matchs1.length == matchs2.length) {<br>                var _date = new Date(1970, 0, 1);<br>                for (var i = 0; i &lt; matchs1.length; i++) {<br>                    var _int = parseInt(matchs2[i]);<br>                    var sign = matchs1[i];<br>                    switch (sign.charAt(0)) {<br>                        case ‘y’: _date.setFullYear(_int); break;<br>                        case ‘M’: _date.setMonth(_int - 1); break;<br>                        case ‘d’: _date.setDate(_int); break;<br>                        case ‘h’: _date.setHours(_int); break;<br>                        case ‘m’: _date.setMinutes(_int); break;<br>                        case ‘s’: _date.setSeconds(_int); break;<br>                    }<br>                }<br>                return _date;<br>            }<br>            return null;<br>        }</p>
+<pre><code>}
+</code></pre><p>用法 import引入</p>
+<p>formatDate.format(val)</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2015/08/08/first29/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="念念不忘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/08/08/first29/" itemprop="url">html5新特性data-属性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-08-08T22:25:17+08:00">
+                2015-08-08
               </time>
             
 
@@ -429,7 +767,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-07-08T22:25:17+08:00">
                 2015-07-08
@@ -545,7 +883,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-06-05T22:25:17+08:00">
                 2015-06-05
@@ -658,7 +996,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-05-05T22:25:17+08:00">
                 2015-05-05
@@ -773,7 +1111,7 @@ SyntaxError：语法错误
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-04-05T22:25:17+08:00">
                 2015-04-05
@@ -925,7 +1263,7 @@ SyntaxError：语法错误
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-03-10T22:25:17+08:00">
                 2015-03-10
@@ -1076,7 +1414,7 @@ cached.find(&#39;p.classB&#39;);</code><br>根据测试，缓存比不缓存，�
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-02-15T22:25:17+08:00">
                 2015-02-15
@@ -1151,559 +1489,11 @@ cached.find(&#39;p.classB&#39;);</code><br>根据测试，缓存比不缓存，�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/12/01/first21/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/12/01/first21/" itemprop="url">a标签添加点击事件导致事件失效</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-12-01T22:25:17+08:00">
-                2014-12-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>有时候给a标签添加点击事件会引起页面刷新导致点击事件看不到效果,但是会看到一瞬间的闪现，打断点调试可以观察到，点击事件之后，页面又刷新了<br><img src="./images/resolve2.png" alt="resolve2"><br>原因：a标签的href会导致默认的页面跳转事件，如果为空值，就会刷新页面，所以就会出现上述的问题。可以改为href=’#’或者href=”JavaScript:;”等。<br>或者使用e.preventDefault();解决。<br>解决方法给函数内部添加return  false；</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/11/15/first20/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/11/15/first20/" itemprop="url">ie6和ie7上z-index不起作用的问题解决</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-11-15T22:25:17+08:00">
-                2014-11-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>遇到的问题如图示<br><img src="./images/bug1.png" alt="bug1"><br>解决方法给父级元素添加position:relative;z-index 给最上面的z-index值越大，效果如图示。<br><img src="./images/resolve1.png" alt="resolve1"></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunsian.github.io/2014/10/01/first19/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="念念不忘">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/10/01/first19/" itemprop="url">前端面试总结之JavaScript</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-10-01T22:25:17+08:00">
-                2014-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="JavaScript原型，原型链-有什么特点？"><a href="#JavaScript原型，原型链-有什么特点？" class="headerlink" title="JavaScript原型，原型链 ? 有什么特点？"></a>JavaScript原型，原型链 ? 有什么特点？</h3><ul>
-<li>原型对象也是普通的对象，是对象一个自带隐式的 <strong>proto</strong> 属性，原型也有可能有自己的原型，如果一个原型对象的原型不为null的话，我们就称之为原型链。</li>
-<li>原型链是由一些用来继承和共享属性的对象组成的（有限的）对象链。</li>
-<li>JavaScript的数据对象有那些属性值？<br>　　writable：这个属性的值是否可以改。<br>　　configurable：这个属性的配置是否可以删除，修改。<br>　　enumerable：这个属性是否能在for…in循环中遍历出来或在Object.keys中列举出来。<br>　　value：属性值。</li>
-<li>当我们需要一个属性的时，Javascript引擎会先看当前对象中是否有这个属性， 如果没有的话，就会查找他的Prototype对象是否有这个属性。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function clone(proto) &#123;</div><div class="line">　　function Dummy() &#123; &#125;</div><div class="line">　　Dummy.prototype = proto;</div><div class="line">　　Dummy.prototype.constructor = Dummy;</div><div class="line">　　return new Dummy(); //等价于Object.create(Person);</div><div class="line">&#125; </div><div class="line">function object(old) &#123;</div><div class="line">  function F() &#123;&#125;;</div><div class="line">  F.prototype = old;</div><div class="line">  return new F();</div><div class="line">&#125;</div><div class="line">var newObj = object(oldObject);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="eval是做什么的？"><a href="#eval是做什么的？" class="headerlink" title="eval是做什么的？"></a>eval是做什么的？</h3><p>它的功能是把对应的字符串解析成JS代码并运行；<br>应该避免使用eval，不安全，非常耗性能（2次，一次解析成js语句，一次执行）。</p>
-<h3 id="null，undefined-的区别？"><a href="#null，undefined-的区别？" class="headerlink" title="null，undefined 的区别？"></a>null，undefined 的区别？</h3><p>写一个通用的事件侦听器函数。</p>
-<pre><code>// event(事件)工具集，
-markyun.Event = {
-    // 页面加载完成后
-    readyEvent : function(fn) {
-        if (fn==null) {
-            fn=document;
-        }
-        var oldonload = window.onload;
-        if (typeof window.onload != &apos;function&apos;) {
-            window.onload = fn;
-        } else {
-            window.onload = function() {
-                oldonload();
-                fn();
-            };
-        }
-    },
-    // 视能力分别使用dom0||dom2||IE方式 来绑定事件
-    // 参数： 操作的元素,事件名称 ,事件处理程序
-    addEvent : function(element, type, handler) {
-        if (element.addEventListener) {
-            //事件类型、需要执行的函数、是否捕捉
-            element.addEventListener(type, handler, false);
-        } else if (element.attachEvent) {
-            element.attachEvent(&apos;on&apos; + type, function() {
-                handler.call(element);
-            });
-        } else {
-            element[&apos;on&apos; + type] = handler;
-        }
-    },
-    // 移除事件
-    removeEvent : function(element, type, handler) {
-        if (element.removeEnentListener) {
-            element.removeEnentListener(type, handler, false);
-        } else if (element.datachEvent) {
-            element.detachEvent(&apos;on&apos; + type, handler);
-        } else {
-            element[&apos;on&apos; + type] = null;
-        }
-    }, 
-    // 阻止事件 (主要是事件冒泡，因为IE不支持事件捕获)
-    stopPropagation : function(ev) {
-        if (ev.stopPropagation) {
-            ev.stopPropagation();
-        } else {
-            ev.cancelBubble = true;
-        }
-    },
-    // 取消事件的默认行为
-    preventDefault : function(event) {
-        if (event.preventDefault) {
-            event.preventDefault();
-        } else {
-            event.returnValue = false;
-        }
-    },
-    // 获取事件目标
-    getTarget : function(event) {
-        return event.target || event.srcElement;
-    },
-    // 获取event对象的引用，取到事件的所有信息，确保随时能使用event；
-    getEvent : function(e) {
-        var ev = e || window.event;
-        if (!ev) {
-            var c = this.getEvent.caller;
-            while (c) {
-                ev = c.arguments[0];
-                if (ev &amp;&amp; Event == ev.constructor) {
-                    break;
-                }
-                c = c.caller;
-            }
-        }
-        return ev;
-    }
-}; 
-</code></pre><h3 id="Node-js的适用场景？"><a href="#Node-js的适用场景？" class="headerlink" title="Node.js的适用场景？"></a>Node.js的适用场景？</h3><p>高并发、聊天、实时消息推送</p>
-<h3 id="介绍js的基本数据类型。"><a href="#介绍js的基本数据类型。" class="headerlink" title="介绍js的基本数据类型。"></a>介绍js的基本数据类型。</h3><p>number,string,boolean,object,undefined</p>
-<h3 id="Javascript如何实现继承？"><a href="#Javascript如何实现继承？" class="headerlink" title="Javascript如何实现继承？"></a>Javascript如何实现继承？</h3><p>通过原型和构造器</p>
-<p>[“1”, “2”, “3”].map(parseInt) 答案是多少？</p>
-<p> [1, NaN, NaN] 因为 parseInt 需要两个参数 (val, radix) 但 map 传了 3 个 (element, index, array)</p>
-<h3 id="如何创建一个对象-（画出此对象的内存图）"><a href="#如何创建一个对象-（画出此对象的内存图）" class="headerlink" title="如何创建一个对象? （画出此对象的内存图）"></a>如何创建一个对象? （画出此对象的内存图）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function Person(name, age) &#123;</div><div class="line">  this.name = name;</div><div class="line">  this.age = age;</div><div class="line">  this.sing = function() &#123; alert(this.name) &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="谈谈This对象的理解。"><a href="#谈谈This对象的理解。" class="headerlink" title="谈谈This对象的理解。"></a>谈谈This对象的理解。</h3><p>this是js的一个关键字，随着函数使用场合不同，this的值会发生变化。<br>但是有一个总原则，那就是this指的是调用函数的那个对象。<br>this一般情况下：是全局对象Global。 作为方法调用，那么this就是指这个对象 </p>
-<h3 id="事件是？IE与火狐的事件机制有什么区别？-如何阻止冒泡？"><a href="#事件是？IE与火狐的事件机制有什么区别？-如何阻止冒泡？" class="headerlink" title="事件是？IE与火狐的事件机制有什么区别？ 如何阻止冒泡？"></a>事件是？IE与火狐的事件机制有什么区别？ 如何阻止冒泡？</h3><ol>
-<li>我们在网页中的某个操作（有的操作对应多个事件）。例如：当我们点击一个按钮就会产生一个事件。是可以被 JavaScript 侦测到的行为。  </li>
-<li>事件处理机制：IE是事件冒泡、火狐是 事件捕获；</li>
-<li>ev.stopPropagation();</li>
-</ol>
-<p>###什么是闭包（closure），为什么要用它？<br>执行say667()后,say667()闭包内部变量会存在,而闭包内部函数的内部变量不会存在.使得Javascript的垃圾回收机制GC不会收回say667()所占用的资源，因为say667()的内部函数的执行需要依赖say667()中的变量。这是对闭包作用的非常直白的描述.</p>
-<p>闭包就是能够读取其他函数内部变量的函数, 可以把闭包简单理解成”定义在一个函数内部的函数”。<br>闭包的用途：①可以读取函数内部的变量②可以让变量始终保持在内存中</p>
-<h4 id="闭包的优点："><a href="#闭包的优点：" class="headerlink" title="闭包的优点："></a>闭包的优点：</h4><p>（1）不增加额外的全局变量，<br>（2）执行过程中所有变量都是在匿名函数内部。</p>
-<h4 id="闭包的缺点："><a href="#闭包的缺点：" class="headerlink" title="闭包的缺点："></a>闭包的缺点：</h4><p>（1）由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</p>
-<p>（2） 闭包会在父函数外部，改变父函数内部变量的值。不要随便改变父函数内部变量的值。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">  function say667() &#123;</div><div class="line">      var num = 666;</div><div class="line">      var sayAlert = function() &#123; alert(num); &#125;</div><div class="line">      num++;</div><div class="line">      return sayAlert;</div><div class="line">  &#125;</div><div class="line"> var sayAlert = say667();</div><div class="line"> sayAlert()//执行结果应该弹出的667 </div><div class="line"> ``` </div><div class="line">### 如何判断一个对象是否属于某个类？</div><div class="line">  使用instanceof （待完善）</div><div class="line">   if(a instanceof Person)&#123;</div><div class="line">       alert(&apos;yes&apos;);</div><div class="line">   &#125;</div><div class="line"></div><div class="line">### new操作符具体干了什么呢?</div><div class="line">     1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。</div><div class="line">     2、属性和方法被加入到 this 引用的对象中。</div><div class="line">     3、新创建的对象由 this 所引用，并且最后隐式的返回 this 。</div><div class="line">var obj  = &#123;&#125;;</div><div class="line">obj.__proto__ = Base.prototype;</div><div class="line">Base.call(obj); </div><div class="line">Javascript中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？</div><div class="line"></div><div class="line">hasOwnProperty</div><div class="line"></div><div class="line">### JSON 的了解？</div><div class="line">JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。</div><div class="line">它是基于JavaScript的一个子集。数据格式简单, 易于读写, 占用带宽小</div><div class="line">&#123;&apos;age&apos;:&apos;12&apos;, &apos;name&apos;:&apos;back&apos;&#125;</div><div class="line"></div><div class="line"></div><div class="line">### ajax 是什么?ajax 的交互模型?同步和异步的区别?如何解决跨域问题?</div><div class="line">Ajax是什么：AJAX即“Asynchronous Javascript And XML”（异步JavaScript和XML），是指一种创建交互式网页应用的网页开发技术。</div><div class="line"></div><div class="line">  1. 通过异步模式，提升了用户体验</div><div class="line">  2. 优化了浏览器和服务器之间的传输，减少不必要的数据往返，减少了带宽占用</div><div class="line">  3. Ajax在客户端运行，承担了一部分本来由服务器承担的工作，减少了大用户量下的服务器负载。</div><div class="line">  2. Ajax的最大的特点是什么。</div><div class="line">  Ajax可以实现动态不刷新（局部刷新）</div><div class="line">  readyState属性 状态 有5个可取值： 0=未初始化 ，1=正在加载 2=以加载，3=交互中，4=完成</div><div class="line"></div><div class="line">#### ajax的缺点</div><div class="line">  1、ajax不支持浏览器back按钮。</div><div class="line">  2、安全问题 AJAX暴露了与服务器交互的细节。</div><div class="line">  3、对搜索引擎的支持比较弱。</div><div class="line">  4、破坏了程序的异常机制。</div><div class="line">  5、不容易调试。</div><div class="line"></div><div class="line">#### 同步和异步的区别?</div><div class="line">同步是指： 发送方发出数据后，等接收方发回响应以后才发下一个数据包的通讯方式。</div><div class="line">异步是指：发送方发出数据后，不等接收方发回响应，接着发送下个数据包的通讯方式。</div><div class="line"></div><div class="line">### 如何解决跨域问题?</div><div class="line"></div><div class="line">jsonp、 iframe、window.name、window.postMessage、服务器上设置代理页面</div><div class="line"></div><div class="line">### 模块化怎么做？</div><div class="line">立即执行函数,不暴露私有成员</div></pre></td></tr></table></figure>
-<pre><code>var module1 = (function(){
-　　　　var _count = 0;
-　　　　var m1 = function(){
-　　　　　　//...
-　　　　};
-　　　　var m2 = function(){
-　　　　　　//...
-　　　　};
-　　　　return {
-　　　　　　m1 : m1,
-　　　　　　m2 : m2
-　　　　};
-　　})(); 
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### js延迟加载的方式有哪些？</div><div class="line">  1. defer，只支持IE</div><div class="line">  2. async：</div><div class="line">  3. 创建script，插入到DOM中，加载完毕后callBack</div><div class="line">  4. 按需异步载入js</div><div class="line"></div><div class="line">### documen.write和 innerHTML的区别</div><div class="line">document.write只能重绘整个页面</div><div class="line">innerHTML可以重绘页面的一部分</div><div class="line"></div><div class="line">### .call() 和 .apply() 的区别？</div><div class="line">  例子中用 add 来替换 sub，add.call(sub,3,1) == add(3,1) ，所以运行结果为：alert(4); </div><div class="line">  注意：js 中的函数其实是对象，函数名是对 Function 对象的引用。</div></pre></td></tr></table></figure>
-<pre><code>function add(a,b){
-    alert(a+b);
-}
-function sub(a,b){
-    alert(a-b);
-}
-add.call(sub,3,1); 
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">### Jquery与jQuery UI 有啥区别？</div><div class="line">*jQuery是一个js库，主要提供的功能是选择器，属性修改和事件绑定等等。</div><div class="line">*jQuery UI则是在jQuery的基础上，利用jQuery的扩展性，设计的插件。</div><div class="line"> 提供了一些常用的界面元素，诸如对话框、拖动行为、改变大小行为等等</div><div class="line"></div><div class="line">### jquery 中如何将数组转化为json字符串，然后再转化回来？</div><div class="line">jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩展：</div></pre></td></tr></table></figure>
-<pre><code>$.fn.stringifyArray = function(array) {
-    return JSON.stringify(array)
-}
-
-$.fn.parseArray = function(array) {
-    return JSON.parse(array)
-} 
-
-然后调用：
-$(&quot;&quot;).stringifyArray(array)
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">### 针对 jQuery 的优化方法？</div><div class="line">*基于Class的选择性的性能相对于Id选择器开销很大，因为需遍历所有DOM元素。</div><div class="line">*频繁操作的DOM，先缓存起来再操作。用Jquery的链式调用更好。   </div><div class="line"> 比如：var str=$(&quot;a&quot;).attr(&quot;href&quot;);</div><div class="line">*for (var i = size; i &lt; arr.length; i++) &#123;&#125;</div><div class="line"> for 循环每一次循环都查找了数组 (arr) 的.length 属性，在开始循环的时候设置一个变量来存储这个数字，可以让循环跑得更快： </div><div class="line"> for (var i = size, length = arr.length; i &lt; length; i++) &#123;&#125;</div><div class="line"></div><div class="line">### 那些操作会造成内存泄漏？</div><div class="line">内存泄漏指任何对象在您不再拥有或需要它之后仍然存在。</div><div class="line">垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为 0（没有其他对象引用过该对象），或对该对象的惟一引用是循环的，那么该对象的内存即可回收。</div><div class="line">setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏。</div><div class="line">闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）</div><div class="line"></div><div class="line">### 如何判断当前脚本运行在浏览器还是node环境中？</div><div class="line">通过判断Global对象是否为window，如果不为window，当前脚本没有运行在浏览器中</div><div class="line"></div><div class="line">###请写出一个获取5位数随机数的方法，要求最大数字不超过99999</div></pre></td></tr></table></figure>
-<p>function GetRandomNum(Min,Max)<br>    {<br>        var Range = Max - Min;<br>        var Rand = Math.random();<br>        return(Min + Math.round(Rand * Range));<br>    }<br>    var num = GetRandomNum(1,99999);<br>alert(num);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">### 如何阻止冒泡和默认事件？</div><div class="line">通过使用 preventDefault() 方法只取消默认的行为。 </div><div class="line">通过使用 stopPropagation() 方法只阻止一个事件起泡。 </div><div class="line"></div><div class="line">### 请指出“get()”“[]”“eq()”的区别？</div><div class="line">eq返回的是一个jquery对象，get返回的是一个html 对象数组。举个例子：</div></pre></td></tr></table></figure></p>
-<p></p><p style="color:yellow">绯雨</p><br>使用eq来获得第一个p标签的color值：<br>$(“p”).eq(0).css(“color”)  //因为eq(num)返回的是个jq对象，所以可以用jq的方法css<br>使用get来获得第一个p标签的color值：<br>$(“p”).get(0).style.color  //因为get(num)返回的是个html对象，所以要使用传统的HTML对象方法，jq对象此时就没用了。<br>当然，你也可以get(num)后把对象转为jq的对象再进行操作：<br>$($(“p”).get(0)).css(“color”)<br> ```<p></p>
-<h3 id="请说出你可以传递到jQuery方法的四种不同值。"><a href="#请说出你可以传递到jQuery方法的四种不同值。" class="headerlink" title="请说出你可以传递到jQuery方法的四种不同值。"></a>请说出你可以传递到jQuery方法的四种不同值。</h3><p>选择器（字符串），HTML（字符串），回调函数，HTML元素，对象，数组，元素数组，jQuery对象等。</p>
-<h3 id="对Node的优点和缺点提出了自己的看法："><a href="#对Node的优点和缺点提出了自己的看法：" class="headerlink" title="对Node的优点和缺点提出了自己的看法："></a>对Node的优点和缺点提出了自己的看法：</h3><pre><code>*（优点）因为Node是基于事件驱动和无阻塞的，所以非常适合处理并发请求，
-  因此构建在Node上的代理服务器相比其他技术实现（如Ruby）的服务器表现要好得多。
-  此外，与Node代理服务器交互的客户端代码是由javascript语言编写的，
-  因此客户端和服务器端都用同一种语言编写，这是非常美妙的事情。
-*（缺点）Node是一个相对新的开源项目，所以不太稳定，它总是一直在变，
-  而且缺少足够多的第三方库支持。看起来，就像是Ruby/Rails当年的样子。
-</code></pre><h3 id="你有哪些性能优化的方法？"><a href="#你有哪些性能优化的方法？" class="headerlink" title="你有哪些性能优化的方法？"></a>你有哪些性能优化的方法？</h3><p> （看雅虎14条性能优化原则）。</p>
-<p>  （1） 减少http请求次数：CSS Sprites, JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存 ，图片服务器。</p>
-<p>  （2） 前端模板 JS+数据，减少由于HTML标签导致的带宽浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数</p>
-<p>  （3） 用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能。</p>
-<p>  （4） 当需要设置的样式很多时设置className而不是直接操作style。</p>
-<p>  （5） 少用全局变量、缓存DOM节点查找的结果。减少IO读取操作。</p>
-<p>  （6） 避免使用CSS Expression（css表达式)又称Dynamic properties(动态属性)。</p>
-<p>  （7） 图片预加载，将样式表放在顶部，将脚本放在底部  加上时间戳。</p>
-<p>  （8） 避免在页面的主体布局中使用table，table要等其中的内容完全下载之后才会显示出来，显示比div+css布局慢。</p>
-<h3 id="http状态码有那些？分别代表是什么意思？"><a href="#http状态码有那些？分别代表是什么意思？" class="headerlink" title="http状态码有那些？分别代表是什么意思？"></a>http状态码有那些？分别代表是什么意思？</h3><p>100-199 用于指定客户端应相应的某些动作。<br>200-299 用于表示请求成功。<br>300-399 用于已经移动的文件并且常被包含在定位头信息中指定新的地址信息。<br>400-499 用于指出客户端的错误。400    1、语义有误，当前请求无法被服务器理解。401   当前请求需要用户验证 403  服务器已经理解请求，但是拒绝执行它。<br>500-599 用于支持服务器错误。 503 – 服务不可用</p>
-<h3 id="一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）"><a href="#一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）" class="headerlink" title="一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）"></a>一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）</h3><pre><code>查找浏览器缓存 
-DNS解析、查找该域名对应的IP地址、重定向（301）、发出第二个GET请求
-进行HTTP协议会话
-客户端发送报头(请求报头)
-服务器回馈报头(响应报头)
-html文档开始下载
-文档树建立，根据标记请求所需指定MIME类型的文件
-文件显示
-[
-浏览器这边做的工作大致分为以下几步：
-
-加载：根据请求的URL进行域名解析，向服务器发起请求，接收文件（HTML、JS、CSS、图象等）。
-
-解析：对加载到的资源（HTML、JS、CSS等）进行语法解析，建议相应的内部数据结构（比如HTML的DOM树，JS的（对象）属性表，CSS的样式规则等等）
-}
-</code></pre><h3 id="对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？"><a href="#对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？" class="headerlink" title="对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？"></a>对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？</h3><pre><code> 前端是最贴近用户的程序员，比后端、数据库、产品经理、运营、安全都近。
-1、实现界面交互
-2、提升用户体验
-3、有了Node.js，前端可以实现服务端的一些事情
-</code></pre><p>前端是最贴近用户的程序员，前端的能力就是能让产品从 90分进化到 100 分，甚至更好，<br> 参与项目，快速高质量完成实现效果图，精确到1px；<br> 与团队成员，UI设计，产品经理的沟通；<br> 做好的页面结构，页面重构和用户体验；<br> 处理hack，兼容、写出优美的代码格式；<br> 针对服务器的优化、拥抱最新前端技术。</p>
-<h3 id="平时如何管理你的项目？"><a href="#平时如何管理你的项目？" class="headerlink" title="平时如何管理你的项目？"></a>平时如何管理你的项目？</h3><pre><code>先期团队必须确定好全局样式（globe.css），编码模式(utf-8) 等；
-编写习惯必须一致（例如都是采用继承式的写法，单样式都写成一行）；
-页面进行标注（例如 页面 模块 开始和结束）；
-CSS跟HTML 分文件夹并行存放，命名都得统一（例如style.css）；
-JS 分文件夹存放 命名以该JS功能为准的英文翻译。
-图片采用整合的 images.png png8 格式文件使用 尽量整合在一起使用方便将来的管理
-</code></pre><h3 id="说说最近最流行的一些东西吧？常去哪些网站？"><a href="#说说最近最流行的一些东西吧？常去哪些网站？" class="headerlink" title="说说最近最流行的一些东西吧？常去哪些网站？"></a>说说最近最流行的一些东西吧？常去哪些网站？</h3><pre><code>Node.js、Mongodb、npm、MVVM、MEAN、three.js 
-</code></pre><h3 id="移动端（Android-IOS）怎么做好用户体验"><a href="#移动端（Android-IOS）怎么做好用户体验" class="headerlink" title="移动端（Android IOS）怎么做好用户体验?"></a>移动端（Android IOS）怎么做好用户体验?</h3><pre><code>清晰的视觉纵线、信息的分组、极致的减法、
-利用选择代替输入、标签及文字的排布方式、
-依靠明文确认密码、合理的键盘利用、
-</code></pre><h3 id="前端页面有哪三层构成，分别是什么？作用是什么？"><a href="#前端页面有哪三层构成，分别是什么？作用是什么？" class="headerlink" title="前端页面有哪三层构成，分别是什么？作用是什么？"></a>前端页面有哪三层构成，分别是什么？作用是什么？</h3><p>最准确的网页设计思路是把网页分成三个层次，即：结构层、表示层、行为层。</p>
-<p>网页的结构层（structural layer）由 HTML 或 XHTML 之类的标记语言负责创建。标签，也就是那些出现在尖括号里的单词，对网页内容的语义含义做出了描述，但这些标签不包含任何关于如何显示有关内容的信息。例如，P 标签表达了这样一种语义：“这是一个文本段。”</p>
-<p>网页的表示层（presentation layer） 由 CSS 负责创建。 CSS 对“如何显示有关内容”的问题做出了回答。</p>
-<p>网页的行为层（behavior layer）负责回答“内容应该如何对事件做出反应”这一问题。这是 Javascript 语言和 DOM 主宰的领域。</p>
-<h3 id="页面重构怎么操作？"><a href="#页面重构怎么操作？" class="headerlink" title="页面重构怎么操作？"></a>页面重构怎么操作？</h3><p>编写 CSS、让页面结构更合理化，提升用户体验，实现良好的页面效果和提升性能。</p>
-<h4 id="网站为什么要进行重构（网站重构的好处）"><a href="#网站为什么要进行重构（网站重构的好处）" class="headerlink" title="网站为什么要进行重构（网站重构的好处）"></a>网站为什么要进行重构（网站重构的好处）</h4><p>a、使页面加载得更快速；</p>
-<p>b、降低带宽带来的费用：节约成本；</p>
-<p>c、让你在修改设计时更有效率而代价更低；                         </p>
-<p>d、帮助你的整个站点保持视觉的一致性；</p>
-<p>e、更利于搜索引擎的检索（符合SEO的规范）；</p>
-<p>f、令站点更容易被各种浏览器和用户访问（包括手机、PDA和残障人士使用的文字浏览器）；</p>
-<p>g、兼容不容忽视的Mozilla系浏览器（Firefox份额）；</p>
-<p>h、提高你的职场竞争实力(事实上也就是降低失业的风险)。</p>
-<p>什么叫优雅降级和渐进增强？</p>
-<p>优雅降级：Web站点在所有新式浏览器中都能正常工作，如果用户使用的是老式浏览器，则代码会检查以确认它们是否能正常工作。由于IE独特的盒模型布局问题，针对不同版本的IE的hack实践过优雅降级了,为那些无法支持功能的浏览器增加候选方案，使之在旧式浏览器上以某种形式降级体验却不至于完全失效.<br>渐进增强：从被所有浏览器支持的基本功能开始，逐步地添加那些只有新式浏览器才支持的功能,向页面增加无害于基础浏览器的额外样式和功能的。当浏览器支持时，它们会自动地呈现出来并发挥作用。</p>
-<h3 id="WEB应用从服务器主动推送Data到客户端有那些方式？"><a href="#WEB应用从服务器主动推送Data到客户端有那些方式？" class="headerlink" title="WEB应用从服务器主动推送Data到客户端有那些方式？"></a>WEB应用从服务器主动推送Data到客户端有那些方式？</h3><pre><code>html5 websoket
-WebSocket通过Flash
-XHR长时间连接
-XHR Multipart Streaming
-不可见的Iframe
-&lt;script&gt;标签的长时间连接(可跨域)
-</code></pre><h3 id="html-xhtml-xml的区别介绍"><a href="#html-xhtml-xml的区别介绍" class="headerlink" title="html,xhtml,xml的区别介绍"></a>html,xhtml,xml的区别介绍</h3><p>html(超文本标记语言)——xhtml(可扩展性超文本标记语言)——xml（可扩展性标记语言）;<br>html： </p>
-<p>1.对大小写不敏感；<br>2.标签不必成对出现；<br>3.<br>; </p>
-<p>xhtml： </p>
-<p>1.对大小写敏感，必须是小写的；<br>2.标签必须成对出现，有开始标签就必须有结束标签；<br>3.属性值必须在引号之内；<br>4.不支持属性最小化：<br>eg：正确：<input checked="checked"><br>错误：<input checked><br>5.name属性不赞成使用，以后会被淘汰；<br>6.空元素也要结束标签：如：<br>,<hr>(水平分割线) </p>
-<p>xml： </p>
-<p>html最终会发展到xml，xhtml是html想xml发展的一个过渡，xhtml的特性也适合xml；</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1749,8 +1539,8 @@ XHR Multipart Streaming
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">29</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">articles</span>
               </a>
             </div>
           
@@ -1817,7 +1607,7 @@ XHR Multipart Streaming
 </div>
 
 <div class="theme-info">
-  Theme -
+  Thème -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Pisces
   </a>
